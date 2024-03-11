@@ -61,7 +61,7 @@
                 </div>
                 <div class="menu-item d-none d-lg-block">
                     <ul class="d-flex align-items-center">
-                        <li><a href="/locations" class="text-16">Locations</a></li>
+                        <li><a href="/our-locations" class="text-16">Locations</a></li>
                         <li><a href="/careers" class="text-16">Careers</a></li>
                         <li><a href="https://hammerandnailsfranchise.com/" class="text-16">Franchise</a></li>
                     </ul>
@@ -81,7 +81,7 @@
                     <li><a class="text-16" href="/services">Services</a></li>
                     <li><a class="text-16" href="/memberships">Memberships</a></li>
                     <li><a class="text-16" href="/gift-cards">Gift Cards</a></li>
-                    <li><a class="text-16" href="/locations">Locations</a></li>
+                    <li><a class="text-16" href="/our-locations">Locations</a></li>
                     <li><a class="text-16" href="/careers">Careers</a></li>
                     <li><a class="text-16" href="/franchise">Franchise</a></li>
                 </ul>
