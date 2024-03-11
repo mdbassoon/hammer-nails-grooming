@@ -17,43 +17,74 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+
+    <!-- title -->
+    <title>Hammer &amp; Nails - Luxury Grooming Shop for Guys</title>
+
+    <!-- favicon -->
+    <link href=""<?php echo get_theme_file_uri( 'assets/images/favicon.ico' ); ?>" type="image/png" rel="icon">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
+<body>
+    
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader3">
+            <img src="<?php echo get_theme_file_uri( 'assets/images/pre-load.png' ); ?>" alt="">
+        </div>
+    </div>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hngrooming' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$hngrooming_description = get_bloginfo( 'description', 'display' );
-			if ( $hngrooming_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $hngrooming_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hngrooming' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <!--============== Header area start ================-->
+    <header class="header-area">
+        <div class="container">
+            <div class="header-main d-flex align-items-center justify-content-between">
+                <div class="menu-item d-none d-lg-block">
+                    <ul class="d-flex align-items-center">
+                        <li><a href="#" class="text-16">Services</a></li>
+                        <li><a href="#" class="text-16">Memberships</a></li>
+                        <li><a href="#" class="text-16">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="logo-item">
+                    <a href="#">
+                        <img src="<?php echo get_theme_file_uri( 'assets/images/logo.png '); ?>" alt="logo">
+                    </a>
+                </div>
+                <div class="menu-item d-none d-lg-block">
+                    <ul class="d-flex align-items-center">
+                        <li><a href="#" class="text-16">Locations</a></li>
+                        <li><a href="#" class="text-16">Careers</a></li>
+                        <li><a href="#" class="text-16">Franchise</a></li>
+                    </ul>
+                </div>
+                <!-- menu toggler -->
+                <div class="hamburger-menu d-lg-none">
+                    <span class="line-top"></span>
+                    <span class="line-center"></span>
+                    <span class="line-bottom"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Ofcanvas-menu -->
+        <div class="ofcavas-menu d-lg-none">
+           <div class="container">
+                <ul>
+                    <li><a class="text-16" href="#">Services</a></li>
+                    <li><a class="text-16" href="#">Memberships</a></li>
+                    <li><a class="text-16" href="#">Gift Cards</a></li>
+                    <li><a class="text-16" href="#">Locations</a></li>
+                    <li><a class="text-16" href="#">Careers</a></li>
+                    <li><a class="text-16" href="#">Franchise</a></li>
+                </ul>
+           </div>
+        </div>
+    </header>

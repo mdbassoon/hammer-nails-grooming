@@ -1,12 +1,12 @@
 /*========================= Web fonts ===========================*/
 @font-face {
     font-family: 'Moonshiner';
-    src: url('../webfonts/Moonshiner-RoundOblique.eot');
-    src: url('../webfonts/Moonshiner-RoundOblique.eot?#iefix') format('embedded-opentype'),
-        url('../webfonts/Moonshiner-RoundOblique.woff2') format('woff2'),
-        url('../webfonts/Moonshiner-RoundOblique.woff') format('woff'),
-        url('../webfonts/Moonshiner-RoundOblique.ttf') format('truetype'),
-        url('../webfonts/Moonshiner-RoundOblique.svg#Moonshiner-RoundOblique') format('svg');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-RoundOblique.eot');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-RoundOblique.eot?#iefix') format('embedded-opentype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-RoundOblique.woff2') format('woff2'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-RoundOblique.woff') format('woff'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-RoundOblique.ttf') format('truetype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-RoundOblique.svg#Moonshiner-RoundOblique') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -14,12 +14,12 @@
 
 @font-face {
     font-family: 'Moonshiner';
-    src: url('../webfonts/Moonshiner-Sharp.eot');
-    src: url('../webfonts/Moonshiner-Sharp.eot?#iefix') format('embedded-opentype'),
-        url('../webfonts/Moonshiner-Sharp.woff2') format('woff2'),
-        url('../webfonts/Moonshiner-Sharp.woff') format('woff'),
-        url('../webfonts/Moonshiner-Sharp.ttf') format('truetype'),
-        url('../webfonts/Moonshiner-Sharp.svg#Moonshiner-Sharp') format('svg');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Sharp.eot');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Sharp.eot?#iefix') format('embedded-opentype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Sharp.woff2') format('woff2'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Sharp.woff') format('woff'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Sharp.ttf') format('truetype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Sharp.svg#Moonshiner-Sharp') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -27,12 +27,12 @@
 
 @font-face {
     font-family: 'Moonshiner';
-    src: url('../webfonts/Moonshiner-SharpOblique.eot');
-    src: url('../webfonts/Moonshiner-SharpOblique.eot?#iefix') format('embedded-opentype'),
-        url('../webfonts/Moonshiner-SharpOblique.woff2') format('woff2'),
-        url('../webfonts/Moonshiner-SharpOblique.woff') format('woff'),
-        url('../webfonts/Moonshiner-SharpOblique.ttf') format('truetype'),
-        url('../webfonts/Moonshiner-SharpOblique.svg#Moonshiner-SharpOblique') format('svg');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-SharpOblique.eot');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-SharpOblique.eot?#iefix') format('embedded-opentype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-SharpOblique.woff2') format('woff2'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-SharpOblique.woff') format('woff'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-SharpOblique.ttf') format('truetype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-SharpOblique.svg#Moonshiner-SharpOblique') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -40,12 +40,12 @@
 
 @font-face {
     font-family: 'Moonshiner';
-    src: url('../webfonts/Moonshiner-Round.eot');
-    src: url('../webfonts/Moonshiner-Round.eot?#iefix') format('embedded-opentype'),
-        url('../webfonts/Moonshiner-Round.woff2') format('woff2'),
-        url('../webfonts/Moonshiner-Round.woff') format('woff'),
-        url('../webfonts/Moonshiner-Round.ttf') format('truetype'),
-        url('../webfonts/Moonshiner-Round.svg#Moonshiner-Round') format('svg');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Round.eot');
+    src: url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Round.eot?#iefix') format('embedded-opentype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Round.woff2') format('woff2'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Round.woff') format('woff'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Round.ttf') format('truetype'),
+        url('/hn/wp-content/themes/hngrooming/assets/webfonts/Moonshiner-Round.svg#Moonshiner-Round') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -373,7 +373,7 @@ body {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-image: url(../images/hlinkbg.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/hlinkbg.png');
 	position: absolute;
 	top: 0.8rem;
 	left: 0.8rem;
@@ -431,7 +431,7 @@ body {
 	content: "";
 	width: 100%;
 	height: 120%;
-	background-image: url(../images/hlinkbg.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/hlinkbg.png' );
 	position: absolute;
 	top: 0.4rem;
 	left: 1.2rem;
@@ -711,7 +711,7 @@ header.sticky {
 	background: transparent;
 	border: 0.2rem solid var(--white);
 	padding: 1.15rem 1rem 1.15rem 5rem;
-	background-image: url(../images/pin.jpg);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/pin.jpg');
 	background-repeat: no-repeat;
 	background-position: center left;
 	background-size: 4rem;
@@ -814,7 +814,7 @@ header.sticky {
 /*========================= cuts-area start ===========================*/
 .cuts-area {
 	background-color: #0f0f12;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 	padding: 10rem 0;
@@ -864,7 +864,7 @@ header.sticky {
 /*====================== service-area start ========================*/
 .service-area {
 	background-color: #06060a;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 	padding: 10rem 0;
@@ -889,7 +889,7 @@ header.sticky {
 	background-color: #040406;
 	padding: 3rem 3rem;
 
-	background-image: url(../images/box-min-top.png), url(../images/box-min-bottom.png), url(../images/box-min-left-right.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/box-min-top.png'), url('/hn/wp-content/themes/hngrooming/assets/images/box-min-bottom.png'), url('/hn/wp-content/themes/hngrooming/assets/images/box-min-left-right.png');
 	background-repeat: no-repeat, no-repeat, repeat-y;
 	background-size: contain;
 	background-position: center top, center bottom, center;
@@ -919,7 +919,7 @@ header.sticky {
 
 /*====================== appointment-area start ========================*/
 .appointment-area {
-	background-image: url(../images/appointment-bg.jpg);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/appointment-bg.jpg');
 	background-repeat: no-repeat;
 	padding: 10rem 0;
 }
@@ -977,7 +977,7 @@ header.sticky {
 }
 
 .social-media ul {
-	background-image: url(../images/bg-social.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/bg-social.png');
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1091,7 +1091,7 @@ header.sticky {
 
 /*========================== careers page start ============================*/
 .career-section {
-	background-image: url(../images/careers-bg.jpg);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/careers-bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -1117,7 +1117,7 @@ header.sticky {
 .join-area {
 	padding: 10rem 0;
 	background-color: #0f0f12;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 }
@@ -1206,7 +1206,7 @@ header.sticky {
 
 .apply-area {
 	background-color: #0f0f12;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 	padding: 10rem 0;
@@ -1242,7 +1242,7 @@ header.sticky {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-image: url(../images/down.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/down.png');
 	background-position: 97%;
 	background-repeat: no-repeat;
 	background-size: 1.2rem;
@@ -1312,7 +1312,7 @@ header.sticky {
 }
 
 .apply-field .date {
-	background-image: url(../images/calender.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/calender.png');
 	background-position: 96%;
   	background-repeat: no-repeat;
   	background-size: 1.6rem;
@@ -1370,7 +1370,7 @@ header.sticky {
 
 /*========================= work-section start ============================*/
 .work-section {
-	background-image: url(../images/gift2-min.jpg);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/gift2-min.jpg');
 	background-repeat: no-repeat;
 	padding: 10rem 0;
 }
@@ -1478,7 +1478,7 @@ header.sticky {
 
 /*============================ location-brea-ca page start ===========================*/
 .brea-section {
-	background-image: url(../images/clack-bg.jpg);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/clack-bg.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -1599,7 +1599,7 @@ header.sticky {
 
 /*========================== client-area start ============================*/
 .client-area {
-	background-image: url(../images/client-bg.jpg);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/client-bg.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -1635,7 +1635,7 @@ header.sticky {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-image: url(../images/botton-reviews-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/botton-reviews-min.png');
 	position: absolute;
 	background-repeat: no-repeat;
 	background-position: left bottom;
@@ -1660,7 +1660,7 @@ header.sticky {
 /*========================== specialist-area start ============================*/
 .specialist-area {
 	background-color: #0f0f12;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 	padding: 10rem 0;
@@ -1942,7 +1942,7 @@ header.sticky {
 .look-area {
 	padding: 10rem 0;
 	background-color: #0f0f12;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 	text-align: center;
@@ -2037,7 +2037,7 @@ header.sticky {
 .choose-area {
 	padding: 2rem 0 10rem;
 	background-color: #0f0f12;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 }
@@ -2052,7 +2052,7 @@ header.sticky {
 }
 
 .choose-item3 {
-	background-image: url(../images/choose-bg.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/choose-bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -2093,7 +2093,7 @@ header.sticky {
 }
 
 .choose-inner2 {
-	background-image: url(../images/choose-01.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/choose-01.png');
   	background-size: contain;
   	background-position: center;
   	background-repeat: no-repeat;
@@ -2166,7 +2166,7 @@ header.sticky {
 
 .about-inner2,
 .about-inner3 {
-	background-image: url(../images/about-bg.jpg);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/about-bg.jpg');
 	padding: 3rem 7rem;
 	position: relative;
 	height: 46rem;
@@ -2275,7 +2275,7 @@ header.sticky {
 	content: "";
 	width: 100%;
 	height: 0.3rem;
-	background: url("../images//botom-bar.png");
+	background: url("/hn/wp-content/themes/hngrooming/assets/images/botom-bar.png");
 	margin: 0 auto;
 	position: absolute;
 	top: 0;
@@ -2288,7 +2288,7 @@ header.sticky {
 	content: "";
 	width: 100%;
 	height: 0.3rem;
-	background: url(../images//botom-bar.png);
+	background: url('/hn/wp-content/themes/hngrooming/assets/images/botom-bar.png');
 	margin: 0 auto;
 	top: auto;
 	position: absolute;
@@ -2325,7 +2325,7 @@ header.sticky {
 	align-items: center;
 	justify-content: space-between;
 	padding: 3rem 0 4rem;
-	background-image: url(../images/bar.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/bar.png');
 	background-size: contain;
   	background-repeat: no-repeat;
   	background-position: center bottom;
@@ -2360,7 +2360,7 @@ header.sticky {
 	width: 0.3rem;
 	height: 9.4rem;
 	display: block;
-	background-image: url(../images/left-bar.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/left-bar.png');
 	background-repeat: no-repeat;
   	background-position: left center;
   	background-size: auto;
@@ -2457,7 +2457,7 @@ header.sticky {
 /*====================== location-area2 start ========================*/
 .location-area2 {
 	background-color: #0f0f12;
-	background-image: url(../images/shadow1-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/shadow1-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 	padding: 5rem 0 10rem;
@@ -2516,7 +2516,7 @@ header.sticky {
 /*======================== valencia-ca page start ========================*/
 .comming-area {
 	background-color: var(--black);
-	background-image: url(../images/cs-hero-banner.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/cs-hero-banner.png');
 	background-repeat: no-repeat;
 	padding-top: 20rem;
     min-height: 92.4rem;
@@ -2646,7 +2646,7 @@ header.sticky {
 /*========================== experince-area start ============================*/
 .comingsoon-wrapper {
 	background-color: #0F0F0F;
-  background-image: url(../images/comingsoon-mainbg.png);
+  background-image: url('/hn/wp-content/themes/hngrooming/assets/images/comingsoon-mainbg.png');
   background-position: top center;
   background-size: contain;
   background-repeat: repeat;
@@ -2676,7 +2676,7 @@ header.sticky {
 	max-width: 104rem;
 	width: 100%;
 	margin: 0 auto;
-	background-image: url(../images/bg_border_art.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/bg_border_art.png');
 	background-repeat: no-repeat;
 	background-size: 70%;
 	background-position: center 2%;
@@ -2701,7 +2701,7 @@ header.sticky {
 .membership-bg {
 	padding: 10rem 0;
 	background-color: #0F0F0F;
-	background-image: url(../images/choose_bg-01.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/choose_bg-01.png');
 	background-position: top center;
 	background-size: cover;
 	background-repeat: repeat;
@@ -3023,7 +3023,7 @@ header.sticky {
 .expect-area2 {
 	background-color: #06060a;
 	padding: 10rem 0;
-	background-image: url(../images/bg-new-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/bg-new-min.png');
 	background-position: center;
 	background-repeat: repeat-y;
 }
@@ -3076,7 +3076,7 @@ header.sticky {
 /*===================== location-greenarea2 start =====================*/
 .location-greenarea2 {
 	background-color: #0f0f12;
-	background-image: url(../images/bg-new-min.png);
+	background-image: url('/hn/wp-content/themes/hngrooming/assets/images/bg-new-min.png');
 	background-position: top center;
 	background-repeat: repeat-y;
 	display: flex;

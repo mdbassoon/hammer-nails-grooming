@@ -11,24 +11,48 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'hngrooming' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'hngrooming' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'hngrooming' ), 'hngrooming', '<a href="http://underscores.me/">Taggart Media Group</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+    <!--================ Footer area ================-->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="footer-logo text-center">
+                <a href="#">
+                    <img src="<?php echo get_theme_file_uri( 'assets/images/logo.png'); ?>" alt="">
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul class="d-flex align-items-center justify-content-center">
+                    <li><a class="text-16" href="#">Home</a></li>
+                    <li><a class="text-16" href="#">Gift Cards</a></li>
+                    <li><a class="text-16" href="#">Memberships</a></li>
+                    <li><a class="text-16" href="#">Careers</a></li>
+                    <li><a class="text-16" href="#">Franchise</a></li>
+                    <li><a class="text-16" href="#">Locations</a></li>
+                </ul>
+            </div>
+            <div class="download-badge">
+                <ul class="d-flex align-items-center justify-content-center">
+                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/app_store_badge.png'); ?>" alt=""></a></li>
+                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/google_play_badge.png'); ?>" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <ul class="d-flex align-items-center justify-content-center">
+                    <li><a href="#"><img class="facebook" src="<?php echo get_theme_file_uri( 'assets/images/facebook.svg'); ?>" alt=""></a></li>
+                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/instagram.svg'); ?>" alt=""></a></li>
+                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/linkedin.svg'); ?>" alt=""></a></li>
+                </ul>
+            </div>
 
-<?php wp_footer(); ?>
+            <div class="footer-bottom d-block d-lg-flex align-items-center justify-content-between">
+                <p class="text-16"><span> &copy; Copyright 2024.</span> The Hammer & Nails Salon Group, LLC.</p>
+                <ul class="d-flex align-items-center">
+                    <li><a href="#" class="text-16">ACCESSIBILITY</a></li>
+                    <li><a href="#" class="text-16">Privacy Policy</a></li>
+                </ul>
+            </div>            
+        </div>
+    </footer>
 
+	<?php wp_footer(); ?>
 </body>
 </html>

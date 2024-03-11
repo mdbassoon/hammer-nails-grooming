@@ -138,16 +138,27 @@ add_action( 'widgets_init', 'hngrooming_widgets_init' );
  * Enqueue scripts and styles.
  */
 function hngrooming_scripts() {
-	wp_enqueue_style( 'hngrooming-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'hngrooming-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'hngrooming-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'hngrooming-bootstrap-css', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style( 'hngrooming-lighbox-css', get_stylesheet_directory_uri() . '/css/light-box.css');
+	wp_enqueue_style( 'hngrooming-owl-css', get_stylesheet_directory_uri() . '/css/owl.carousel.min.css');
+	wp_enqueue_style( 'hngrooming-responsive-css', get_stylesheet_directory_uri() . '/css/responsive.css');
+	wp_enqueue_style( 'hngrooming-main-css', get_stylesheet_directory_uri() . '/css/style.css');
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'hngrooming-jquery-js', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'hngrooming-plugins-js', get_template_directory_uri() . '/js/plugins.js', array(), _S_VERSION, true );
+	
+	wp_enqueue_script( 'hngrooming-main-js', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'hngrooming_scripts' );
+
+
+
+function hn_groom_enqueue_assets() {
+
+}
+add_action( 'wp_enqueue_scripts', 'hn_groom_enqueue_assets' );
 
 /**
  * Implement the Custom Header feature.
