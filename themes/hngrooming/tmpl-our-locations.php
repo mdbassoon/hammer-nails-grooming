@@ -1,79 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
-
-    <!-- title -->
-    <title>Locations - Hammer &amp; Nails - Grooming Shop for Guys</title>
-
-    <!-- favicon -->
-    <link href="images/favicon.ico" type="image/png" rel="icon">
-
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- all css here -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader3">
-            <img src="<?php echo get_theme_file_uri( 'assets/images/pre-load.png'); ?>" alt="">
-        </div>
-    </div>
-
-    <!--============== Header area ================-->
-    <header class="header-area">
-        <div class="container">
-            <div class="header-main d-flex align-items-center justify-content-between">
-                <div class="menu-item d-none d-lg-block">
-                    <ul class="d-flex align-items-center">
-                        <li><a href="/services" class="text-16">Services</a></li>
-                        <li><a href="/memberships" class="text-16">Memberships</a></li>
-                        <li><a href="/gift-cards" class="text-16">Gift Cards</a></li>
-                    </ul>
-                </div>
-                <div class="logo-item">
-                    <a href="/">
-                        <img src="<?php echo get_theme_file_uri( 'assets/images/logo.png'); ?>" alt="logo">
-                    </a>
-                </div>
-                <div class="menu-item d-none d-lg-block">
-                    <ul class="d-flex align-items-center">
-                        <li><a href="/locations" class="text-16">Locations</a></li>
-                        <li><a href="/careers" class="text-16">Careers</a></li>
-                        <li><a href="https://hammerandnailsfranchise.com/" class="text-16">Franchise</a></li>
-                    </ul>
-                </div>
-                <!-- menu toggler -->
-                <div class="hamburger-menu d-lg-none">
-                    <span class="line-top"></span>
-                    <span class="line-center"></span>
-                    <span class="line-bottom"></span>
-                </div>
-            </div>
-        </div>
-        <!-- Ofcanvas-menu -->
-        <div class="ofcavas-menu d-lg-none">
-           <div class="container">
-                <ul>
-                    <li><a class="text-16" href="/services">Services</a></li>
-                    <li><a class="text-16" href="/memberships">Memberships</a></li>
-                    <li><a class="text-16" href="/gift-cards">Gift Cards</a></li>
-                    <li><a class="text-16" href="/locations">Locations</a></li>
-                    <li><a class="text-16" href="/careers">Careers</a></li>
-                    <li><a class="text-16" href="https://hammerandnailsfranchise.com/">Franchise</a></li>
-                </ul>
-           </div>
-        </div>
-    </header>
+<?php
+/**
+ * Template Name: Our Locations
+ *
+ * @package WordPress
+ */
+get_header();
+?>
 
 
     <main class="overflow-hidden">
@@ -3394,53 +3326,5 @@
         </section>
 
     </main>
-
-
-    <!--================ Footer area ================-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="footer-logo text-center">
-                <a href="#">
-                    <img src="<?php echo get_theme_file_uri( 'assets/images/logo.png'); ?>" alt="">
-                </a>
-            </div>
-            <div class="footer-links">
-                <ul class="d-flex align-items-center justify-content-center">
-                    <li><a class="text-16" href="#">Home</a></li>
-                    <li><a class="text-16" href="#">Gift Cards</a></li>
-                    <li><a class="text-16" href="#">Memberships</a></li>
-                    <li><a class="text-16" href="#">Careers</a></li>
-                    <li><a class="text-16" href="#">Franchise</a></li>
-                    <li><a class="text-16" href="#">Locations</a></li>
-                </ul>
-            </div>
-            <div class="download-badge">
-                <ul class="d-flex align-items-center justify-content-center">
-                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/app_store_badge.png'); ?>" alt=""></a></li>
-                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/google_play_badge.png'); ?>" alt=""></a></li>
-                </ul>
-            </div>
-            <div class="social-media">
-                <ul class="d-flex align-items-center justify-content-center">
-                    <li><a href="#"><img class="facebook" src="<?php echo get_theme_file_uri( 'assets/images/facebook.svg'); ?>" alt=""></a></li>
-                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/instagram.svg'); ?>" alt=""></a></li>
-                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/linkedin.svg'); ?>" alt=""></a></li>
-                </ul>
-            </div>
-
-            <div class="footer-bottom d-block d-lg-flex align-items-center justify-content-between">
-                <p class="text-16"><span> &copy; Copyright 2024.</span> The Hammer & Nails Salon Group, LLC.</p>
-                <ul class="d-flex align-items-center">
-                    <li><a href="#" class="text-16">ACCESSIBILITY</a></li>
-                    <li><a href="#" class="text-16">Privacy Policy</a></li>
-                </ul>
-            </div>            
-        </div>
-    </footer>
-
-    <!-- all js here -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+    <?php
+get_footer();
