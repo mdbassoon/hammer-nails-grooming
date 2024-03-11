@@ -15,18 +15,18 @@
     <footer class="footer-area">
         <div class="container">
             <div class="footer-logo text-center">
-                <a href="#">
+                <a href="/">
                     <img src="<?php echo get_theme_file_uri( 'assets/images/logo.png'); ?>" alt="">
                 </a>
             </div>
             <div class="footer-links">
                 <ul class="d-flex align-items-center justify-content-center">
-                    <li><a class="text-16" href="#">Home</a></li>
-                    <li><a class="text-16" href="#">Gift Cards</a></li>
-                    <li><a class="text-16" href="#">Memberships</a></li>
-                    <li><a class="text-16" href="#">Careers</a></li>
-                    <li><a class="text-16" href="#">Franchise</a></li>
-                    <li><a class="text-16" href="#">Locations</a></li>
+                    <li><a class="text-16" href="/">Home</a></li>
+                    <li><a class="text-16" href="/gift-cards">Gift Cards</a></li>
+                    <li><a class="text-16" href="/memberships">Memberships</a></li>
+                    <li><a class="text-16" href="/careers">Careers</a></li>
+                    <li><a class="text-16" href="https://hammerandnailsfranchise.com/">Franchise</a></li>
+                    <li><a class="text-16" href="/locations">Locations</a></li>
                 </ul>
             </div>
             <div class="download-badge">
@@ -47,7 +47,7 @@
                 <p class="text-16"><span> &copy; Copyright 2024.</span> The Hammer & Nails Salon Group, LLC.</p>
                 <ul class="d-flex align-items-center">
                     <li><a href="#" class="text-16">ACCESSIBILITY</a></li>
-                    <li><a href="#" class="text-16">Privacy Policy</a></li>
+                    <li><a href="/privacy-policy" class="text-16">Privacy Policy</a></li>
                 </ul>
             </div>            
         </div>

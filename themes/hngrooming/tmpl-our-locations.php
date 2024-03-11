@@ -35,21 +35,21 @@
             <div class="header-main d-flex align-items-center justify-content-between">
                 <div class="menu-item d-none d-lg-block">
                     <ul class="d-flex align-items-center">
-                        <li><a href="#" class="text-16">Services</a></li>
-                        <li><a href="#" class="text-16">Memberships</a></li>
-                        <li><a href="#" class="text-16">Gift Cards</a></li>
+                        <li><a href="/services" class="text-16">Services</a></li>
+                        <li><a href="/memberships" class="text-16">Memberships</a></li>
+                        <li><a href="/gift-cards" class="text-16">Gift Cards</a></li>
                     </ul>
                 </div>
                 <div class="logo-item">
-                    <a href="#">
+                    <a href="/">
                         <img src="<?php echo get_theme_file_uri( 'assets/images/logo.png'); ?>" alt="logo">
                     </a>
                 </div>
                 <div class="menu-item d-none d-lg-block">
                     <ul class="d-flex align-items-center">
-                        <li><a href="#" class="text-16">Locations</a></li>
-                        <li><a href="#" class="text-16">Careers</a></li>
-                        <li><a href="#" class="text-16">Franchise</a></li>
+                        <li><a href="/locations" class="text-16">Locations</a></li>
+                        <li><a href="/careers" class="text-16">Careers</a></li>
+                        <li><a href="https://hammerandnailsfranchise.com/" class="text-16">Franchise</a></li>
                     </ul>
                 </div>
                 <!-- menu toggler -->
@@ -64,12 +64,12 @@
         <div class="ofcavas-menu d-lg-none">
            <div class="container">
                 <ul>
-                    <li><a class="text-16" href="#">Services</a></li>
-                    <li><a class="text-16" href="#">Memberships</a></li>
-                    <li><a class="text-16" href="#">Gift Cards</a></li>
-                    <li><a class="text-16" href="#">Locations</a></li>
-                    <li><a class="text-16" href="#">Careers</a></li>
-                    <li><a class="text-16" href="#">Franchise</a></li>
+                    <li><a class="text-16" href="/services">Services</a></li>
+                    <li><a class="text-16" href="/memberships">Memberships</a></li>
+                    <li><a class="text-16" href="/gift-cards">Gift Cards</a></li>
+                    <li><a class="text-16" href="/locations">Locations</a></li>
+                    <li><a class="text-16" href="/careers">Careers</a></li>
+                    <li><a class="text-16" href="https://hammerandnailsfranchise.com/">Franchise</a></li>
                 </ul>
            </div>
         </div>
