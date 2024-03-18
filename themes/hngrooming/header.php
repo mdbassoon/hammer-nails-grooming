@@ -8,6 +8,24 @@
  *
  * @package hngrooming
  */
+global $wp;
+
+$id = $wp_query->post->ID;
+$status = get_field('location_status',$id);
+if($status){
+    $url_dir = $wp->request;
+    if($status['is_it_live'][0]!='1'&&$status['coming_soon'][0]!='1'){
+        wp_redirect(home_url());
+    } else if(str_contains($url_dir,'coming-soon')){
+        if($status['coming_soon'][0]!='1'){
+            wp_redirect( get_permalink($id) );
+        }
+    } else {
+        if($status['is_it_live'][0]!='1'&&$status['coming_soon'][0]=='1'){
+            wp_redirect( str_replace('location','coming-soon',get_permalink($id)) );
+        }  
+    }
+}
 
 ?>
 <!doctype html>
@@ -49,8 +67,8 @@
             <div class="header-main d-flex align-items-center justify-content-between">
                 <div class="menu-item d-none d-lg-block">
                     <ul class="d-flex align-items-center">
-                        <li><a href="/services" class="text-16">Services</a></li>
-                        <li><a href="/memberships" class="text-16">Memberships</a></li>
+                        <li><a href="/service" class="text-16">Services</a></li>
+                        <li><a href="/join-the-club" class="text-16">Memberships</a></li>
                         <li><a href="/gift-cards" class="text-16">Gift Cards</a></li>
                     </ul>
                 </div>
@@ -78,8 +96,8 @@
         <div class="ofcavas-menu d-lg-none">
            <div class="container">
                 <ul>
-                    <li><a class="text-16" href="/services">Services</a></li>
-                    <li><a class="text-16" href="/memberships">Memberships</a></li>
+                    <li><a class="text-16" href="/service">Services</a></li>
+                    <li><a class="text-16" href="/join-the-club">Memberships</a></li>
                     <li><a class="text-16" href="/gift-cards">Gift Cards</a></li>
                     <li><a class="text-16" href="/our-locations">Locations</a></li>
                     <li><a class="text-16" href="/careers">Careers</a></li>

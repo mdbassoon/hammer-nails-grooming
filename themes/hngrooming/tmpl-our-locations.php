@@ -3326,5 +3326,240 @@ get_header();
         </section>
 
     </main>
+    <?php $key = 'AIzaSyBqcjHOT4eht92zqEHPVgCytpUVtv0w8H8'; ?>
+    <script type="text/javascript">
+        var clicked_event = true;
+        let userLocation = null;
+        function scrollLocationBox(state,state_name,div_id,u,s){
+            console.log("PARAMS2!!",state,state_name,div_id);
+            jQuery('.mapping_with_map').each((function(t, i) {
+
+            console.log(state);
+            console.log(state_name);
+            var check_location = jQuery.inArray(state_name, state);
+
+
+            if (check_location >= 0) {
+                var container = jQuery('.location_area');
+                var position = jQuery('#'+div_id).offset().top - container.offset().top + container.scrollTop();
+                if(active != true){
+                    container.animate({
+                        scrollTop: position
+                    });
+                }
+                console.log(state);
+            }
+            }));
+            for (var t = u.getBounds(), i = 0; i < s.length; i++) {
+                var a = s[i]
+                    , n = jQuery(this).parent().find('.map_all_locations li[data-post="' + a.post + '"]');
+                !0 === t.contains(a.getPosition()) && (n.show())
+            }
+        }
+        function scrollToLocation(u,s,a){
+            console.log('SCROLLING !!!!!!');
+            var latlng = u.center;
+            console.log('here');
+            console.log(u)
+            console.log(s)
+            console.log(a)
+            //var latlng = new google.maps.LatLng(parseFloat('41.3440061'),parseFloat('-96.2423023'));
+            var geocoder = geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    //let mapDiv = new google.maps.Map(document.getElementById('map39'), {
+                        //center: results[0].geometry.location
+                    //})
+                    //map.setCenter(new google.maps.LatLng(parseFloat('41.3440061'),parseFloat('-96.2423023')))
+                    if (results[1]) {
+                        //alert("Location: " + results[1].formatted_address);
+                        var address_components = results[1]['address_components'];
+                        //console.log(results[1].formatted_address);
+                        console.log(address_components);
+                        var state = [
+                                        address_components[3].long_name,
+                                        address_components[4].long_name
+                                    ];
+                        if(address_components[5] !== undefined){
+                            state.push(address_components[5].long_name);
+                        }
+                        if(address_components[6] !== undefined){
+                            state.push(address_components[6].long_name);
+                        }
+                        if(address_components[7] !== undefined){
+                            if (address_components[7].long_name == '67026') {
+                                var active = true;
+                            }
+                        }
+
+                        //jQuery('.location_area').animate({
+                        //      scrollTop: jQuery("#florida").position().top-50
+                            //}, 2000);
+                            console.log("PARAMS1!!",state,jQuery(this).data('loc_name'),jQuery(this).attr('id'));
+                        //scrollLocationBox(state,jQuery(this).data('loc_name'),jQuery(this).attr('id'),u,s);
+                        jQuery('.mapping_with_map').each((function(t, i) {
+
+                        var state_name = jQuery(this).data('loc_name');
+                        //console.log(state);
+                        //console.log(state_name);
+                        var check_location = jQuery.inArray(state_name, state);
+
+
+                        if (check_location >= 0) {
+                            var div_id = jQuery(this).attr('id');
+                            var container = jQuery('.location_area');
+                            var position = jQuery('#'+div_id).offset().top - container.offset().top + container.scrollTop();
+                            if(active != true){
+                                container.animate({
+                                    scrollTop: position
+                                });
+                            }
+                            console.log(state);
+                        }
+                        }));
+                        for (var t = u.getBounds(), i = 0; i < s.length; i++) {
+                        var a = s[i]
+                            , n = jQuery(this).parent().find('.map_all_locations li[data-post="' + a.post + '"]');
+                        !0 === t.contains(a.getPosition()) && (n.show())
+                        }
+
+                    }
+                }
+            });
+        }
+        function init() {
+            function continueInit(scroll=null,centerCoord=null){
+                console.log('continuing init')
+                
+                jQuery(".loaction_map_wrraper .map").each((function(t, i) {
+                    console.log("t: ", t)
+                    console.log("i: ", i)
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                    var zoom_per_view = 3.3;
+                }else{
+                    var zoom_per_view = 4.35;
+                }
+                
+                var s = []
+                    , a = []
+                    , n = jQuery(i)
+                    , r = n.data("lat")
+                    , o = n.data("lng")
+                    , z = n.data("zoom")
+                    , l = new google.maps.LatLng(n.data("lat"),n.data("lng"));
+                                    console.log("center: ", l, i)
+
+                let parent = n.parent().parent().parent().parent()
+                let parentId = parent.attr("id")
+                let isParentActive = parent.hasClass('active')
+                if (r || o) {
+                    var d = {
+                        //zoom: (isParentActive&&centerCoord)?5.5:zoom_per_view,
+                        zoom: (centerCoord||parentId!=='all')?5.5:zoom_per_view,
+                        maxZoom: 20,
+                        center: (isParentActive&&centerCoord)?centerCoord:l,
+                        backgroundColor: "#ffffff",
+                        panControl: !1,
+                        scrollwheel: !1,
+                        styles: <?php get_template_part('page-templates/location-parts/map-design');?>
+                    }
+                        , h = new google.maps.MarkerImage(n.data("marker"),null,null,null,new google.maps.Size(38,45))
+                        , c = new google.maps.LatLngBounds
+                        , u = new google.maps.Map(document.getElementById(n.attr("id")),d)
+                        , p = new google.maps.LatLng(parseFloat(r),parseFloat(o));
+                        //console.log(n);
+                    //new google.maps.Marker({
+                    //    map: u,
+                    //    position: p,
+                    //    icon: h
+                    //});
+                    jQuery(this).parent().find(".map_all_locations li").each((function(t, i) {
+                        console.log('firing')
+                        var n = jQuery(i)
+                            , r = n.data("lat")
+                            , o = n.data("lng")
+                            , l = n.data("post")
+                            , d = n.find(".map__info").html();
+                        if (r || o) {
+                            var p = new google.maps.LatLng(parseFloat(r),parseFloat(o));
+                            //u.fitBounds(c),
+                            //c.extend(p);
+                            var f = new google.maps.InfoWindow({
+                                content: d,
+                                maxWidth: 300,
+                                pixelOffset: new google.maps.Size(0,-10)
+                            })
+                                , m = new google.maps.Marker({
+                                map: u,
+                                position: p,
+                                icon: h,
+                                //zoom: 15
+                            });
+                            m.post = l,
+                            s.push(m),
+                            a.push(f);
+                            var v = s.indexOf(m);
+                            m.addListener("click", (function() {
+                                console.log(m);
+                                for (var e = 1; e < a.length; e++)
+                                    void 0 !== a && a[e].close();
+                                a[v].open(u, s[v])
+                            }
+                            ))
+                        }
+                    }
+                    ));
+                    var f = [{
+                        url: "<?php echo get_template_directory_uri();?>/page-templates/location-parts/icons/icon-pin.png",
+                        width: 46,
+                        height: 60,
+                        anchorText: [35, 0]
+                    }];
+                    new MarkerClusterer(u,s,{
+                        zoom: z,
+                        maxZoom: 12,
+                        averageCenter: !0,
+                        styles: f,
+                    });
+                    
+                    google.maps.event.addListener(u, 'bounds_changed', (function() {
+                        // scrollToLocation(u);
+                    }));
+
+                    google.maps.event.addListener(u, "idle", (function() {
+                        scrollToLocation(u,s,a);
+                    // continueInit()
+                    }));
+                    if(scroll){
+                    google.maps.event.addListenerOnce(u, 'idle', function(){
+                            console.log('initial scroll firing');
+                            scrollToLocation(u,s,a);
+                        });
+                    }
+                }
+                }));
+            }
+            //continueInit();
+            // LOCATION DETECTION
+            console.log("LOCATIONS PAGE!!!!!!!!!!");
+            const successCallback = (position) => {
+                console.log(position);
+                let centerCoord = {};
+                centerCoord['lat']  = position.coords.latitude;
+                centerCoord['lng']  = position.coords.longitude;
+                //continueInit(scroll,centerCoord);                
+            };
+            const errorCallback = (error) => {
+                //continueInit();
+            };
+
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+            
+        }
+    </script>
+    <!--<script src="https://unpkg.com/@google/markerclustererplus@5.0.1/dist/markerclustererplus.min.js" type="text/javascript"></script>-->
+    <script src="<?php echo get_template_directory_uri();?>/js/markcluster.js?1" type="text/javascript"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
     <?php
 get_footer();

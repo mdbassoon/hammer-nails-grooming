@@ -23,7 +23,7 @@
                 <ul class="d-flex align-items-center justify-content-center">
                     <li><a class="text-16" href="/">Home</a></li>
                     <li><a class="text-16" href="/gift-cards">Gift Cards</a></li>
-                    <li><a class="text-16" href="/memberships">Memberships</a></li>
+                    <li><a class="text-16" href="/join-the-club">Memberships</a></li>
                     <li><a class="text-16" href="/careers">Careers</a></li>
                     <li><a class="text-16" href="https://hammerandnailsfranchise.com/">Franchise</a></li>
                     <li><a class="text-16" href="/locations">Locations</a></li>
