@@ -1,21 +1,27 @@
+<?php 
+$presale = get_field('presale');
+?>
 <main class="overflow-hidden">
-    
+
     <!--================ brea-section start ================-->
-    <section class="brea-section">
+    <?php 
+    $top = $presale['top'];
+    ?>
+    <section class="brea-section" id="top-section">
         <div class="container">
             <div class="row align-items-center csgreen-mainrow">
                 <div class="col-xl-4 col-lg-6">
                     <div class="brea-left csopen-cnt">
-                        <h1 class="title-lg"><span>Opening</span> May 2024</h1>
-                        <p class="text-21">Not your ordinary barbershop- one premium barber cut, hand and foot treatment at a time. Welcome to a higher level of full-service grooming experiences for extraordinary men.</p>
+                        <h1 class="title-lg"><span>Opening</span> <?php echo $top['opens']; ?></h1>
+                        <p class="text-21"><?php echo $top['description']; ?></p>
                         <a href="#">
-                            <img src="<?php echo get_theme_file_uri( 'assets/images/services-logo-3.png'); ?>" alt="services-logo">
+                            <img src="<?php echo $top['icon']; ?>" alt="<?php echo $top['icon']; ?>">
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6">
                     <div class="brea-midle">
-                        <img src="<?php echo get_theme_file_uri( 'assets/images/designed.png'); ?>" alt="">
+                        <img src="<?php echo $top['background_image']; ?>" alt="">
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-12">
@@ -23,8 +29,8 @@
                         <div class="csgreen-upper text-center">
                             <img src="<?php echo get_theme_file_uri( 'assets/images/h-n-icon.png'); ?>" alt="">
                             <h6 class="text-16">Hammer & Nails <br>Greenwich, CT</h6>
-                            <h4 class="title-xl3">Claim Your Free <br> Exclusive Offer</h4>
-                            <p class="text-16">First 150 Founding Members only (Up to $299 Value!) </p>
+                            <h4 class="title-xl3"><?php echo $top['form_title']; ?></h4>
+                            <p class="text-16"><?php echo $top['form_description']; ?> </p>
                         </div>
                         <form action="#">
                             <div class="csgreen-form">
@@ -42,48 +48,37 @@
     </section>
 
     <!--================ founding-area start ================-->
+    <?php $memberships = $presale['memberships']; ?>
     <section class="founding-area">
         <div class="container">
             <div class="founding-upper text-center">
-                <h2 class="title-xxl">FOUNDING <span>MEMBERSHIPS</span></h2>
-                <p class="text-20">Apply to be a founding member today to receive exclusive offers</p>
+                <h2 class="title-xxl"><?php echo $memberships['title']; ?></h2>
+                <p class="text-20"><?php echo $memberships['description']; ?></p>
             </div>
             <div class="founding-main">
-                <div class="founding-box founding-firstbox">
-                    <h3 class="title-xl">Classic CLUB</h3>
-                    <h6 class="title-sm"><del>$104</del> per month</h6>
-                    <h4 class="title-lg3"><small class="text-20">$</small>99</h4>
-                    <p class="text-20"> per month </p>
-                    <ul>
-                        <li class="text-16">Two Classic services per month</li>
-                        <li class="text-16"><strong>Founding Member Exclusive:</strong> One Free Premium Service* ** (Up to $97.50 value)</li>
-                        <li class="text-16"><strong>Founding Member Exclusive:</strong> Rate Lock for One Year**</li>
-                    </ul>
-                </div>
-                <div class="founding-box founding-mdlbox">
-                    <h3 class="title-xl">VIP CLUB</h3>
-                    <h6 class="title-sm"><del>$212</del> per month</h6>
-                    <h4 class="title-lg3"><small class="text-20">$</small>202</h4>
-                    <p class="text-20"> per month </p>
-                    <ul>
-                        <li class="text-16">Three Premium services per month</li>
-                        <li class="text-16">One Free Add-On per Month</li>
-                        <li class="text-16"><strong>Founding Member Exclusive:</strong> One Free Luxe Service* **($299 value)</li>
-                        <li class="text-16"><strong>Founding Member Exclusive:</strong> Rate Lock for One Year**</li>
-                    </ul>
-                </div>
-                <div class="founding-box founding-lastbox">
-                    <h3 class="title-xl">Club Luxe</h3>
-                    <h6 class="title-sm"><del>$699</del> per month</h6>
-                    <h4 class="title-lg3"><small class="text-20">$</small>679</h4>
-                    <p class="text-20"> per month </p>
-                    <ul>
-                        <li class="text-16">Unlimited Services for Member</li>
-                        <li class="text-16">One free guest pass per month</li>
-                        <li class="text-16"><strong>Founding Member Exclusive:</strong> One Additional Free Guest Pass* ** ($299 value)</li>
-                        <li class="text-16"><strong>Founding Member Exclusive:</strong> Rate Lock for One Year**</li>
-                    </ul>
-                </div>
+                <?php 
+                $membership_info = $memberships['membership_info'];
+                $classes = array('founding-firstbox','founding-mdlbox','founding-lastbox');
+                foreach($membership_info as $i=>$membership){
+                    ?>
+                    <div class="founding-box <?php echo $classes[$i]; ?>">
+                        <h3 class="title-xl"><?php echo $membership['membership_type']; ?></h3>
+                        <h6 class="title-sm"><del>$<?php echo $membership['full_price']; ?></del> per month</h6>
+                        <h4 class="title-lg3"><small class="text-20">$</small><?php echo $membership['discount_price']; ?></h4>
+                        <p class="text-20"> per month </p>
+                        <ul>
+                            <?php 
+                            foreach($membership['features'] as $feature){
+                                ?>                          
+                                <li class="text-16"><?php echo $feature['feature']; ?></li>  
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
             <div class="founding-bottombox">
                 <p class="text-20">*One time only with purchase of Founding Membership <br> **Redeemable only after first payment</p>
@@ -95,25 +90,22 @@
                     <div class="benefit-inner2">
                         <h3 class="title-xl3 text-center">Membership Benefits</h3>
                         <ul>
-                            <li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>No commitment, cancel anytime </li>
-                            <li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Premium & Classic Services roll over</li>
-                            <li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Share services with family & friends</li>
-                            <li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Combine services to upgrade experience</li>
-                            <li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Complimentary beverage</li>
-                            <li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>20-40%+ on retail and services</li>
-                            <li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Complimentary upgrade days</li>
+                            <?php 
+                            foreach($memberships['benefits'] as $benefit){
+                                ?><li class="text-21"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span><?php echo $benefit['benefit']; ?></li><?php
+                            } ?>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="claimfree-btn text-center">
-                <a href="#" class="button mx-auto">Claim My Free Service</a>
+                <a href="#top-section" class="button mx-auto">Claim My Free Service</a>
             </div>
         </div>
     </section>
 
     <!--================= partner-area ================-->
-    <div class="partner-area">
+    <div class="partner-area" style="<?php echo $presale['partners']['hide_partners'][0]=='1'?'display:none;':'';?>">
         <div class="container">
             <div class="partner-feature2 text-center">
                 <h4 class="title-lg2">featured on</h4>
@@ -139,7 +131,7 @@
     </div>
 
     <!--================= expect-area2 ================-->
-    <section class="expect-area2">
+    <section class="expect-area2" style="<?php echo $presale['experience']['hide_experience'][0]=='1'?'display:none;':'';?>>
         <div class="container">
             <div class="expect-upper text-center">
                 <h3 class="title-xxl">With Every Hammer & Nails <span>Experience You Can Expect</span></h3>
@@ -252,7 +244,7 @@
                     </div>
                 </div>
                 <div class="freeserv-btn">
-                    <a href="#" class="button mx-auto">Claim My Free Service</a>
+                    <a href="#top-section" class="button mx-auto">Claim My Free Service</a>
                 </div>
             </div>  
         </div>
@@ -267,58 +259,62 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="location-greenleft">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3009.7839705450006!2d-73.62775!3d41.029982!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29847cf6d7d2b%3A0x72ef4276b01a77f!2s48%20West%20Putnam%20Avenue%2C%20Greenwich%2C%20CT%2006830!5e0!3m2!1sen!2sus!4v1709392445256!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <?php echo get_field('google_map_iframe');  ?>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="location-greenright">
                             <div class="brea-right p-0">
-                                <h4 class="title-xl3 text-center mb-5">Greenwich, CT</h4>
+                                <h4 class="title-xl3 text-center mb-5"><?php echo get_the_title(); ?></h4>
                                 <ul>
                                     <li>
                                         <div class="brea-icon">
                                             <img src="<?php echo get_theme_file_uri( 'assets/images/location.png'); ?>" alt="">
                                         </div>
-                                        <a class="text-18" href="#">48 West Putnam Avenue, <br>Greenwich, CT 06830, United States</a>
+                                        <a class="text-18" href="<?php echo get_field('google_maps_link'); ?>"><?php echo get_field('address')['address']; ?></a>
                                     </li>
                                     <li>
                                         <div class="brea-icon">
                                             <img src="<?php echo get_theme_file_uri( 'assets/images/tel.png'); ?>" alt="">
                                         </div>
-                                        <a class="text-18" href="tel: (203) 489-2220"> (203) 489-2220</a>
+                                        <a class="text-18" href="tel: <?php echo get_field('address')['phone']; ?>"> <?php echo get_field('address')['phone']; ?></a>
                                     </li>
                                     <li>
                                         <div class="brea-icon">
                                             <img src="<?php echo get_theme_file_uri( 'assets/images/email.png'); ?>" alt="">
                                         </div>
-                                        <a class="text-18" href="mailto: winterpark@hngrooming.com"> winterpark@hngrooming.com</a>
+                                        <a class="text-18" href="mailto: <?php echo get_field('address')['email']; ?>"> <?php echo get_field('address')['email']; ?></a>
                                     </li>
                                     <li>
                                         <div class="brea-icon">
                                             <img src="<?php echo get_theme_file_uri( 'assets/images/tm-icon.png'); ?>" alt="">
                                         </div>
                                         <div class="bre-schedule">
-                                            <p lang="text-18">Monday <span>10am - 6:30pm</span></p>
-                                            <p lang="text-18">Tuesday <span>10am - 6:30pm</span></p>
-                                            <p lang="text-18">Wednesday <span>10am - 6:30pm</span></p>
-                                            <p lang="text-18">Thursday <span>10am - 6:30pm</span></p>
-                                            <p lang="text-18">Friday <span>10am - 6:30pm</span></p>
-                                            <p lang="text-18">Saturday <span>9am - 5:30pm</span></p>
-                                            <p lang="text-18">Sunday <span>10am - 430pm</span></p>
+                                            <?php foreach(get_field('hours') as $day){
+                                                ?><p lang="text-18"><?php echo $day['day']; ?> <span><?php echo $day['times']; ?></span></p><?php
+                                            } ?>
                                         </div>
                                     </li>    
                                 </ul>
                             </div>
                             <div class="locatgreen-social d-flex">
-                                <a href="#">
-                                    <img class="facebook" src="<?php echo get_theme_file_uri( 'assets/images/facebook.svg'); ?>" alt="">
-                                </a>
-                                <a href="#">
-                                    <img class="instagram" src="<?php echo get_theme_file_uri( 'assets/images/instagram.svg'); ?>" alt="">
-                                </a>
+                                <?php 
+                                    $social = get_field('social_links');
+                                    $social_icons = array(
+                                        'facebook'=>get_theme_file_uri( 'assets/images/facebook.svg'),
+                                        'instagram'=>get_theme_file_uri( 'assets/images/instagram.svg'),
+                                        'linkedin'=>get_theme_file_uri( 'assets/images/linkedin.svg'),
+                                    );
+                                    foreach($social as $social_link){ ?>
+                                        <a href="<?php echo $social_link['link']; ?>">
+                                            <img class="<?php echo $social_link['name']; ?>" src="<?php echo $social_icons[$social_link['name']]; ?>" alt="<?php echo $social_link['name']; ?>">
+                                        </a>
+                                    <?php
+                                    }
+                                ?>
                             </div>
                             <div class="brea-btn">
-                                <a href="#" class="button mx-auto">Claim My Free Service</a>
+                                <a href="#top-section" class="button mx-auto">Claim My Free Service</a>
                             </div>
                         </div>
                     </div>
