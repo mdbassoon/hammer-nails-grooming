@@ -1,4 +1,6 @@
-
+<?php 
+$template = get_field('template');
+?>
 <main class="overflow-hidden">
     <!--================ brea-section start ================-->
     <section class="brea-section">
@@ -8,8 +10,8 @@
                     <div class="brea-left">
                         <img src="<?php echo get_theme_file_uri( 'assets/images/h-n-icon.png'); ?>" alt="h-n-icon">
                         <h6 class="text-19">WELCOME TO HAMMER & NAILS</h6>
-                        <h1 class="title-xxl2">A Grooming Lounge Designed for Men</h1>
-                        <p class="text-21">Your premier destination for men’s grooming experiences, in a relaxed environment, designed with your privacy and comfort in mind.</p>
+                        <h1 class="title-xxl2"><?php echo $template['title']; ?></h1>
+                        <p class="text-21"><?php echo $template['description']; ?></p>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -19,45 +21,43 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="brea-right">
-                        <h4 class="title-lg2">Brea, CA</h4>
+                        <h4 class="title-lg2"><?php echo get_the_title(); ?></h4>
                         <ul>
                             <li>
                                 <div class="brea-icon">
                                     <img src="<?php echo get_theme_file_uri( 'assets/images/location.png'); ?>" alt="">
                                 </div>
-                                <a class="text-18" href="#">375 W. Birch<br>Street Unit 2, Brea, CA 92821</a>
+                                <a class="text-18" href="<?php echo $template['booking_link']; ?>"><?php echo get_field('address')['address']; ?></a>
                             </li>
                             <li>
                                 <div class="brea-icon">
                                     <img src="<?php echo get_theme_file_uri( 'assets/images/tel.png'); ?>" alt="">
                                 </div>
-                                <a class="text-18" href="tel: (714) 282-1008"> (714) 282-1008</a>
+                                <a class="text-18" href="tel: <?php echo get_field('address')['phone']; ?>"> <?php echo get_field('address')['phone']; ?></a>
                             </li>
                             <li>
                                 <div class="brea-icon">
                                     <img src="<?php echo get_theme_file_uri( 'assets/images/email.png'); ?>" alt="">
                                 </div>
-                                <a class="text-18" href="mailto: brea@hngrooming.com"> brea@hngrooming.com</a>
+                                <a class="text-18" href="mailto: <?php echo get_field('address')['email']; ?>"> <?php echo get_field('address')['email']; ?></a>
                             </li>
                             <li>
                                 <div class="brea-icon">
                                     <img src="<?php echo get_theme_file_uri( 'assets/images/tm-icon.png'); ?>" alt="">
                                 </div>
                                 <div class="bre-schedule">
-                                    <p lang="text-18">Monday <span>9am to 7pm</span></p>
-                                    <p lang="text-18">Tuesday <span>9am to 7pm</span></p>
-                                    <p lang="text-18">Wednesday <span>9am to 7pm</span></p>
-                                    <p lang="text-18">Thursday <span>9am to 7pm</span></p>
-                                    <p lang="text-18">Friday <span>9am to 7pm</span></p>
-                                    <p lang="text-18">Saturday <span>9am to 7pm</span></p>
-                                    <p lang="text-18">Sunday <span>9am to 7pm</span></p>
+                                    <?php 
+                                    foreach(get_field('hours') as $day){
+                                        ?><p lang="text-18"><?php echo $day['day']; ?> <span><?php echo $day['times']; ?></span></p><?php
+                                    }
+                                    ?>
                                 </div>
                             </li>    
                         </ul>
                     </div>
                     <div class="brea-btn">
-                        <a href="#" class="button">Book Now</a>
-                        <a href="#" class="button">Learn About Our Club</a>
+                        <a href="<?php echo $template['booking_link']; ?>" class="button">Book Now</a>
+                        <a href="/join-the-club" class="button">Learn About Our Club</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
     </section>
 
     <!--================= partner-area ================-->
-    <div class="partner-area">
+    <div class="partner-area" style="<?php echo $template['hide_partners'][0]=='1'?'display:none;':'';?>">
         <div class="container">
             <div class="partner-main d-flex align-items-center justify-content-around">
                 <div class="partner-logo">
@@ -97,7 +97,7 @@
                     <div class="booking-cnt">
                         <h3 class="title-xl">With every experience <br> you can expect….</h3>
                         <p class="text-18">To be greeted by our friendly Member of our concierge team. They will navigate our service offerings with you to design a personalized experience that meets all your grooming needs. </p>
-                        <a class="button" href="#">Book Now</a>
+                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                     <div class="booking-cnt">
                         <h3 class="title-xl">Luxury and Discretion</h3>
                         <p class="text-18">Your privacy is our priority. You will receive your own oversized leather chair, big screen tv, and noise cancelling headphones so you can plug in and relax. </p>
-                        <a class="button" href="#">Book Now</a>
+                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                     <div class="booking-cnt">
                         <h3 class="title-xl">Raise a Glass</h3>
                         <p class="text-18">We’ll have your favorite brew, spirit, or mixed drink waiting for you, with every cut, shave, manicure, or pedicure visit. </p>
-                        <a class="button" href="#">Book Now</a>
+                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                     <div class="booking-cnt">
                         <h3 class="title-xl">Opulence You Can Afford </h3>
                         <p class="text-18">We offer world-class luxury experiences, without the pretentious price tag. Relax as our dedicated artists deliver treatments infused with high grade essential oils, aromatherapeutic steamed towels, reflexology and massage. </p>
-                        <a class="button" href="#">Book Now</a>
+                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -165,7 +165,7 @@
                     <div class="booking-cnt">
                         <h3 class="title-xl">Quality and Craft</h3>
                         <p class="text-18">Here you can say “goodbye” to basic. We equip our licensed artists with advanced education and training, premium tools and products, and sanitation procedures that exceed state board standards, delivering a first-class feeling every time. </p>
-                        <a class="button" href="#">Book Now</a>
+                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -182,7 +182,7 @@
                     <div class="booking-cnt">
                         <h3 class="title-xl">Tailored Experiences</h3>
                         <p class="text-18">We speak the language of quality. Our expertly trained artists collaborate with you to craft a custom look, enhancing your best features while meeting the needs of your lifestyle. You will be educated on products and routines that ensure you love the way you look and feel. </p>
-                        <a class="button" href="#">Book Now</a>
+                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -199,7 +199,7 @@
                     <div class="booking-cnt">
                         <h3 class="title-xl">Escape the Grind</h3>
                         <p class="text-18">A place designed with you in mind, to recharge alone or connect with community and friends. </p>
-                        <a class="button" href="#">Book Now</a>
+                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -475,144 +475,73 @@
             <div class="service-upperitem text-center">
                 <h3 class="title-xxl">Our Services</h3>
             </div>
-            <div class="service-wrappart">
-                <div class="carts-title mt-0">
-                    <h4 class="title-xl2 ">THE CLASSIC</h4>
-                    <img src="<?php echo get_theme_file_uri( 'assets/images/nail-min.png'); ?>" alt="">
-                </div>
-                <div class="service-wraprow">
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Classic Cut</h4>
-                        <h5 class="text-17">Non-Member $55 <i>|</i> <span>Member $44</span></h5>
-                        <p class="text-16"><strong>Our most classy and stylish haircut.</strong> This service is ideal for your regular maintenance cut and includes a shampoo, conditioning scalp massage, and a lavender-infused hot towel for your face. (approx. 30 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Classic Face / Head Shave</h4>
-                        <h5 class="text-17">Non-Member $55 <i>|</i> <span>Member $44</span></h5>
-                        <p class="text-16"><strong>Invoke the nostalgia of the good ol’ days.</strong> This experience incorporates warm foam, straight razor shave, hot and cold essential oil-infused towels, and a cooling massage to make you look as smooth as you feel. (approx. 30 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Classic Beard Grooming</h4>
-                        <h5 class="text-17">Non-Member $55 <i>|</i> <span>Member $44</span></h5>
-                        <p class="text-16"><strong>Show your mug some extra love.</strong> Pamper your Abe Lincoln with reshaping, straight razor outlines, lavender oil-infused hot towels, beard conditioning, and styling. (approx. 30 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Classic Grey Camo</h4>
-                        <h5 class="text-17">Non-Member $55 <i>|</i> <span>Member $44</span></h5>
-                        <p class="text-16"><strong>Turn back the clock in minutes.</strong> Rewind time by adding subtle color and saturation into your salt and pepper blend. With a seamless grow-out, this color will gently fade to keep the camouflage undetectable. (approx. 30 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Classic Manicure </h4>
-                        <h5 class="text-17">Non-Member $55 <i>|</i> <span>Member $44</span></h5>
-                        <p class="text-16"><strong>First-rate hand care. </strong> This maintenance service includes a warm soak, nail care (clip, file, nip, and buff), hand and forearm massage, and our hot towel wrap. (approx. 30 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Classic Pedicure</h4>
-                        <h5 class="text-17">Non-Member $55 <i>|</i> <span>Member $44</span></h5>
-                        <p class="text-16"><strong>Excellent regular foot care.</strong> This service is ideal for guests who receive routine foot care. You will enjoy a warm soak, callus maintenance, nail care (clip, file, nip, and buff), foot and calf massage, and our hot towel wrap. (approx. 30 minutes)</p>
-                    </div>
-                </div>
-            </div>
+            <?php 
 
-            <div class="service-wrappart">
-                <div class="carts-title mt-0">
-                    <h4 class="title-xl2 ">THE PREMIUM</h4>
-                    <img src="<?php echo get_theme_file_uri( 'assets/images/nail-min.png'); ?>" alt="">
-                </div>
-                <div class="service-wraprow">
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Premium Cut</h4>
-                        <h5 class="text-17">Non-Member $82.50 <i>|</i> <span>Member $66</span></h5>
-                        <p class="text-16"><strong>Our ultimate cutting experience. </strong> This cut includes extra time for complex styles and finishing details. You’ll feel pampered with our straight razor outlines, warm foam, and aftershave massage. Once you love the way you look and feel, we will finish with a shampoo, conditioning scalp massage, and a lavender-infused hot towel for your face. (approx. 45 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Premium Face / Head Shave</h4>
-                        <h5 class="text-17">Non-Member $110 <i>|</i> <span>Member $88</span></h5>
-                        <p class="text-16"><strong>A rejuvenating skin treatment and shave. </strong> An epic combination of cleansing, exfoliation, and hydration is delivered with warm foam and a straight razor for your face or head. Our charcoal mask, facial massage, and essential oil-infused towels will put you in a trance. (approx. 60 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Premium Beard Grooming</h4>
-                        <h5 class="text-17">Non-Member $110 <i>|</i> <span>Member $88</span></h5>
-                        <p class="text-16"><strong>A revitalizing beard shaping and facial massage. </strong> We’ll revive your beard with a rich oil massage, reconstruct its shape with crisp razor lines, and make your skin say “ahhh”. This exfoliating cleanser uses a charcoal mask to draw out impurities and ends with a hydrating lavender facial massage.(approx. 60 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Premium Manicure</h4>
-                        <h5 class="text-17">Non-Member $82.50 <i>|</i> <span>Member $66</span></h5>
-                        <p class="text-16"><strong>An indulgent experience with exfoliation and hydration.</strong> Enjoy a warm soak,nail care (clip, file, nip and buff), peppermint sugar scrub, massage, warm paraffin, and our hot towel wrap. (approx. 45 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Premium Pedicure </h4>
-                        <h5 class="text-17">Non-Member $82.50 <i>|</i> <span>Member $66</span></h5>
-                        <p class="text-16"><strong>A total foot renewal with ultimate relaxation.</strong>  This pedicure adds deep hydration and exfoliates skin. Your feet will feel renewed after a warm soak, callus resurfacing, peppermint sugar scrub, massage, nail care (clip, file, nip and buff), warm paraffin, and hot towels. (approx. 45 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Essential Tea Tree Pedicure</h4>
-                        <h5 class="text-17">Non-Member $110 <i>|</i> <span>Member $88</span></h5>
-                        <p class="text-16"><strong>For feet needing extra TLC.</strong> .This Premium Pedicure incorporates a tea tree oil-infused soak and sugar scrub. Additional time is allotted for a reviving foot massage, callus resurfacing, restorative nail care (clip, file, nip and buff), warm paraffin, and our hot towel wrap. (approx. 60 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Sports Pedicure</h4>
-                        <h5 class="text-17">Non-Member $110 <i>|</i> <span>Member $88</span></h5>
-                        <p class="text-16"><strong>Sore muscle relief for our most active guests. </strong> This specialty PremiumPedicure alternates between a series of hot and cold treatments to promote circulation and ease sore muscles. Your feet will receive a warm soak, callus resurfacing, tea tree oil-infused sugar scrub, nail care (clip, file, nip and buff), hot-stone massage, mint clay mask, hot towel wrap, and a cooling foot balm massage. (approx. 60 minutes)</p>
-                    </div>
-                </div>
-            </div>
+ 
+            $cats = get_categories(array(
+                'taxonomy' => 'service_types',
+                'orderby' => 'name',
+                'order'   => 'ASC'
+            ));
 
-            <div class="service-wrappart">
-                <div class="carts-title m-0">
-                    <h4 class="title-xl2 ">PREMIUM COMBO TREATMENTS</h4>
-                    <img src="<?php echo get_theme_file_uri( 'assets/images/nail-min.png'); ?>" alt="">
-                </div>
-                <div class="premium-subtitle">
-                    <p class="text-16">All Premium Treatments include a MANicure & Pedicure*</p>
-                </div>
-                <div class="service-wraprow">
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">The Jack Hammer Experience</h4>
-                        <h5 class="text-17">Non-Member $165 <i>|</i> <span>Member $132</span></h5>
-                        <p class="text-16"><strong>Rich, liquid-gold from fingers to toes.</strong> This is the ultimate Premium Manicure and Pedicure combination for whiskey fanatics. The whiskey-infused service includes warm soak, callus resurfacing, sugar scrub, massage, nail care (clip, file, nip, and buff), warm paraffin, and our hot towel wrap. (approx. 90 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">The Hops And Cedar Experience</h4>
-                        <h5 class="text-17">Non-Member $165 <i>|</i> <span>Member $132</span></h5>
-                        <p class="text-16"><strong>Beer-lover’s bliss.</strong> This Premium Manicure and Pedicure combination will have you walking on clouds. This service includes stout beer and cedarwood oil-infused soak, callus resurfacing, sugar scrub, massage, nail care (clip, file, nip, and buff), warm paraffin, and our hot towel wrap. (approx. 90 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">The Big Daddy Experience</h4>
-                        <h5 class="text-17">Non-Member $165 <i>|</i> <span>Member $132</span></h5>
-                        <p class="text-16"><strong>Refresh & relax with our most popular hand & foot experience.</strong> This clarifying lemon and peppermint-infused Premium Manicure and Pedicure combination includes warm soak, callus resurfacing, sugar scrub, massage, nail care (clip, file, nip, and buff), warm paraffin, and our hot towel wrap. (approx. 90 minutes)</p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">The Milk And Honey</h4>
-                        <h5 class="text-17">Non-Member $165  <i>|</i> <span>Member $132</span></h5>
-                        <p class="text-16"><strong>Saturate your skin in luxury. </strong> This is a magnificently moisturizing Premium Manicure and Pedicure combination. We incorporate a coconut milk-infused soak, callus resurfacing, honey-infused sugar scrub, massage, nail care (clip, file, nip, and buff), warm paraffin, and our hot towel wrap. (approx. 90 minutes)</p>
-                    </div>
-                </div>
-            </div>
+            $title_arr = array(
+                'classic-services'=>'THE CLASSIC',
+                'luxe-treatments'=>'Luxe Treatments',
+                'premium-combo-treatments'=>'PREMIUM COMBO TREATMENTS',
+                'premium-services'=>'THE PREMIUM',
+            );
 
-            <div class="service-wrappart">
-                <div class="carts-title mt-0">
-                    <h4 class="title-xl2 ">Luxe Treatments</h4>
-                    <img src="<?php echo get_theme_file_uri( 'assets/images/nail-min.png'); ?>" alt="">
+            $service_pricing = get_field('location_services');
+            $price_by_id = array();
+
+            foreach($service_pricing as $pricing){
+                $price_by_id[(int)$pricing['service_id']] = $pricing;
+            }
+
+            foreach($cats as $cat){
+                $cat_services = get_posts(array(
+                    'post_type'=>'service',
+                    'post_status'=>'published',
+                    'posts_per_page'=>-1,
+                    'tax_query' => array(
+                        array (
+                            'taxonomy'=>'service_types',
+                            'field' => 'slug',
+                            'terms' => $cat->slug,
+                        )
+                    ),
+                ));
+                ?>
+                <div class="service-wrappart">
+                    <div class="carts-title mt-0">
+                        <h4 class="title-xl2 "><?php echo $title_arr[$cat->slug]; ?></h4>
+                        <img src="<?php echo get_theme_file_uri( 'assets/images/nail-min.png'); ?>" alt="">
+                    </div>
+                    <?php if($cat->slug=='premium-combo-treatments'){ ?>
+                        <div class="premium-subtitle">
+                            <p class="text-16">All Premium Treatments include a MANicure & Pedicure*</p>
+                        </div>
+                    <?php } ?>
+                    <div class="service-wraprow">
+                        <?php 
+                        foreach($cat_services as $service){
+                            
+                            
+                            ?>  
+                            <div class="service-wrapbox">
+                                <h4 class="title-lg3"><?php echo $service->post_title; ?></h4>
+                                <h5 class="text-17">Non-Member $<?php echo $price_by_id[$service->ID]['non_member_price']; ?> <i>|</i> <span>Member $<?php echo $price_by_id[$service->ID]['member_price']; ?></span></h5>
+                                <?php echo $service->post_content; ?>
+                            </div>
+                            <?php 
+                        }
+                        
+                        ?>
+                    </div>
                 </div>
-                <div class="service-wraprow">
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Luxe 24K Hand Care </h4>
-                        <h5 class="text-17">Non-Member $249 <i>|</i> <span>Member $199.20</span></h5>
-                        <p class="text-16"><strong>Extraordinary hand care for extraordinary men. </strong> This French lavender and 24k gold-infused Luxe MANicure features a relaxing hot stone massage complimented by a cooling CBD massage to promote circulation. A hydrating sugar scrub, rich paraffin treatment, and oil-infused steamed towels soften hands to showcase immaculate nail care without using polish. Gold’s anti-inflammatory properties promote anti-aging and cell regeneration, delivering the crème de la crème of hand care. (approx. 60 minutes) </p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Luxe 24K Foot Care</h4>
-                        <h5 class="text-17">Non-Member $249 <i>|</i> <span>Member $199.20</span></h5>
-                        <p class="text-16"><strong>The relaxing scent of pure French lavender </strong> and anti-inflammatory properties of 24k gold promote cell regeneration, circulation, and relaxation. This unmistakable 60-minute premium service is the perfect reason to stop and decompress. The hallmark of this treatment is the tension relieving foot and calf hot stone massage. Rich paraffin treatment and callus resurfacing ensures your feet are year-round vacation ready. (approx. 60 minutes) </p>
-                    </div>
-                    <div class="service-wrapbox">
-                        <h4 class="title-lg3">Luxe 24K Haircut Experience </h4>
-                        <h5 class="text-17">Non-Member $249 <i>|</i> <span>Member $199.20</span></h5>
-                        <p class="text-16"><strong>This luxury haircut experience you’ve been longing for isn’t just a haircut. </strong> A senior certified artist will transform you with bespoke finishing details, including a straight razor outline with warm foam, and an aftershave neck massage. Lavender-infused steamed towels and an extensive cool-tingling CBD-infused scalp massage will leave you snoring (perhaps literally) while a 24k gold mask rejuvenates your skin and gives you that post-vacation glow. Retreat from the grind of your daily life and leave ready to take on the world. (approx. 60 minutes) </p>
-                    </div>
-                </div>
-            </div>                
+                <?php
+            }
+            ?>               
         </div>
     </section>
 

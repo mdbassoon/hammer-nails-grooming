@@ -14,14 +14,14 @@ $id = $wp_query->post->ID;
 $status = get_field('location_status',$id);
 if($status){
     $url_dir = $wp->request;
-    if($status['is_it_live'][0]!='1'&&$status['coming_soon'][0]!='1'){
+    if($status['is_it_live'][0]!='1'&&$status['presale'][0]!='1'){
         wp_redirect(home_url());
     } else if(str_contains($url_dir,'coming-soon')){
-        if($status['coming_soon'][0]!='1'){
+        if($status['presale'][0]!='1'){
             wp_redirect( get_permalink($id) );
         }
     } else {
-        if($status['is_it_live'][0]!='1'&&$status['coming_soon'][0]=='1'){
+        if($status['is_it_live'][0]!='1'&&$status['presale'][0]=='1'){
             wp_redirect( str_replace('location','coming-soon',get_permalink($id)) );
         }  
     }

@@ -214,7 +214,7 @@ function hn_cpts()
 
     $args = array(
         'label' => 'locations',
-        'description' => 'Location news and reviews',
+        'description' => 'Locations',
         'labels' => $labels,
 
         // Features this CPT supports in Post Editor
@@ -254,7 +254,90 @@ function hn_cpts()
 
     //register_post_type('locations', $args);
     register_post_type('location', $args);
-    
+	
+	// Labels part for the GUI
+	
+	$labels = array(
+		'name' => _x( 'Service Types', 'taxonomy general name' ),
+		'singular_name' => _x( 'Service Type', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Service Types' ),
+		'menu_name' => __( 'Service Types' ),
+	); 
+	
+	// Now register the non-hierarchical taxonomy like tag
+	
+	register_taxonomy('service_types','books',array(
+		'hierarchical' => false,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_in_rest' => true,
+		'show_admin_column' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'service-type' ),
+	));
+	
+    // Set UI labels for Custom Post Type
+
+    $labels = array(
+        'name' => 'Services' ,
+        'singular_name' => 'Service',
+        'menu_name' => 'Services',
+        'parent_item_colon' => 'Parent Service',
+        'all_items' => 'All Services',
+        'view_item' => 'View Service',
+        'add_new_item' => 'Add New Service',
+        'add_new' => 'Add New',
+        'edit_item' => 'Edit Service',
+        'update_item' => 'Update Service',
+        'search_items' => 'Search Service',
+        'not_found' => 'Not Found',
+        'not_found_in_trash' => 'Not found in Trash',
+    );
+
+    // Set other options for Custom Post Type
+
+    $args = array(
+        'label' => 'Services',
+        'description' => 'Services',
+        'labels' => $labels,
+
+        // Features this CPT supports in Post Editor
+
+        'supports' => array(
+            'title',
+			'editor',
+            'custom-fields',
+        ) ,
+
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+		'taxonomies' => array('service_types'),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'menu_position' => 5,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'page',
+		'rewrite' => array(
+			'with_front' => false
+		)
+    );
+
+    // Registering your Custom Post Type
+
+    //register_post_type('locations', $args);
+    register_post_type('service', $args);
+
 }
 add_action('init', 'hn_cpts', 0);
 
@@ -262,3 +345,59 @@ function rewrite_presale_urls(){
 	add_rewrite_rule( 'coming-soon\/(.*)', 'index.php?post_type=location&name=$matches[1]', 'top' );
 }
 add_action('init','rewrite_presale_urls',0);
+
+function hn_populate_location_services($value, $post_id, $field) {
+	
+	$services = get_posts(array(
+		'post_type'=>'service',
+		'post_status'=>'published',
+		'posts_per_page'=>-1,
+	));
+	$new_value = array();
+
+	foreach($services as $service){
+		$value_exists = false;
+		if($value){
+			foreach($value as $sub_fields){		
+				if((int)$sub_fields['field_65fa691f34901']==(int)$service->ID){
+					$new_value[] = $sub_fields;
+					$value_exists = true;
+					break;
+				}
+			}	
+		}
+		if(!$value_exists){
+			$new_value[] = array(
+				'field_65fa692f34902'=>$service->post_title,
+				'field_65fa691f34901'=>$service->ID,
+			);
+		}
+	}
+	$value = $new_value;
+	
+    return $new_value;
+    
+}
+add_filter('acf/load_value/key=field_65fa691234900', 'hn_populate_location_services', 10, 3);
+
+function enable_svg_upload( $upload_mimes ) {
+
+
+
+    $upload_mimes['svg'] = 'image/svg+xml';
+
+
+
+    $upload_mimes['svgz'] = 'image/svg+xml';
+
+
+
+    return $upload_mimes;
+
+
+}
+
+
+
+
+add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
