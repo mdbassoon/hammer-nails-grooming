@@ -116,6 +116,10 @@ get_header();
                                                     break;
                                                 }
                                             }
+                                            $linkActive = true;
+                                            if(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1'){
+                                                $linkActive = false;
+                                            }
                                             $all_coord[] = array(
                                                 'lat'=>get_field('coordinates',$location_id)['lat'],   
                                                 'lng'=>get_field('coordinates',$location_id)['lng'],
@@ -124,6 +128,7 @@ get_header();
                                                     'address'=>get_field('address',$location_id)['address'],
                                                     'phone'=>get_field('address',$location_id)['phone'],
                                                     'link'=>get_the_permalink($location_id),
+                                                    'linkActive'=>$linkActive,
                                                 ),
                                             );
                                             ?>
@@ -481,8 +486,13 @@ get_header();
                 let mapCoord = new google.maps.LatLng(parseFloat(map.lat),parseFloat(map.lng));
                 
                 let info = map.info;
+                let phone = (info.phone!=''?'<a href="tel: '+info.phone+'" tabindex="0">'+info.phone+'</a>':'');
+                
+                
+                let link = (info.linkActive==true?'</strong></p><p><a href="'+info.link+'" target="_blank">View Location</a>':'');
+
                 let infoWindow = new google.maps.InfoWindow({
-                    content: '<div><h3>'+info.title+'</h3><p>'+info.address+'</p><p><strong><a href="tel: '+info.phone+'" tabindex="0">'+info.phone+'</a></strong></p><p><a href="'+info.link+'" target="_blank">View Location</a></div></p>',
+                    content: '<div><h3>'+info.title+'</h3><p>'+info.address+'</p><p><strong>'+phone+link+'</div></p>',
                     maxWidth: 300,
                     pixelOffset: new google.maps.Size(0,-10)
                 });
