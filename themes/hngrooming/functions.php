@@ -380,6 +380,12 @@ function hn_populate_location_services($value, $post_id, $field) {
 }
 add_filter('acf/load_value/key=field_65fa691234900', 'hn_populate_location_services', 10, 3);
 
+function hn_acf_state_select($field){
+	$field['choices'] = hn_state_abbr();
+	return $field;
+}
+add_filter('acf/load_field/key=field_65fa99467d844', 'hn_acf_state_select', 10, 3);
+
 function enable_svg_upload( $upload_mimes ) {
 
 
@@ -397,7 +403,70 @@ function enable_svg_upload( $upload_mimes ) {
 
 }
 
-
+function hn_state_abbr($abbr=null){
+	$state_by_abbr = array (
+		'AK' => 'Alaska',
+		'AL' => 'Alabama',
+		'AR' => 'Arkansas',
+		'AS' => 'American Samoa',
+		'AZ' => 'Arizona',
+		'CA' => 'California',
+		'CO' => 'Colorado',
+		'CT' => 'Connecticut',
+		'DC' => 'District of Columbia',
+		'DE' => 'Delaware',
+		'FL' => 'Florida',
+		'GA' => 'Georgia',
+		'GU' => 'Guam',
+		'HI' => 'Hawaii',
+		'IA' => 'Iowa',
+		'ID' => 'Idaho',
+		'IL' => 'Illinois',
+		'IN' => 'Indiana',
+		'KS' => 'Kansas',
+		'KY' => 'Kentucky',
+		'LA' => 'Louisiana',
+		'MA' => 'Massachusetts',
+		'MD' => 'Maryland',
+		'ME' => 'Maine',
+		'MI' => 'Michigan',
+		'MN' => 'Minnesota',
+		'MO' => 'Missouri',
+		'MP' => 'Northern Mariana Islands',
+		'MS' => 'Mississippi',
+		'NC' => 'North Carolina',
+		'ND' => 'North Dakota',
+		'NE' => 'Nebraska',
+		'NH' => 'New Hampshire',
+		'NJ' => 'New Jersey',
+		'NM' => 'New Mexico',
+		'NV' => 'Nevada',
+		'NY' => 'New York',
+		'OH' => 'Ohio',
+		'OK' => 'Oklahoma',
+		'OR' => 'Oregon',
+		'PA' => 'Pennsylvania',
+		'PR' => 'Puerto Rico',
+		'RI' => 'Rhode Island',
+		'SC' => 'South Carolina',
+		'SD' => 'South Dakota',
+		'TN' => 'Tennessee',
+		'TT' => 'Trust Territories',
+		'TX' => 'Texas',
+		'UT' => 'Utah',
+		'VA' => 'Virginia',
+		'VI' => 'Virgin Islands',
+		'VT' => 'Vermont',
+		'WA' => 'Washington',
+		'WI' => 'Wisconsin',
+		'WV' => 'West Virginia',
+		'WY' => 'Wyoming',
+	);
+	if($abbr){
+		return $state_by_abbr[$abbr];
+	}
+	return $state_by_abbr;
+}
 
 
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );

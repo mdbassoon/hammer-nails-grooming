@@ -28,7 +28,7 @@ $presale = get_field('presale');
                     <div class="csgreen-right">
                         <div class="csgreen-upper text-center">
                             <img src="<?php echo get_theme_file_uri( 'assets/images/h-n-icon.png'); ?>" alt="">
-                            <h6 class="text-16">Hammer & Nails <br>Greenwich, CT</h6>
+                            <h6 class="text-16">Hammer & Nails <br><?php echo get_the_title(); ?></h6>
                             <h4 class="title-xl3"><?php echo $top['form_title']; ?></h4>
                             <p class="text-16"><?php echo $top['form_description']; ?> </p>
                         </div>
