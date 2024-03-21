@@ -222,6 +222,7 @@ function hn_cpts()
         'supports' => array(
             'title',
             'custom-fields',
+			'thumbnail'
         ) ,
 
         // You can associate this CPT with a taxonomy or custom taxonomy.
