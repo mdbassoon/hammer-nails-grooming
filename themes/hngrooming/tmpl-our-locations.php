@@ -425,10 +425,13 @@ get_header();
                             }
                         });
                         
-                        let top = jQuery('.state-'+state).position().top;
-                        jQuery('.map-left').animate({
-                            scrollTop:top
-                        },300);
+                        let stateElement = jQuery('.state-'+state);
+                        if(stateElement.length>0){
+                            let top = jQuery('.state-'+state).position().top;
+                            jQuery('.map-left').animate({
+                                scrollTop:top
+                            },300);
+                        }
                     }
                 }
             });
