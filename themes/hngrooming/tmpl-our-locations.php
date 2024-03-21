@@ -552,9 +552,34 @@ get_header();
 
                 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
             }            
-        }   
+        }  
+        console.log('loaded');
+
+
     </script>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
     <?php
 get_footer();
+?>
+<script>
+
+jQuery('.location-tablinks a').on('click',function(e){
+    console.log('clicked');
+    e.preventDefault();
+    
+    jQuery('.nav-link').removeClass('active');
+    jQuery(this).closest('.nav-link').addClass('active');
+    
+    let abbr = jQuery(this).attr('data-state');
+    let top = 0;
+
+    if(abbr!='all'){
+        top = jQuery('.state-'+abbr).position().top;
+    }
+
+    jQuery('.map-left').animate({
+        scrollTop:top
+    },300);
+}); 
+</script>
