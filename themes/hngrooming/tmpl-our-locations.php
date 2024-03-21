@@ -241,7 +241,11 @@ get_header();
 
     </main>
 
-    <script type="text/javascript">
+    <?php
+get_footer();
+?>
+
+<script type="text/javascript">
         var clicked_event = true;
         let userLocation = null;
         let mapStyles = [
@@ -413,7 +417,7 @@ get_header();
         ];
         
         let currentState = '';
-
+        let mainMap;
         function scrollToLocation(map,centerCoord){
             let latLng = map.center;
             if(centerCoord){
@@ -465,7 +469,7 @@ get_header();
                 g_coord = new google.maps.LatLng(centerCoord['lat'],centerCoord['lng']);
             }
             
-            let mainMap = new google.maps.Map(document.getElementById('map'),{
+            mainMap = new google.maps.Map(document.getElementById('map'),{
                 zoom: zoom_per_view,
                 maxZoom: 20,
                 center: g_coord,
@@ -486,11 +490,11 @@ get_header();
                 let mapCoord = new google.maps.LatLng(parseFloat(map.lat),parseFloat(map.lng));
                 
                 let info = map.info;
-                let phone = (info.phone!=''?'<a href="tel: '+info.phone+'" tabindex="0">'+info.phone+'</a>':'');
                 
-                
-                let link = (info.linkActive==true?'</strong></p><p><a href="'+info.link+'" target="_blank">View Location</a>':'');
                 let address = (info.address&&info.address!=''?'<p>'+info.address+'</p>':'');
+                let phone = (info.phone&&info.phone!=''?'<a href="tel: '+info.phone+'" tabindex="0">'+info.phone+'</a>':'');
+                let link = (info.linkActive==true?'</strong></p><p><a href="'+info.link+'" target="_blank">View Location</a>':'');
+
                 let infoWindow = new google.maps.InfoWindow({
                     content: '<div><h3>'+info.title+'</h3>'+address+'<p><strong>'+phone+link+'</div></p>',
                     maxWidth: 300,
@@ -571,31 +575,31 @@ get_header();
         }  
         console.log('loaded');
 
+            jQuery('.location-tablinks a').on('click',function(e){
+                console.log('clicked');
+                e.preventDefault();
+                
+                jQuery('.nav-link').removeClass('active');
+                jQuery(this).closest('.nav-link').addClass('active');
+                
+                let abbr = jQuery(this).attr('data-state');
+                let top = 0;
 
-    </script>
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
-    <?php
-get_footer();
-?>
-<script>
-
-jQuery('.location-tablinks a').on('click',function(e){
-    console.log('clicked');
-    e.preventDefault();
-    
-    jQuery('.nav-link').removeClass('active');
-    jQuery(this).closest('.nav-link').addClass('active');
-    
-    let abbr = jQuery(this).attr('data-state');
-    let top = 0;
-
-    if(abbr!='all'){
-        top = jQuery('.state-'+abbr).position().top;
-    }
-
-    jQuery('.map-left').animate({
-        scrollTop:top
-    },300);
-}); 
+                if(abbr!='all'){
+                    top = jQuery('.state-'+abbr).position().top;
+                }
+                let geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        console.log('results!',results);
+                        mainMap.setCenter(results[0].geometry.location);
+                    }
+                }
+            });
+            jQuery('.map-left').animate({
+                scrollTop:top
+            },300);
+        }); 
 </script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
