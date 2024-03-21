@@ -251,7 +251,7 @@ $presale = get_field('presale');
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="location-greenleft">
-                            <?php echo get_field('google_map_iframe');  ?>
+                            <iframe src="<?php echo get_field('google_map_iframe');  ?>" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                     <div class="col-lg-5">
