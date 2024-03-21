@@ -405,7 +405,10 @@ get_header();
                 }
             ]
             }
-        ]
+        ];
+        
+        let currentState = '';
+
         function scrollToLocation(map,centerCoord){
             let latLng = map.center;
             if(centerCoord){
@@ -424,14 +427,17 @@ get_header();
                                 state = addressArr.short_name;
                             }
                         });
-                        
-                        let stateElement = jQuery('.state-'+state);
-                        if(stateElement.length>0){
-                            let top = jQuery('.state-'+state).position().top;
-                            jQuery('.map-left').animate({
-                                scrollTop:top
-                            },300);
+                        if(state!=currentState){
+                            let stateElement = jQuery('.state-'+state);
+                            if(stateElement.length>0){
+                                let top = jQuery('.state-'+state).position().top;
+                                jQuery('.map-left').animate({
+                                    scrollTop:top
+                                },300);
+                            }
+                            currentState = state;
                         }
+                        
                     }
                 }
             });
