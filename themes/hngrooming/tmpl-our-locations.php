@@ -490,9 +490,9 @@ get_header();
                 
                 
                 let link = (info.linkActive==true?'</strong></p><p><a href="'+info.link+'" target="_blank">View Location</a>':'');
-
+                let address = (info.address&&info.address!=''?'<p>'+info.address+'</p>':'');
                 let infoWindow = new google.maps.InfoWindow({
-                    content: '<div><h3>'+info.title+'</h3><p>'+info.address+'</p><p><strong>'+phone+link+'</div></p>',
+                    content: '<div><h3>'+info.title+'</h3>'+address+'<p><strong>'+phone+link+'</div></p>',
                     maxWidth: 300,
                     pixelOffset: new google.maps.Size(0,-10)
                 });
