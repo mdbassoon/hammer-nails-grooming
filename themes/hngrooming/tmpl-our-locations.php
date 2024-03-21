@@ -38,9 +38,9 @@ get_header();
         <section class="location-area">
             <div class="container">
                 <div class="location-upper">
-                    <form action="#">
+                    <form action="/our-locations">
                         <div class="location-item justify-content-center">
-                            <input class="text-16" type="text" placeholder="Enter Your City Or Zip" required>
+                            <input class="text-16" type="text" name="zip" placeholder="Enter Your City Or Zip" required>
                             <button class="button" type="submit">Submit</button>
                         </div>
                     </form> 
@@ -522,20 +522,36 @@ get_header();
         }
     
         function init() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const zip = urlParams.get('zip');
+            if(zip){
+                console.log('search by zip');
+                let geocoder = new google.maps.Geocoder();
+                geocoder.geocode( { 'address':'zipcode '+zip}, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            let centerCoord = {};
+                            centerCoord['lat']  = results[0].geometry.location.lat();
+                            centerCoord['lng']  = results[0].geometry.location.lng();                         
+                            makeMaps(centerCoord); 
 
-            const successCallback = (position) => {
-                console.log(position);
-                let centerCoord = {};
-                centerCoord['lat']  = position.coords.latitude;
-                centerCoord['lng']  = position.coords.longitude;                    
-                makeMaps(centerCoord); 
-            };
-            const errorCallback = (error) => {
-                makeMaps();
-            };
+                        } else {
+                            console.log("Geocode Error: " + status);
+                        }
+                });
+            } else {
+                const successCallback = (position) => {
+                    console.log(position);
+                    let centerCoord = {};
+                    centerCoord['lat']  = position.coords.latitude;
+                    centerCoord['lng']  = position.coords.longitude;                    
+                    makeMaps(centerCoord); 
+                };
+                const errorCallback = (error) => {
+                    makeMaps();
+                };
 
-            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-            
+                navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+            }            
         }   
     </script>
 
