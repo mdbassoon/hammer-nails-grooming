@@ -491,7 +491,7 @@ get_footer();
                 
                 let info = map.info;
                 
-                let address = (info.address&&info.address!=''?'<p>'+info.address+'</p>':'');
+                let address = (info.address&&info.address!=''?'<p>'+info.address+'</p>':'<p>COMING SOON</p>');
                 let phone = (info.phone&&info.phone!=''?'<a href="tel: '+info.phone+'" tabindex="0">'+info.phone+'</a>':'');
                 let link = (info.linkActive==true?'</strong></p><p><a href="'+info.link+'" target="_blank">View Location</a>':'');
 
