@@ -503,6 +503,8 @@ $template = get_field('template');
                     'post_type'=>'service',
                     'post_status'=>'published',
                     'posts_per_page'=>-1,
+                    'orderby' => 'publish_date',
+                    'order' => 'ASC',
                     'tax_query' => array(
                         array (
                             'taxonomy'=>'service_types',
