@@ -3146,3 +3146,67 @@ header.sticky {
 .location-greenright .brea-btn a {
 	max-width: 90%;
 }
+
+
+
+/****    GRAVITY FORMS *****/
+
+#gform_fields_1 {
+	max-width:740px;
+}
+#gform_fields_2 {
+	display:flex;
+	flex-direction:column;
+	column-gap:0px !important;
+	row-gap:1.5rem !important;
+	max-height:300px;
+}
+.gform-body {
+	display:flex !important;
+	justify-content:center !important;
+}
+.gform_wrapper input[type="email"],.gform_wrapper input[type="text"],.gform_wrapper input[type="tel"] {
+	width: 100%;
+	max-width:428px !important;
+	display: block !important;
+	background: #fff !important;
+	color: #000;
+	border: none;
+	outline: none;
+	padding: 26px 20px !important;
+	font-family: 'Montserrat';
+    font-size: 1.6rem !important;
+    font-weight: 400 !important;
+	border-radius:0px !important;
+}
+#gform_fields_1 .gfield {
+	width:100% !important;
+}
+.gform_footer input[type="submit"],.gfield--type-submit input[type="submit"] {
+	  width: 100% !important;
+    display: block;
+    text-align: center;
+    font-family: 'Montserrat' !important;
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    color: #fff;
+    background: transparent !important;
+    border: 0.2rem solid #e3c76c !important;
+	border-radius:0px !important;
+    padding: 15px 0px !important;
+    position: relative;
+    transition: 0.6s all ease;
+    z-index: 9;
+}
+.gfield--type-submit input[type="submit"] {
+	max-width:332px !important;
+}
+.gfield--type-submit {
+	max-width:300px !important;
+}
+.gform_footer input[type="submit"]:hover, .gfield--type-submit input[type="submit"]:hover {
+	background: #fff !important;
+	border-color: #fff !important;
+	color: #e3c76c !important;
+}

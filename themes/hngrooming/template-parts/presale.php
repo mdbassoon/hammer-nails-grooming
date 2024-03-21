@@ -32,15 +32,7 @@ $presale = get_field('presale');
                             <h4 class="title-xl3"><?php echo $top['form_title']; ?></h4>
                             <p class="text-16"><?php echo $top['form_description']; ?> </p>
                         </div>
-                        <form action="#">
-                            <div class="csgreen-form">
-                                <input class="text-16" type="text" placeholder="First Name" required>
-                                <input class="text-16" type="text" placeholder="Last Name" required>
-                                <input class="text-16" type="email" placeholder="Email" required>
-                                <input class="text-16" type="tel" placeholder="Phone Number" required>
-                                <button class="button" type="submit">LET'S DO THIS</button>
-                            </div>
-                        </form>
+                        <?php echo do_shortcode($top['form_shortcode']); ?>
                     </div>
                 </div>
             </div>

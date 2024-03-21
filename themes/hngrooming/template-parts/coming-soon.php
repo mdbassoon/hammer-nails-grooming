@@ -5,6 +5,7 @@ $data = get_field('coming_soon');
 $coming_soon = $data['coming_soon'];
 ?>
 <!--================= comming-area ================-->
+
 <section class="comming-area">
     <div class="container">
         <div class="csmain-part">
@@ -13,12 +14,7 @@ $coming_soon = $data['coming_soon'];
                 <h1 class="title-xxl">Coming Soon</h1>
                 <p class="text-16"><?php echo $coming_soon['description']; ?></p>
             </div>
-            <form action="#">
-                <div class="csupper-item">
-                    <input class="text-16" type="email" placeholder="Enter Your Email Address" required>
-                    <button class="button" type="submit">Notify Me</button>
-                </div>
-            </form>
+            <?php echo do_shortcode($coming_soon['form']); ?>
             <div class="csupper-location">
                 <div class="csupper-locationbox">
                     <img src="<?php echo get_theme_file_uri( 'assets/images/icon_loction-01.png'); ?>" alt="location-icon">
