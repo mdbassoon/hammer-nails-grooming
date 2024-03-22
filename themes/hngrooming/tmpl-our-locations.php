@@ -197,10 +197,10 @@ get_header();
                         </div>
                         <div class="row">
                             <?php 
-                            $coming_coon_locations = array();
+                            $coming_soon_locations = array();
                             foreach($state_info as $location_id){
                                 if(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1'){
-                                    $coming_coon_locations[] = $location_id;
+                                    $coming_soon_locations[] = $location_id;
                                     
                                 } else {
                                     ?>
