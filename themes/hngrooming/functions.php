@@ -222,7 +222,8 @@ function hn_cpts()
         'supports' => array(
             'title',
             'custom-fields',
-			'thumbnail'
+			'thumbnail',
+			'page-attributes'
         ) ,
 
         // You can associate this CPT with a taxonomy or custom taxonomy.
@@ -234,7 +235,7 @@ function hn_cpts()
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
         */
-        'hierarchical' => true,
+        'hierarchical' => false,
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
