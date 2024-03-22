@@ -59,7 +59,9 @@ get_header();
                                 'meta_key'      => 'state',
                                 'meta_value'    => $abbr,
                                 'fields' => 'ids',
-                                'posts_per_page'=>-1
+                                'posts_per_page'=>-1,
+                                'orderby' => 'title',
+                                'order' => 'ASC',
                             ));
                             if(count($locations_in_state)>0){
                                 $locations_by_state[$abbr] = $locations_in_state
@@ -195,24 +197,11 @@ get_header();
                         </div>
                         <div class="row">
                             <?php 
+                            $coming_coon_locations = array();
                             foreach($state_info as $location_id){
-                                $coming_soon = get_field('location_status',$location_id)['is_it_live'];
                                 if(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1'){
-                                    ?>
-                                    <div class="col-sm-6 col-lg-3">
-                                        <div class="location2-item">
-                                            <div class="location2-banner">
-                                                <a href="<?php echo get_the_permalink($location_id); ?>">
-                                                    <img src="<?php echo get_theme_file_uri( 'assets/images/comming-soon.jpg'); ?>" alt="comming-soon">
-                                                </a>
-                                            </div>
-                                            <h4>
-                                                <a class="title-lg4" href="<?php echo get_the_permalink($location_id); ?>"><?php echo get_the_title($location_id); ?></a>
-                                            </h4>
-                                            <p class="text-12">COMING SOON!</p>
-                                        </div>
-                                    </div>
-                                    <?php
+                                    $coming_coon_locations[] = $location_id;
+                                    
                                 } else {
                                     ?>
                                     <div class="col-sm-6 col-lg-3">
@@ -243,7 +232,26 @@ get_header();
                                     </div>
                                     <?php
                                 }
-                            } ?>
+                            } 
+                            foreach($coming_soon_locations as $location_id){
+                                ?>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="location2-item">
+                                        <div class="location2-banner">
+                                            <a href="<?php echo get_the_permalink($location_id); ?>">
+                                                <img src="<?php echo get_theme_file_uri( 'assets/images/comming-soon.jpg'); ?>" alt="comming-soon">
+                                            </a>
+                                        </div>
+                                        <h4>
+                                            <a class="title-lg4" href="<?php echo get_the_permalink($location_id); ?>"><?php echo get_the_title($location_id); ?></a>
+                                        </h4>
+                                        <p class="text-12">COMING SOON!</p>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            
+                            ?>
                         </div>
                     </div>
                 <?php } ?>
