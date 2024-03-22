@@ -18,7 +18,7 @@ get_header();
             </div>
             <div class="hero-content">
                 <div class="container">
-                    <h6 class="title-md">Introducing the first</h6>
+                    <h6 class="title-md">Welcome To</h6>
                     <h1 class="title-xxl">Luxury Grooming <br>Shop for Guys</h1>
                     <form action="/our-locations">
                         <div class="location-item">
@@ -39,7 +39,7 @@ get_header();
                 <div class="container">
                     <div class="care-cnt">
                         <h2 class="title-xxl">Total. Man. Care.</h2>
-                        <p class="text-18">When it comes to men’s needs, it’s time to think bigger. And bolder. And way more moisturized and exfoliated. It’s time to recognize that men are bigger than biceps and abs. That men’s health is about more than burpees and leg days. Because men have follicles and cuticles, too. And pores. And soles. And palms. And today’s extraordinary man deserves a grooming experience that tends to the whole man. In a space that’s far from take-a-number haircut farms and pedicure stations that reek of acrylic fumes. It’s time to care about the care that goes into men’s grooming. And it starts at a place where men’s care is all we care about. That, and a good drink. </p>
+                        <p class="text-18">And Palms. And today’s extraordinary man deserves a grooming experience that tends to the whole man. In a space that’s far from take-a-number haircut farms and pedicure stations that reek of acrylic fumes. It’s time to care about the care that goes into men’s grooming. And it starts at a place where men’s care is all we care about. That, and a good drink. </p>
                         <h4 class="title-md2">Your Ultimate Stop to the Total Men's Grooming Experience</h4>
                         <a href="#" class="button">Our Customized Services</a>
                     </div>
@@ -124,24 +124,6 @@ get_header();
                         </div>
                         <div class="cust-item">
                             <img src="<?php echo get_theme_file_uri( 'assets/images/beard-3.jpg' ); ?>" alt="beard">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cuts-part">
-                    <div class="carts-title">
-                        <h4 class="title-xl2">Mustaches</h4>
-                        <img src="<?php echo get_theme_file_uri( 'assets/images/nail-min.png' ); ?>" alt="pin">
-                    </div>
-                    <div class="cuts-main">
-                        <div class="cust-item">
-                            <img src="<?php echo get_theme_file_uri( 'assets/images/mustache-1.jpg' ); ?>" alt="mustache">
-                        </div>
-                        <div class="cust-item">
-                            <img src="<?php echo get_theme_file_uri( 'assets/images/mustache-2.jpg' ); ?>" alt="mustache">
-                        </div>
-                        <div class="cust-item">
-                            <img src="<?php echo get_theme_file_uri( 'assets/images/mustache-3.jpg' ); ?>" alt="mustache">
                         </div>
                     </div>
                 </div>
