@@ -58,7 +58,8 @@ get_header();
                                 'post_type'=>'location',
                                 'meta_key'      => 'state',
                                 'meta_value'    => $abbr,
-                                'fields' => 'ids'
+                                'fields' => 'ids',
+                                'posts_per_page'=>-1
                             ));
                             if(count($locations_in_state)>0){
                                 $locations_by_state[$abbr] = $locations_in_state
@@ -532,13 +533,7 @@ get_footer();
 
 
             
-            google.maps.event.addListener(mainMap, 'idle', function(){
-                console.log('initial scroll firing');
-                scrollToLocation(mainMap);
-            });
-            if(centerCoord){
-                scrollToLocation(mainMap,centerCoord);
-            }
+            
         }
     
         function init() {
@@ -556,6 +551,7 @@ get_footer();
 
                         } else {
                             console.log("Geocode Error: " + status);
+                            makeMaps();
                         }
                 });
             } else {
@@ -575,21 +571,21 @@ get_footer();
         }  
         console.log('loaded');
 
-            jQuery('.location-tablinks a').on('click',function(e){
-                console.log('clicked');
-                e.preventDefault();
-                
-                jQuery('.nav-link').removeClass('active');
-                jQuery(this).closest('.nav-link').addClass('active');
-                
-                let abbr = jQuery(this).attr('data-state');
-                let top = 0;
+        jQuery('.location-tablinks a').on('click',function(e){
+            console.log('clicked');
+            e.preventDefault();
+            
+            jQuery('.nav-link').removeClass('active');
+            jQuery(this).closest('.nav-link').addClass('active');
+            
+            let abbr = jQuery(this).attr('data-state');
+            let top = 0;
 
-                if(abbr!='all'){
-                    top = jQuery('.state-'+abbr).position().top;
-                }
-                let geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
+            if(abbr!='all'){
+                top = jQuery('.state-'+abbr).position().top;
+            }
+            let geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
                         console.log('results!',results);
