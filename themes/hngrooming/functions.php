@@ -234,7 +234,7 @@ function hn_cpts()
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
         */
-        'hierarchical' => false,
+        'hierarchical' => true,
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
