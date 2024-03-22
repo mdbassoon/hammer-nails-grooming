@@ -146,7 +146,7 @@ get_header();
                                                         <p class="text-16"><?php echo get_field('address',$location_id)['address']; ?></p>
                                                         <ul class="d-flex align-items-center">
                                                             <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
-                                                            <li><a href="<?php echo get_field('template',$location_id)['booking_link']; ?>" class="button book-btn">Book</a></li>
+                                                            <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book</a></li>
                                                         </ul>
                                                         <?php
                                                     }
@@ -227,7 +227,17 @@ get_header();
                                             </h4>
                                             <div class="location2-btn">
                                                 <a href="tel: <?php echo preg_replace("/[^0-9]/", "", get_field('address',$location_id)['phone']); ?>" class="button"><?php echo get_field('address',$location_id)['phone']; ?></a>
-                                                <a href="<?php echo $template = get_field('template')['booking_link']; ?>" class="button">Schedule appointment</a>
+                                                <?php 
+                                                if(get_field('location_status',$location_id)['presale'][0]!='1'&&get_field('booking_link')!=''){
+                                                    ?>
+                                                    <a href="<?php echo get_field('booking_link'); ?>" class="button">Schedule appointment</a>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <a href="<?php echo get_field('membership_link'); ?>" class="button">Join Our Club</a>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>

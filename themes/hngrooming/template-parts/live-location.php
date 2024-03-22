@@ -27,7 +27,7 @@ $template = get_field('template');
                                 <div class="brea-icon">
                                     <img src="<?php echo get_theme_file_uri( 'assets/images/location.png'); ?>" alt="">
                                 </div>
-                                <a class="text-18" href="<?php echo $template['booking_link']; ?>"><?php echo get_field('address')['address']; ?></a>
+                                <a class="text-18" href="<?php echo get_field('google_map_link'); ?>"><?php echo get_field('address')['address']; ?></a>
                             </li>
                             <li>
                                 <div class="brea-icon">
@@ -56,7 +56,7 @@ $template = get_field('template');
                         </ul>
                     </div>
                     <div class="brea-btn">
-                        <a href="<?php echo $template['booking_link']; ?>" class="button">Book Now</a>
+                        <a href="<?php echo get_field('booking_link'); ?>" class="button">Book Now</a>
                         <a href="/join-the-club" class="button">Learn About Our Club</a>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ $template = get_field('template');
                     <div class="booking-cnt">
                         <h3 class="title-xl">With every experience <br> you can expect….</h3>
                         <p class="text-18">To be greeted by our friendly Member of our concierge team. They will navigate our service offerings with you to design a personalized experience that meets all your grooming needs. </p>
-                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
+                        <a class="button" href="<?php echo get_field('booking_link'); ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@ $template = get_field('template');
                     <div class="booking-cnt">
                         <h3 class="title-xl">Luxury and Discretion</h3>
                         <p class="text-18">Your privacy is our priority. You will receive your own oversized leather chair, big screen tv, and noise cancelling headphones so you can plug in and relax. </p>
-                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
+                        <a class="button" href="<?php echo get_field('booking_link'); ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@ $template = get_field('template');
                     <div class="booking-cnt">
                         <h3 class="title-xl">Raise a Glass</h3>
                         <p class="text-18">We’ll have your favorite brew, spirit, or mixed drink waiting for you, with every cut, shave, manicure, or pedicure visit. </p>
-                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
+                        <a class="button" href="<?php echo get_field('booking_link'); ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@ $template = get_field('template');
                     <div class="booking-cnt">
                         <h3 class="title-xl">Opulence You Can Afford </h3>
                         <p class="text-18">We offer world-class luxury experiences, without the pretentious price tag. Relax as our dedicated artists deliver treatments infused with high grade essential oils, aromatherapeutic steamed towels, reflexology and massage. </p>
-                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
+                        <a class="button" href="<?php echo get_field('booking_link'); ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -165,7 +165,7 @@ $template = get_field('template');
                     <div class="booking-cnt">
                         <h3 class="title-xl">Quality and Craft</h3>
                         <p class="text-18">Here you can say “goodbye” to basic. We equip our licensed artists with advanced education and training, premium tools and products, and sanitation procedures that exceed state board standards, delivering a first-class feeling every time. </p>
-                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
+                        <a class="button" href="<?php echo get_field('booking_link'); ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -182,7 +182,7 @@ $template = get_field('template');
                     <div class="booking-cnt">
                         <h3 class="title-xl">Tailored Experiences</h3>
                         <p class="text-18">We speak the language of quality. Our expertly trained artists collaborate with you to craft a custom look, enhancing your best features while meeting the needs of your lifestyle. You will be educated on products and routines that ensure you love the way you look and feel. </p>
-                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
+                        <a class="button" href="<?php echo get_field('booking_link'); ?>">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -199,7 +199,7 @@ $template = get_field('template');
                     <div class="booking-cnt">
                         <h3 class="title-xl">Escape the Grind</h3>
                         <p class="text-18">A place designed with you in mind, to recharge alone or connect with community and friends. </p>
-                        <a class="button" href="<?php echo $template['booking_link']; ?>">Book Now</a>
+                        <a class="button" href="<?php echo get_field('booking_link'); ?>">Book Now</a>
                     </div>
                 </div>
             </div>
