@@ -58,7 +58,8 @@ get_header();
                                 'post_type'=>'location',
                                 'meta_key'      => 'state',
                                 'meta_value'    => $abbr,
-                                'fields' => 'ids'
+                                'fields' => 'ids',
+                                'posts_per_page'=>-1
                             ));
                             if(count($locations_in_state)>0){
                                 $locations_by_state[$abbr] = $locations_in_state
