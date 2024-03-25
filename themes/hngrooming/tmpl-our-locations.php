@@ -444,6 +444,8 @@ get_footer();
         
         let currentState = '';
         let mainMap;
+        
+        let scrollingMap = false;
         function scrollToLocation(map,centerCoord){
             let latLng = map.center;
             if(centerCoord){
@@ -462,12 +464,15 @@ get_footer();
                             }
                         });
                         if(state!=currentState){
+                            scrollingMap = true;
                             let stateElement = jQuery('.state-'+state);
                             if(stateElement.length>0){
                                 let top = jQuery('.state-'+state).position().top;
                                 jQuery('.map-left').animate({
                                     scrollTop:top
-                                },300);
+                                },300,null,function(){
+                                    scrollingMap = false;
+                                });
                             }
                             currentState = state;
                         }
@@ -589,7 +594,6 @@ get_footer();
                 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
             }            
         }  
-        let scrollingMap = false;
         jQuery('.location-tablinks a').on('click',function(e){
             
             e.preventDefault();
