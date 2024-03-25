@@ -145,7 +145,7 @@ get_header();
                                                         <?php
                                                     } else {
                                                         ?>
-                                                        <p class="text-16"><?php var_dump(wp_strip_all_tags(get_field('address',$location_id)['address']));
+                                                        <p class="text-16"><?php echo wp_strip_all_tags(get_field('address',$location_id)['address']);
                                                         //echo get_field('address',$location_id)['address']; 
                                                         
                                                         ?></p>
