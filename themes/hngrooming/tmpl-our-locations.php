@@ -615,25 +615,36 @@ get_footer();
             },300);
             
         }); 
+
+        let lastScroll = 0;
         jQuery('.map-left').on('scroll',function(){
-            console.log('scrolling');
-            let visibleStates = jQuery('.map-section:visible');
-            console.log('visible states',visibleStates);
-            visibleStates.map(function(state){
-                let abbr = jQuery(state).attr('data-state')
-                if(currentState!=abbr){
+
+            let direction = true;
+            if(jQuery(this).scrollTop()<lastScroll){
+                //Scrolling Up
+                direction = false;
+
+            }
+            for(let i=0;i<jQuery('.map-section').length;i++){
+                let section = jQuery('.map-section')[i];
+                if(jQuery(section).position().top>0 &&jQuery(section).position().top<400&&currentState!=abbr){ 
                     currentState = abbr;
-                    console.log('state',abbr);
+                    console.log('searching new state',abbr);
                     geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
                             if (results[0]) {
                                 mainMap.setZoom(5.8);
                                 mainMap.setCenter(results[0].geometry.location);
+ 
                             }
                         }
                     });
+                    break;
                 }
-            });
+
+            }
+            
+            lastScroll = jQuery(this).scrollTop();
         })
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
