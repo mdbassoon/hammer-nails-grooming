@@ -446,11 +446,9 @@ get_footer();
         let mainMap;
         
         let scrollingMap = false;
-        function scrollToLocation(map,centerCoord){
+        function scrollToListLocation(map){
             let latLng = map.center;
-            if(centerCoord){
-                latLng = new google.maps.LatLng(centerCoord['lat'],centerCoord['lng']);
-            }
+            
             let geocoder = new google.maps.Geocoder();
             
             geocoder.geocode({ 'latLng': latLng }, function (results, status) {
@@ -463,11 +461,14 @@ get_footer();
                                 state = addressArr.short_name;
                             }
                         });
+                        console.log('state',state,currentState);
                         if(state!=currentState){
                             scrollingMap = true;
                             let stateElement = jQuery('.state-'+state);
                             if(stateElement.length>0){
-                                let top = jQuery('.state-'+state).position().top;
+                                let stateTop = jQuery('.state-'+state).position().top;
+                                let boxTop = jQuery('.map-left').scrollTop();
+                                let top = stateTop + boxTop;
                                 jQuery('.map-left').animate({
                                     scrollTop:top
                                 },300,null,function(){
@@ -561,7 +562,7 @@ get_footer();
 
             google.maps.event.addListener(mainMap, 'idle', function(){
                 console.log('initial scroll firing');
-                scrollToLocation(mainMap);
+                scrollToListLocation(mainMap);
             });
         }
     
