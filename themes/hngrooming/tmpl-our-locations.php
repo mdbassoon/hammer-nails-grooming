@@ -445,7 +445,6 @@ get_footer();
             if(centerCoord){
                 latLng = new google.maps.LatLng(centerCoord['lat'],centerCoord['lng']);
             }
-            console.log('new center',latLng);
             let geocoder = new google.maps.Geocoder();
             
             geocoder.geocode({ 'latLng': latLng }, function (results, status) {
@@ -482,8 +481,6 @@ get_footer();
             }
             
             if(centerCoord){
-                
-                console.log('centercoord',centerCoord);
                 zoom_per_view = 5.5;
             }
             let g_coord = new google.maps.LatLng('39.50','-98.35');
@@ -577,7 +574,6 @@ get_footer();
                 });
             } else {
                 const successCallback = (position) => {
-                    console.log(position);
                     let centerCoord = {};
                     centerCoord['lat']  = position.coords.latitude;
                     centerCoord['lng']  = position.coords.longitude;                    
@@ -590,7 +586,6 @@ get_footer();
                 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
             }            
         }  
-        console.log('loaded');
 
         jQuery('.location-tablinks a').on('click',function(e){
             console.log('clicked');
@@ -604,12 +599,13 @@ get_footer();
 
             if(abbr!='all'){
                 top = jQuery('.state-'+abbr).position().top;
+                console.log('state-'abbr, jQuery('.state-'+abbr));
             }
+
             let geocoder = new google.maps.Geocoder();
             geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
-                        console.log('results!',results);
                         mainMap.setCenter(results[0].geometry.location);
                     }
                 }
