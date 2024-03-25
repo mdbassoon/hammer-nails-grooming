@@ -530,7 +530,6 @@ get_footer();
                 markers.push(marker);
 
                 marker.addListener("click", (function() {
-                    console.log(marker);
                     infoWindows.map(function(window){
                         window.close();
                     });
@@ -558,7 +557,6 @@ get_footer();
             const urlParams = new URLSearchParams(window.location.search);
             const zip = urlParams.get('zip');
             if(zip){
-                console.log('search by zip');
                 let geocoder = new google.maps.Geocoder();
                 geocoder.geocode( { 'address':'zipcode '+zip}, function(results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
@@ -588,7 +586,7 @@ get_footer();
         }  
 
         jQuery('.location-tablinks a').on('click',function(e){
-            console.log('clicked');
+            
             e.preventDefault();
             
             jQuery('.nav-link').removeClass('active');
@@ -601,9 +599,6 @@ get_footer();
                 let stateTop = jQuery('.state-'+abbr).position().top;
                 let boxTop = jQuery('.map-left').scrollTop();
                 top = stateTop + boxTop;
-                console.log('state-'+abbr, jQuery('.state-'+abbr));
-                console.log(stateTop);
-                console.log(boxTop,top);
             }
 
             let geocoder = new google.maps.Geocoder();
