@@ -6,7 +6,7 @@
  */
 get_header();
 ?>
-    <main class="overflow-hidden">
+    <main class="overflow-hidden gift-card-template">
 
         <!--================ giftcard-area start ================-->
         <section class="giftcard-area">
