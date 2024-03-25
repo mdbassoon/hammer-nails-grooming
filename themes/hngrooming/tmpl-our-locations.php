@@ -606,7 +606,7 @@ get_footer();
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
                         mainMap.setZoom(5.8);
-                        mainMap.setCenter(results[0].geometry.location);
+                        mainMap.panTo(results[0].geometry.location);
                     }
                 }
             });
@@ -640,7 +640,7 @@ get_footer();
                         if (status == google.maps.GeocoderStatus.OK) {
                             if (results[0]) {
                                 mainMap.setZoom(5.8);
-                                mainMap.setCenter(results[0].geometry.location);
+                                mainMap.panTo(results[0].geometry.location);
  
                             }
                         }
