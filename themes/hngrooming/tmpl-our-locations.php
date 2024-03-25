@@ -220,7 +220,7 @@ get_header();
                                             <div class="location2-btn">
                                                 <a href="tel: <?php echo preg_replace("/[^0-9]/", "", get_field('address',$location_id)['phone']); ?>" class="button"><?php echo get_field('address',$location_id)['phone']; ?></a>
                                                 <?php 
-                                                if(get_field('location_status',$location_id)['presale'][0]!='1'&&get_field('booking_link')!=''){
+                                                if(get_field('location_status',$location_id)['presale'][0]!='1'&&get_field('booking_link',$location_id)!=''){
                                                     ?>
                                                     <a href="<?php echo get_field('booking_link'); ?>" class="button">Schedule appointment</a>
                                                     <?php
