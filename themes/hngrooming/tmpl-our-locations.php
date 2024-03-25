@@ -471,7 +471,7 @@ get_footer();
                                 jQuery('.map-left').animate({
                                     scrollTop:top
                                 },300,null,function(){
-                                    setTimout(function(){
+                                    setTimeout(function(){
                                         scrollingMap = false;
                                     },300)
                                 });
