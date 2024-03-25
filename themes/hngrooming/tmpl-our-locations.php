@@ -155,7 +155,7 @@ get_header();
                                                         ?></p>
                                                         <ul class="d-flex align-items-center">
                                                             <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
-                                                            <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book</a></li>
+                                                            <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book <span class="mobile-only">Now</span></a></li>
                                                         </ul>
                                                         <?php
                                                     }
