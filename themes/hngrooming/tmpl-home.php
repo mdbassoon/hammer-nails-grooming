@@ -117,13 +117,13 @@ get_header();
                     </div>
                     <div class="cuts-main">
                         <div class="cust-item">
-                            <img src="<?php echo get_theme_file_uri( 'assets/images/beard-1.jpg' ); ?>" alt="beard">
+                            <img src="<?php echo get_theme_file_uri( 'assets/images/beard-1.webp' ); ?>" alt="beard">
                         </div>
                         <div class="cust-item">
-                            <img src="<?php echo get_theme_file_uri( 'assets/images/beard-2.jpg' ); ?>" alt="beard">
+                            <img src="<?php echo get_theme_file_uri( 'assets/images/beard-2.webp' ); ?>" alt="beard">
                         </div>
                         <div class="cust-item">
-                            <img src="<?php echo get_theme_file_uri( 'assets/images/beard-3.jpg' ); ?>" alt="beard">
+                            <img src="<?php echo get_theme_file_uri( 'assets/images/beard-3.webp' ); ?>" alt="beard">
                         </div>
                     </div>
                 </div>
