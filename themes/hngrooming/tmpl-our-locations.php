@@ -599,7 +599,7 @@ get_footer();
 
             if(abbr!='all'){
                 let stateTop = jQuery('.state-'+abbr).position().top;
-                let boxTop = jQuery('.state-'+abbr).scrollTop();
+                let boxTop = jQuery('.map-left').scrollTop();
                 top = stateTop + boxTop;
                 console.log('state-'+abbr, jQuery('.state-'+abbr));
                 console.log(stateTop);
