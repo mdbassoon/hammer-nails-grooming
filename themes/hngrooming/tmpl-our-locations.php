@@ -552,9 +552,10 @@ get_footer();
                 }],
             });
 
-
-            
-            
+            google.maps.event.addListener(mainMap, 'idle', function(){
+                console.log('initial scroll firing');
+                scrollToLocation(mainMap);
+            });
         }
     
         function init() {
