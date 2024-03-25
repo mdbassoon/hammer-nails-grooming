@@ -9,7 +9,7 @@ get_header();
 
 
 
-    <main class="overflow-hidden">
+    <main class="overflow-hidden home-template">
 
         <!--================= hero-area ================-->
         <section class="hero-area">
