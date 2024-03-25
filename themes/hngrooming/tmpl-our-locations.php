@@ -102,7 +102,7 @@ get_header();
                                     $all_coord = array();
                                     foreach($locations_by_state as $abbr=>$state_info){
                                         ?>
-                                        <div class="map-section state-<?php echo $abbr; ?>">
+                                        <div class="map-section state-<?php echo $abbr; ?>" data-state="<?php echo $abbr; ?>">
                                             <div class="vertical-textcnt veticaltext<?php echo (($i+1) % 2); ?>">
                                                 <span><?php echo hn_state_abbr($abbr); ?></span>
                                             </div>
@@ -613,6 +613,24 @@ get_footer();
             jQuery('.map-left').animate({
                 scrollTop:top
             },300);
+            jQuery('.map-left').on('scroll',function(){
+                let visibleStates = jQuery('.map-section:visible');
+                console.log('visible states');
+                visibleStates.map(function(state){
+                    let abbr = jQuery(state).attr('data-state')
+                    if(currentState!=abbr){
+                        currentState = abbr;
+                        geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                if (results[0]) {
+                                    mainMap.setZoom(5.8);
+                                    mainMap.setCenter(results[0].geometry.location);
+                                }
+                            }
+                        });
+                    }
+                });
+            })
         }); 
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
