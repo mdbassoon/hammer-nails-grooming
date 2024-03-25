@@ -600,6 +600,7 @@ get_footer();
             if(abbr!='all'){
                 top = jQuery('.state-'+abbr).position().top;
                 console.log('state-'+abbr, jQuery('.state-'+abbr));
+                console.log(jQuery('.map-left').position().top)
                 console.log(jQuery('.state-'+abbr).position().top);
             }
 
