@@ -611,12 +611,9 @@ get_footer();
                     }
                 }
             });
-            jQuery('.map-left').animate({
-                scrollTop:top,
-                complete:function(){
+            jQuery('.map-left').animate({scrollTop:top},300,null,function(){
                     scrollingMap = false;
-                }
-            },300);
+            });
             
         }); 
 
