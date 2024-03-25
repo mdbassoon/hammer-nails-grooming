@@ -631,6 +631,7 @@ get_footer();
                 if(jQuery(section).position().top>0 &&jQuery(section).position().top<400&&currentState!=abbr){ 
                     currentState = abbr;
                     console.log('searching new state',abbr);
+                    let geocoder = new google.maps.Geocoder();
                     geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
                             if (results[0]) {
