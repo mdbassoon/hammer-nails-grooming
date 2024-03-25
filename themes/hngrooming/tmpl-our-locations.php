@@ -145,10 +145,10 @@ get_header();
                                                         <?php
                                                     } else {
                                                         ?>
-                                                        <p class="text-16"><?php echo get_field('address',$location_id)['address']; ?></p>
+                                                        <p class="text-16"><?php // echo get_field('address',$location_id)['address']; ?></p>
                                                         <ul class="d-flex align-items-center">
-                                                            <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
-                                                            <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book</a></li>
+                                                            <li><a href="<?php // echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
+                                                            <li><a href="<?php // echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book</a></li>
                                                         </ul>
                                                         <?php
                                                     }
@@ -156,13 +156,13 @@ get_header();
                                                     
                                                 </div>
                                                 <div class="mapright-cnt">
-                                                    <div class="mapinner-cnt" style="style="<?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'display:none;':''; ?>">
+                                                    <div class="mapinner-cnt" style="style="<?php // echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'display:none;':''; ?>">
                                                         <h4 class="title-sm">Call Us</h4>
-                                                        <a href="#" class="text-16"><?php echo get_field('address',$location_id)['phone']; ?> </a>
+                                                        <a href="#" class="text-16"><?php //echo get_field('address',$location_id)['phone']; ?> </a>
                                                     </div>
                                                     <div>
                                                         <h4 class="title-sm">Today's Hours</h4>
-                                                        <p class="text-16"><?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'Coming Soon':$todays_hours; ?></p>
+                                                        <p class="text-16"><?php //echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'Coming Soon':$todays_hours; ?></p>
                                                     </div>
                                                 </div>
                                             </div>
