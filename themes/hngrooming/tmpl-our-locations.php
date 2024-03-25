@@ -145,10 +145,14 @@ get_header();
                                                         <?php
                                                     } else {
                                                         ?>
-                                                        <p class="text-16"><?php //echo get_field('address',$location_id)['address']; ?></p>
+                                                        <p class="text-16"><?php 
+                                                        var_dump(get_field('address',$location_id)['address']);
+                                                        //echo get_field('address',$location_id)['address']; 
+                                                        
+                                                        ?></p>
                                                         <ul class="d-flex align-items-center">
-                                                            <li><a href="<?php // echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
-                                                            <li><a href="<?php // echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book</a></li>
+                                                            <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
+                                                            <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book</a></li>
                                                         </ul>
                                                         <?php
                                                     }
