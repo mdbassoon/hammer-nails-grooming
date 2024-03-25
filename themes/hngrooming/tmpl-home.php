@@ -248,7 +248,7 @@ get_header();
             <div class="container">
                 <div class="appintment-cnt text-center">
                     <h3 class="title-xxl">Ready to Look Your Best? Schedule An Appointment</h3>
-                    <a href="/locations" class="button mx-auto">Locations</a>
+                    <a href="/our-locations" class="button mx-auto">Locations</a>
                 </div>
             </div>
         </section>        
