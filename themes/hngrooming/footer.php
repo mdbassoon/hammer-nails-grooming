@@ -16,7 +16,7 @@
         <div class="container">
             <div class="footer-logo text-center">
                 <a href="/">
-                    <img src="<?php echo get_theme_file_uri( 'assets/images/logo.png'); ?>" alt="">
+                    <img src="<?php echo get_theme_file_uri( 'assets/images/footer-logo.png'); ?>" alt="">
                 </a>
             </div>
             <div class="footer-links">
