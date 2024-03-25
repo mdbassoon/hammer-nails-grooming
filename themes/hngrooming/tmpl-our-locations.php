@@ -584,11 +584,11 @@ get_footer();
                 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
             }            
         }  
-
+        let scrollingMap = false;
         jQuery('.location-tablinks a').on('click',function(e){
             
             e.preventDefault();
-            
+            scrollingMap = true;
             jQuery('.nav-link').removeClass('active');
             jQuery(this).closest('.nav-link').addClass('active');
             
@@ -607,17 +607,24 @@ get_footer();
                     if (results[0]) {
                         mainMap.setZoom(5.8);
                         mainMap.panTo(results[0].geometry.location);
+
                     }
                 }
             });
             jQuery('.map-left').animate({
-                scrollTop:top
+                scrollTop:top,
+                animate:function(){
+                    scrollingMap = false;
+                }
             },300);
             
         }); 
 
         let lastScroll = 0;
         jQuery('.map-left').on('scroll',function(){
+            if(scrollingMap==true){
+                return;
+            }
 
             let direction = true;
             if(jQuery(this).scrollTop()<lastScroll){
