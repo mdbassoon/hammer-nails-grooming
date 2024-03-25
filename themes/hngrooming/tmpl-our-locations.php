@@ -628,7 +628,7 @@ get_footer();
             for(let i=0;i<jQuery('.map-section').length;i++){
                 let section = jQuery('.map-section')[i];
                 let abbr = jQuery(section).attr('data-state');
-                if(jQuery(section).position().top>0 &&jQuery(section).position().top<400&&currentState!=abbr){ 
+                if(jQuery(section).position().top>0 &&jQuery(section).position().top<10&&currentState!=abbr){ 
                     currentState = abbr;
                     console.log('searching new state',abbr);
                     let geocoder = new google.maps.Geocoder();
