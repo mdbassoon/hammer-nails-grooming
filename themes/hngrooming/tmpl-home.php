@@ -41,7 +41,7 @@ get_header();
                         <h2 class="title-xxl">Total. Man. Care.</h2>
                         <p class="text-18">And Palms. And today’s extraordinary man deserves a grooming experience that tends to the whole man. In a space that’s far from take-a-number haircut farms and pedicure stations that reek of acrylic fumes. It’s time to care about the care that goes into men’s grooming. And it starts at a place where men’s care is all we care about. That, and a good drink. </p>
                         <h4 class="title-md2">Your Ultimate Stop to the Total Men's Grooming Experience</h4>
-                        <a href="#" class="button">Our Customized Services</a>
+                        <a href="/service" class="button">Our Customized Services</a>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ get_header();
                 <div class="container">
                     <div class="member-cnt">
                         <h3 class="title-xl">Reward yourself with Top Tier Grooming Services in a Relaxed Environment</h3>
-                        <a href="#" class="button">Become a Member</a>
+                        <a href="/join-the-club" class="button">Become a Member</a>
                     </div>
                 </div>
             </div>
@@ -248,7 +248,7 @@ get_header();
             <div class="container">
                 <div class="appintment-cnt text-center">
                     <h3 class="title-xxl">Ready to Look Your Best? Schedule An Appointment</h3>
-                    <a href="#" class="button mx-auto">Locations</a>
+                    <a href="/locations" class="button mx-auto">Locations</a>
                 </div>
             </div>
         </section>        

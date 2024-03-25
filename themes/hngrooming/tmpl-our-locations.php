@@ -31,6 +31,10 @@ get_header();
         color: #dbb339;
         margin-top: -25px;
     }
+    .mapleft-cnt p.text-16 {
+        padding-right: 20px;
+        max-width: 242px;
+    }
 </style>
     <main class="overflow-hidden">
 
