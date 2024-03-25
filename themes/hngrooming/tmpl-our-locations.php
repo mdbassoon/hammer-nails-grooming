@@ -599,7 +599,7 @@ get_footer();
 
             if(abbr!='all'){
                 top = jQuery('.state-'+abbr).position().top;
-                console.log('state-'abbr, jQuery('.state-'+abbr));
+                console.log('state-'+abbr, jQuery('.state-'+abbr));
             }
 
             let geocoder = new google.maps.Geocoder();
