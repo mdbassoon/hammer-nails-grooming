@@ -618,11 +618,12 @@ get_footer();
         jQuery('.map-left').on('scroll',function(){
             console.log('scrolling');
             let visibleStates = jQuery('.map-section:visible');
-            console.log('visible states');
+            console.log('visible states',visibleStates);
             visibleStates.map(function(state){
                 let abbr = jQuery(state).attr('data-state')
                 if(currentState!=abbr){
                     currentState = abbr;
+                    console.log('state',abbr);
                     geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
                             if (results[0]) {
