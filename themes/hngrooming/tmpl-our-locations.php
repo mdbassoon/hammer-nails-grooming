@@ -614,6 +614,7 @@ get_footer();
                 scrollTop:top
             },300);
             jQuery('.map-left').on('scroll',function(){
+                console.log('scrolling');
                 let visibleStates = jQuery('.map-section:visible');
                 console.log('visible states');
                 visibleStates.map(function(state){
