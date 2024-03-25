@@ -115,8 +115,8 @@ get_header();
                                             $todays_hours = '';
                                             foreach($hours as $time){
                                                 if($time['day']==$weekday){
-                                                    $todays_hours = $time['times'];
-                                                    break;
+                                                    //$todays_hours = $time['times'];
+                                                    //break;
                                                 }
                                             }
                                             $linkActive = true;
