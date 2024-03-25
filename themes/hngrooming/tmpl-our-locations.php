@@ -481,7 +481,7 @@ get_footer();
             }
             
             if(centerCoord){
-                zoom_per_view = 5.5;
+                zoom_per_view = 5.8;
             }
             let g_coord = new google.maps.LatLng('39.50','-98.35');
             if(centerCoord){
@@ -605,6 +605,7 @@ get_footer();
             geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
+                        mainMap.setZoom(5.8);
                         mainMap.setCenter(results[0].geometry.location);
                     }
                 }
