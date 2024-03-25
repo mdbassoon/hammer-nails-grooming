@@ -6,10 +6,10 @@
  */
 get_header();
 ?>
-    <main class="overflow-hidden">
+    <main class="overflow-hidden  membership-template">
 
         <!--================ giftcard-area start ================-->
-        <section class="giftcard-area membership-template">
+        <section class="giftcard-area">
             <img src="<?php echo get_theme_file_uri( 'assets/images/hammer-membership-bg.jpg'); ?>" class="d-md-block" alt="">
             <div class="giftcard-main join-clubmain"> 
                 <div class="container"> 
