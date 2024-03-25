@@ -27,7 +27,7 @@ get_header();
                         </div>
                     </form>                    
                     <span class="mobile-only">
-                        <h1 class="title-xxl">Luxury Grooming</h1>
+                        <h1 class="title-xxl">Your Luxury Grooming Shop</h1>
                         <form action="/our-locations">
                             <div class="location-item">
                                 <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
