@@ -36,7 +36,7 @@ get_header();
         max-width: 242px;
     }
 </style>
-    <main class="overflow-hidden">
+    <main class="overflow-hidden locations-template">
 
         <!--================ location-area start ================-->
         <section class="location-area">
