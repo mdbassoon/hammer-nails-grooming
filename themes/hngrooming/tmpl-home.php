@@ -27,11 +27,11 @@ get_header();
                         </div>
                     </form>                    
                     <span class="mobile-only">
-                        <h1 class="title-xxl">Luxury Grooming <br>Shop for Guys</h1>
+                        <h1 class="title-xxl">Luxury Grooming</h1>
                         <form action="/our-locations">
                             <div class="location-item">
                                 <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
-                                <button class="button" type="button">Find a Location Near You</button>
+                                <button class="button" type="button">Book Now</button>
                             </div>
                         </form>     
                     </span>
