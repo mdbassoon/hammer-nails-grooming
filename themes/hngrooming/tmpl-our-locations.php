@@ -471,7 +471,9 @@ get_footer();
                                 jQuery('.map-left').animate({
                                     scrollTop:top
                                 },300,null,function(){
-                                    scrollingMap = false;
+                                    setTimout(function(){
+                                        scrollingMap = false;
+                                    },300)
                                 });
                             }
                             currentState = state;
