@@ -630,9 +630,9 @@ get_footer();
                 let abbr = jQuery(section).attr('data-state');
                 let bound = jQuery(section).position().top;
                 if(!direction){
-                    bound = jQuery(section).position().bottom;
+                    bound = jQuery(section).position().top + jQuery(section).outerHeight(true);
                 }
-                if(bound>0 &&bound<100&&currentState!=abbr){ 
+                if(bound>0&&bound<100&&currentState!=abbr){ 
                     currentState = abbr;
                     console.log('searching new state',abbr);
                     let geocoder = new google.maps.Geocoder();
