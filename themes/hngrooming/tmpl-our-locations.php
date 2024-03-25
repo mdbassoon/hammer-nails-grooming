@@ -483,15 +483,15 @@ get_footer();
             if(centerCoord){
                 zoom_per_view = 5.8;
             }
-            let g_coord = new google.maps.LatLng('39.50','-98.35');
+            let gCoord = new google.maps.LatLng('39.50','-98.35');
             if(centerCoord){
-                g_coord = new google.maps.LatLng(centerCoord['lat'],centerCoord['lng']);
+                gCoord = new google.maps.LatLng(centerCoord['lat'],centerCoord['lng']);
             }
             
             mainMap = new google.maps.Map(document.getElementById('map'),{
                 zoom: zoom_per_view,
                 maxZoom: 20,
-                center: g_coord,
+                center: gCoord,
                 backgroundColor: "#ffffff",
                 panControl: !1,
                 scrollwheel: !1,
@@ -634,7 +634,6 @@ get_footer();
                 }
                 if(bound>0&&bound<100&&currentState!=abbr){ 
                     currentState = abbr;
-                    console.log('searching new state',abbr);
                     let geocoder = new google.maps.Geocoder();
                     geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
