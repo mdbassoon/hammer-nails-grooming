@@ -211,11 +211,11 @@ Small Screen - Tablate
 @media (max-width: 991px) {
 
 	.hamburger-menu {
-		display: inline-block;
+		display: inline-block !important;
 	}
 
 	.ofcavas-menu {
-		display: block;
+		display: block !important;
 	}
 
 	.menu-item ul li a {

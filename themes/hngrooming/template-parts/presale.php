@@ -55,8 +55,19 @@ $presale = get_field('presale');
                     ?>
                     <div class="founding-box <?php echo $classes[$i]; ?>">
                         <h3 class="title-xl"><?php echo $membership['membership_type']; ?></h3>
-                        <h6 class="title-sm"><del>$<?php echo $membership['full_price']; ?></del> per month</h6>
-                        <h4 class="title-lg3"><small class="text-20">$</small><?php echo $membership['discount_price']; ?></h4>
+                        <?php 
+                        if(!$membership['discount_price']||$membership['discount_price']==''){
+                            ?>
+                                <h6 class="title-sm"></h6>                            
+                                <h4 class="title-lg3"><small class="text-20">$</small><?php echo $membership['full_price']; ?></h4>
+                            <?php
+                        } else {
+                            ?>
+                                <h6 class="title-sm"><del>$<?php echo $membership['full_price']; ?></del> per month</h6>
+                                <h4 class="title-lg3"><small class="text-20">$</small><?php echo $membership['discount_price']; ?></h4>
+                            <?php
+                        }
+                        ?>
                         <p class="text-20"> per month </p>
                         <ul>
                             <?php 
