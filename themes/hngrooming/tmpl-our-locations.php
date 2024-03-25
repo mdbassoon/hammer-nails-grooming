@@ -598,10 +598,12 @@ get_footer();
             let top = 0;
 
             if(abbr!='all'){
-                top = jQuery('.state-'+abbr).position().top;
+                let stateTop = jQuery('.state-'+abbr).position().top;
+                let boxTop = jQuery('.state-'+abbr).scrollTop();
+                top = stateTop - boxTop;
                 console.log('state-'+abbr, jQuery('.state-'+abbr));
-                console.log(jQuery('.map-left').position().top)
-                console.log(jQuery('.state-'+abbr).position().top);
+                console.log(stateTop);
+                console.log(boxTop,top);
             }
 
             let geocoder = new google.maps.Geocoder();
