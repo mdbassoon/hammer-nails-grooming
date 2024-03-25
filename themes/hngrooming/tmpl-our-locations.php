@@ -600,7 +600,7 @@ get_footer();
             if(abbr!='all'){
                 let stateTop = jQuery('.state-'+abbr).position().top;
                 let boxTop = jQuery('.state-'+abbr).scrollTop();
-                top = stateTop - boxTop;
+                top = stateTop + boxTop;
                 console.log('state-'+abbr, jQuery('.state-'+abbr));
                 console.log(stateTop);
                 console.log(boxTop,top);
