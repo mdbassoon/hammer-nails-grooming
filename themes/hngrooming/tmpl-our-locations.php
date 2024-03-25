@@ -613,7 +613,7 @@ get_footer();
             });
             jQuery('.map-left').animate({
                 scrollTop:top,
-                animate:function(){
+                complete:function(){
                     scrollingMap = false;
                 }
             },300);
