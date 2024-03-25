@@ -159,13 +159,13 @@ get_header();
                                                     
                                                 </div>
                                                 <div class="mapright-cnt">
-                                                    <div class="mapinner-cnt" style="style="<?php // echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'display:none;':''; ?>">
+                                                    <div class="mapinner-cnt" style="style="<?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'display:none;':''; ?>">
                                                         <h4 class="title-sm">Call Us</h4>
-                                                        <a href="#" class="text-16"><?php //echo get_field('address',$location_id)['phone']; ?> </a>
+                                                        <a href="#" class="text-16"><?php echo get_field('address',$location_id)['phone']; ?> </a>
                                                     </div>
                                                     <div>
                                                         <h4 class="title-sm">Today's Hours</h4>
-                                                        <p class="text-16"><?php //echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'Coming Soon':$todays_hours; ?></p>
+                                                        <p class="text-16"><?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'Coming Soon':$todays_hours; ?></p>
                                                     </div>
                                                 </div>
                                             </div>
