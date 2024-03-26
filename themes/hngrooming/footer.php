@@ -37,9 +37,9 @@
             </div>
             <div class="social-media">
                 <ul class="d-flex align-items-center justify-content-center">
-                    <li><a href="#"><img class="facebook" src="<?php echo get_theme_file_uri( 'assets/images/facebook.svg'); ?>" alt=""></a></li>
-                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/instagram.svg'); ?>" alt=""></a></li>
-                    <li><a href="#"><img src="<?php echo get_theme_file_uri( 'assets/images/linkedin.svg'); ?>" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/HammerandNailsGrooming"><img class="facebook" src="<?php echo get_theme_file_uri( 'assets/images/facebook.svg'); ?>" alt=""></a></li>
+                    <li><a href="https://www.instagram.com/hammerandnailsgrooming/"><img src="<?php echo get_theme_file_uri( 'assets/images/instagram.svg'); ?>" alt=""></a></li>
+                    <li><a href="https://www.linkedin.com/company/hammer-&-nails-grooming-shop-for-guys"><img src="<?php echo get_theme_file_uri( 'assets/images/linkedin.svg'); ?>" alt=""></a></li>
                 </ul>
             </div>
 
