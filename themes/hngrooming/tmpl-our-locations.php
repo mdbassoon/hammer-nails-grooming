@@ -141,7 +141,7 @@ get_header();
                                             ?>
                                             <div class="mapleft-item">
                                                 <div class="mapleft-cnt">
-                                                    <h3 class="title-lg4"><?php echo get_the_title($location_id); ?></h3>
+                                                    <h3 class="title-lg4"><a href="<?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1'?'':get_the_permalink(); ?>"><?php echo get_the_title($location_id); ?></a></h3>
                                                     <?php 
                                                     if(get_field('location_status',$location_id)['hide_link'][0]=='1'){
                                                         ?>
