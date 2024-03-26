@@ -113,8 +113,10 @@ get_footer();
 
 ?>
 <script>
-jQuery('.apply-button').on('click',function(){
-    jQuery('.apply-form').slideToggle();
+jQuery('.apply-button').on('click',function(e){
+    e.preventDefault();
+    jQuery('.apply-form').show();
+    jQuery('.apply-form').scrollIntoView();
 });
 
 </script>
