@@ -276,34 +276,6 @@ get_footer();
         if(buttonTop>200){
             jQuery('.button.sticky').addClass('sticky');
         }
-        if(jQuery(this).scrollTop()<lastScroll){
-
-        }
-        for(let i=0;i<jQuery('.map-section').length;i++){
-            let section = jQuery('.map-section')[i];
-            let abbr = jQuery(section).attr('data-state');
-            let bound = jQuery(section).position().top;
-            if(!direction){
-                bound = jQuery(section).position().top + jQuery(section).outerHeight(true);
-            }
-            if(bound>0&&bound<100&&currentState!=abbr){ 
-                currentState = abbr;
-                let geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        if (results[0]) {
-                            mainMap.setZoom(5.8);
-                            mainMap.panTo(results[0].geometry.location);
-
-                        }
-                    }
-                });
-                break;
-            }
-
-        }
-        
-        lastScroll = jQuery(this).scrollTop();
 
     });
 </script>
