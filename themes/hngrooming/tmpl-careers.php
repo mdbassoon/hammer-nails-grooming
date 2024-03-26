@@ -51,6 +51,9 @@ get_header();
                         <div class="join-btn pt-5 mt-3">
                             <a href="#" class="button mx-auto">Apply Today</a>
                         </div>
+                        <div class="apply-form">
+                            <?php echo do_shortcode('[gravityform id="4"]'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
