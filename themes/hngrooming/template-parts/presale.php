@@ -14,7 +14,7 @@ $presale = get_field('presale');
                     <div class="brea-left csopen-cnt">
                         <h1 class="title-lg"><span>Opening</span> <?php echo $top['opens']; ?></h1>
                         <p class="text-21"><?php echo $top['description']; ?></p>
-                        <a href="#services">
+                        <a href="/service">
                             <img src="<?php echo $top['icon']; ?>" alt="<?php echo $top['icon']; ?>">
                         </a>
                     </div>
