@@ -272,7 +272,7 @@ get_footer();
 
     jQuery(window).on('scroll',function(){
 
-        let buttonTop = jQuery('.header-button').position().top;
+        let buttonTop = jQuery('.header-button').offset().top;
         console.log('scrollTop',jQuery(window).scrollTop());
         console.log('top',buttonTop);
         if(buttonTop>200){
