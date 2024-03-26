@@ -61,7 +61,7 @@ get_header();
         </section>
 
         <!--================= choose-area ================-->
-        <section class="choose-area" id="#choose-area">
+        <section class="choose-area" id="choose-area">
             <div class="container">
                 <div class="choose-item text-center">
                     <h2 class="title-xxl">Choose Your Membership</h2>
@@ -76,7 +76,7 @@ get_header();
                             <ul>
                                 <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Two Classic Services per Month</li>
                             </ul>
-                            <a href="#" class="button mx-auto">Choose a location</a>
+                            <a href="/our-locations" class="button mx-auto">Choose a location</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
@@ -89,7 +89,7 @@ get_header();
                                 <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Three Premium Services per Month</li>
                                 <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>One Free Add-On per Month</li>
                             </ul>
-                            <a href="#" class="button mx-auto">Choose a location</a>
+                            <a href="/our-locations" class="button mx-auto">Choose a location</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
@@ -104,7 +104,7 @@ get_header();
                                 <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Unlimited Services for Member </li>
                                 <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>One Free Guest Pass </li>
                             </ul>
-                            <a href="#" class="button mx-auto">Choose a location</a>
+                            <a href="/our-locations" class="button mx-auto">Choose a location</a>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@ get_header();
                             <div class="about-inner2">
                                 <h4 class="title-lg">Quality Guaranteed</h4>
                                 <p class="text-16">Why do we limit the number of Memberships sold in each shop? Keeping our Membership exclusive helps us deliver on our promise to treat you like a king with every visit. </p>
-                                <a href="#" class="button">Choose Your Membership</a>
+                                <a href="#choose-area" class="button">Choose Your Membership</a>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@ get_header();
                             <div class="about-inner3">
                                 <h4 class="title-lg">Exceptional Experiences</h4>
                                 <p class="text-16">Every Hammer and Nails service has been crafted with unique elements to guarantee a relaxing and unforgettable visit, every time. </p>
-                                <a href="#" class="button">Choose Your Membership</a>
+                                <a href="#choose-area" class="button">Choose Your Membership</a>
                             </div>
                         </div>
                         <div class="col-md-6 order-1 order-md-2">
@@ -196,7 +196,7 @@ get_header();
                             <div class="about-inner2">
                                 <h4 class="title-lg">Welcoming Oasis</h4>
                                 <p class="text-16">Get away from the ordinary and indulge in essential pampering. Be treated like you deserve with a professional and competent team, in an environment that exudes quality and relaxation. </p>
-                                <a href="#" class="button">Choose Your Membership</a>
+                                <a href="#choose-area" class="button">Choose Your Membership</a>
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@ get_header();
                             <div class="about-inner3">
                                 <h4 class="title-lg">Priority Access</h4>
                                 <p class="text-16">Jampacked Schedule? No problem. We reserve exclusive booking times for our VIP Members. </p>
-                                <a href="#" class="button">Choose Your Membership</a>
+                                <a href="#choose-area" class="button">Choose Your Membership</a>
                             </div>
                         </div>
                         <div class="col-md-6 order-1 order-md-2">
@@ -228,7 +228,7 @@ get_header();
                             <div class="about-inner2">
                                 <h4 class="title-lg cntsm">Your experience comes first</h4>
                                 <p class="text-16">Our Membership is uniquely flexible. Services included in Membership plans roll over from month-to-month and can even be shared with a friend. If life gets in the way, you can cancel at any time, no-strings-attached. </p>
-                                <a href="#" class="button">Choose Your Membership</a>
+                                <a href="#choose-area" class="button">Choose Your Membership</a>
                             </div>
                         </div>
                     </div>
