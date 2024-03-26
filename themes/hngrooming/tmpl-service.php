@@ -149,6 +149,7 @@ get_header();
     <script>
         jQuery('.service-upperitem .button').on('click',function(e){
             e.preventDefault();
+            console.log('clicked');
            let id = jQuery(this).attr('data-scroll');
            jQuery(id).get(0).scrollIntoView({behavior: 'smooth'});
         });
