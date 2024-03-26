@@ -274,7 +274,7 @@ $presale = get_field('presale');
                                         <div class="brea-icon">
                                             <img src="<?php echo get_theme_file_uri( 'assets/images/location.png'); ?>" alt="">
                                         </div>
-                                        <a class="text-18" href="<?php echo get_field('google_map_link'); ?>"><?php echo get_field('address')['address']; ?></a>
+                                        <a class="text-18 map-link" href="<?php echo get_field('google_map_link'); ?>"><?php echo get_field('address')['address']; ?></a>
                                     </li>
                                     <li>
                                         <div class="brea-icon">
@@ -331,10 +331,14 @@ $presale = get_field('presale');
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
+        console.log('clicked');
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
+});
+jQuery('.map-link').on('click',function(e){
+    e.preventDefault();
+    window.location = jQuery(this).attr('href');
 });
 </script>
