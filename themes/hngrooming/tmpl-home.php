@@ -276,7 +276,8 @@ get_footer();
         console.log('scrollTop',jQuery(window).scrollTop());
         console.log('top',buttonTop);
         if(buttonTop-jQuery(window).scrollTop()<200){
-            jQuery('.button.sticky').addClass('sticky');
+            console.log('adding sticky class');
+            jQuery('.button.header-button').addClass('sticky');
         }
 
     });
