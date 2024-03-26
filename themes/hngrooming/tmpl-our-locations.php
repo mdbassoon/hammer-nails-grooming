@@ -694,13 +694,13 @@ get_footer();
     jQuery('.show-map').on('click',function(e){
         e.preventDefault();
         console.log('clicked');
-        jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'400px'},300);
+        jQuery('#map').animate({height:'400px'},300);
         jQuery('.show-map').toggleClass('hide-map-button');
         jQuery('.hide-map').toggleClass('hide-map-button');
     });
     jQuery('.hide-map').on('click',function(e){
         e.preventDefault();
-        jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'0px'},300);
+        jQuery('#map').animate({height:'0px'},300);
         jQuery('.hide-map').toggleClass('hide-map-button');
         jQuery('.show-map').toggleClass('hide-map-button');
     });
