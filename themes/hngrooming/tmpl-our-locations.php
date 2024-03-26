@@ -153,22 +153,28 @@ get_header();
                                                         //echo get_field('address',$location_id)['address']; 
                                                         
                                                         ?></p>
-                                                        <div class="mobile-only mobile-hours">
-                                                            <div>
-                                                                <h4 class="title-sm">HOURS</h4>
-                                                                <p class="text-16"><?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'Coming Soon':$todays_hours; ?></p>
-                                                            </div>
-                                                            <div class="mapinner-cnt" style="style="<?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'display:none;':''; ?>">
-                                                                <h4 class="title-sm">PHONE NUMBER</h4>
-                                                                <a href="tel: <?php echo get_field('address',$location_id)['phone']; ?>" class="text-16"><?php echo get_field('address',$location_id)['phone']; ?> </a>
-                                                            </div>
-                                                        </div>  
-                                                        <ul class="d-flex align-items-center">
-                                                            <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
-                                                            <li class="mobile-only directions"><a href="<?php echo get_field('google_maps_link',$location_id); ?>">GET DIRECTIONS <img src="<?php echo get_theme_file_uri( 'assets/images/small-directions.svg'); ?>" /></a></li>
-                                                            <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book <span class="mobile-only">Now</span></a></li>
-                                                        </ul>
-                                                        <?php
+                                                        <?php 
+                                                        if(get_field('location_status',$location_id)['presale'][0]=='1'||get_field('location_status',$location_id)['is_it_live'][0]=='1'){
+                                                            ?>
+                                                            <div class="mobile-only mobile-hours">
+                                                                <div>
+                                                                    <h4 class="title-sm">HOURS</h4>
+                                                                    <p class="text-16"><?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'Coming Soon':$todays_hours; ?></p>
+                                                                </div>
+                                                                <div class="mapinner-cnt" style="style="<?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'?'display:none;':''; ?>">
+                                                                    <h4 class="title-sm">PHONE NUMBER</h4>
+                                                                    <a href="tel: <?php echo get_field('address',$location_id)['phone']; ?>" class="text-16"><?php echo get_field('address',$location_id)['phone']; ?> </a>
+                                                                </div>
+                                                            </div>  
+                                                            <ul class="d-flex align-items-center">
+                                                                <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
+                                                                <li class="mobile-only directions"><a href="<?php echo get_field('google_maps_link',$location_id); ?>">GET DIRECTIONS <img src="<?php echo get_theme_file_uri( 'assets/images/small-directions.svg'); ?>" /></a></li>
+                                                                <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book <span class="mobile-only">Now</span></a></li>
+                                                            </ul>
+                                                            <?php
+                                                        } else {
+                                                            ?><p class="text-16">Coming Soon</p><?php
+                                                        }
                                                     }
                                                     ?>
                                                     
