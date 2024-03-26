@@ -139,7 +139,7 @@ get_header();
                                                 ),
                                             );
                                             ?>
-                                            <div class="mapleft-item">
+                                            <div class="mapleft-item" >
                                                 <div class="mapleft-cnt">
                                                     <h3 class="title-lg4"><a href="<?php echo get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1'?'#':get_the_permalink($location_id); ?>"><?php echo get_the_title($location_id); ?></a></h3>
                                                     <?php 
@@ -645,12 +645,17 @@ get_footer();
                 }
             }
         });
-        jQuery('.map-left').animate({scrollTop:top},300,null,function(){
-            setTimeout(function(){
-                scrollingMap = false;
-            },300)
-        });
-        
+        if(window.innerWidth<732){
+            $([document.documentElement, document.body]).animate({
+                scrollTop: jQuery(".state-"+abbr).offset().top
+            }, 300);
+        } else {
+            jQuery('.map-left').animate({scrollTop:top},300,null,function(){
+                setTimeout(function(){
+                    scrollingMap = false;
+                },300)
+            });
+        }        
     }); 
 
     let lastScroll = 0;
