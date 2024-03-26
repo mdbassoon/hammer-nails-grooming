@@ -275,11 +275,11 @@ get_footer();
         let buttonTop = jQuery('.header-button').offset().top;
         console.log('scrollTop',jQuery(window).scrollTop());
         console.log('top',buttonTop);
-        if(buttonTop-jQuery(window).scrollTop()<200){
+        if(jQuery(window).scrollTop()<500) {
+            jQuery('.button.header-button').removeClass('sticky');
+        } else if(buttonTop-jQuery(window).scrollTop()<200){
             console.log('adding sticky class');
             jQuery('.button.header-button').addClass('sticky');
-        } else if(jQuery(window).scrollTop()<500) {
-            jQuery('.button.header-button').removeClass('sticky');
         }
 
     });
