@@ -116,7 +116,7 @@ get_footer();
 jQuery('.apply-button').on('click',function(e){
     e.preventDefault();
     jQuery('.apply-form').show();
-    jQuery('.apply-form').scrollIntoView();
+    jQuery('.apply-form').get(0).scrollIntoView();
 });
 
 </script>
