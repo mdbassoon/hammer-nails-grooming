@@ -48,7 +48,7 @@ get_header();
                 <div class="container">
                     <div class="care-cnt">
                         <h2 class="title-xxl">Total. Man. Care.</h2>
-                        <p class="text-18">And Palms. And today’s extraordinary man deserves a grooming experience that tends to the whole man. In a space that’s far from take-a-number haircut farms and pedicure stations that reek of acrylic fumes. It’s time to care about the care that goes into men’s grooming. And it starts at a place where men’s care is all we care about. That, and a good drink. </p>
+                        <p class="text-18">Today’s extraordinary man deserves a grooming experience that tends to the whole man. In a space that’s far from take-a-number haircut farms and pedicure stations that reek of acrylic fumes. It’s time to care about the care that goes into men’s grooming. And it starts at a place where men’s care is all we care about. That, and a good drink. </p>
                         <h4 class="title-md2">Your Ultimate Stop to the Total Men's Grooming Experience</h4>
                         <a href="/service" class="button">Our Customized Services</a>
                     </div>

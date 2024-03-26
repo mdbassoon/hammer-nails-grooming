@@ -26,7 +26,7 @@
                     <li><a class="text-16" href="/join-the-club">Memberships</a></li>
                     <li><a class="text-16" href="/careers">Careers</a></li>
                     <li><a class="text-16" href="https://hammerandnailsfranchise.com/">Franchise</a></li>
-                    <li><a class="text-16" href="/locations">Locations</a></li>
+                    <li><a class="text-16" href="/our-locations">Locations</a></li>
                 </ul>
             </div>
             <div class="download-badge">
