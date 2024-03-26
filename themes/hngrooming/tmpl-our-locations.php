@@ -647,7 +647,7 @@ get_footer();
         });
         if(window.innerWidth<732){
             $([document.documentElement, document.body]).animate({
-                scrollTop: jQuery(".state-"+abbr).offset().top
+                scrollTop: jQuery(".state-"+abbr).offset().top-100
             }, 300);
         } else {
             jQuery('.map-left').animate({scrollTop:top},300,null,function(){
