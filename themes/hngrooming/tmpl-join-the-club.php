@@ -20,7 +20,7 @@ get_header();
                             <li class="text-18">Superior Routines</li>
                             <li class="text-18">Confident Lifestyles</li>
                         </ul>
-                        <a href="#" class="button">Choose Your Membership</a>
+                        <a href="#choose-area" class="button">Choose Your Membership</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@ get_header();
         </section>
 
         <!--================= choose-area ================-->
-        <section class="choose-area">
+        <section class="choose-area" id="#choose-area">
             <div class="container">
                 <div class="choose-item text-center">
                     <h2 class="title-xxl">Choose Your Membership</h2>
