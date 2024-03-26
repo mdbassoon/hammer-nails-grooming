@@ -187,7 +187,7 @@ get_header();
             <div class="container">
                 <div class="appintment-cnt text-center">
                     <h3 class="title-xxl">Choose a Location</h3>
-                    <a href="#" class="button mx-auto">Choose a Location</a>
+                    <a href="/our-locations" class="button mx-auto">Choose a Location</a>
                 </div>
             </div>
         </section>  
