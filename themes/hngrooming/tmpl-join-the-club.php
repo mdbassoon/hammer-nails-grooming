@@ -68,18 +68,6 @@ get_header();
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4">
-                        <div class="choose-item2">
-                            <div class="choose-inner">
-                                
-                            </div>
-                            <h3 class="title-xl4">Classic Club</h3>
-                            <ul>
-                                <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Two Classic Services per Month</li>
-                            </ul>
-                            <a href="/our-locations" class="button mx-auto">Choose a location</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
                         <div class="choose-item3">
                             <div class="choose-inner">
                                 
@@ -88,6 +76,18 @@ get_header();
                             <ul>
                                 <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Three Premium Services per Month</li>
                                 <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>One Free Add-On per Month</li>
+                            </ul>
+                            <a href="/our-locations" class="button mx-auto">Choose a location</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="choose-item2">
+                            <div class="choose-inner">
+                                
+                            </div>
+                            <h3 class="title-xl4">Classic Club</h3>
+                            <ul>
+                                <li class="text-18"><span><img src="<?php echo get_theme_file_uri( 'assets/images/choose-icon-01.png'); ?>" alt=""></span>Two Classic Services per Month</li>
                             </ul>
                             <a href="/our-locations" class="button mx-auto">Choose a location</a>
                         </div>
