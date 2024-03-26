@@ -689,19 +689,20 @@ get_footer();
             
             lastScroll = jQuery(this).scrollTop();
 
-            jQuery('.show-map').on('click',function(e){
-                e.preventDefault();
-                console.log('clicked');
-                jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'400px'},300);
-                jQuery('.show-map').hide();
-                jQuery('.hide-map').show();
-            });
-            jQuery('.hide-map').on('click',function(e){
-                e.preventDefault();
-                jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'0px'},300);
-                jQuery('.hide-map').hide();
-                jQuery('.show-map').show();
-            });
+
         })
+        jQuery('.show-map').on('click',function(e){
+            e.preventDefault();
+            console.log('clicked');
+            jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'400px'},300);
+            jQuery('.show-map').hide();
+            jQuery('.hide-map').show();
+        });
+        jQuery('.hide-map').on('click',function(e){
+            e.preventDefault();
+            jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'0px'},300);
+            jQuery('.hide-map').hide();
+            jQuery('.show-map').show();
+        });
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
