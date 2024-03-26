@@ -58,6 +58,8 @@ $template = get_field('template');
                     <div class="brea-btn">
                         <a href="<?php echo get_field('booking_link'); ?>" class="button">Book Now</a>
                         <a href="/join-the-club" class="button">Learn About Our Club</a>
+                        <a href="<?php echo get_field('membership_link'); ?>" class="button">Purchase a Membership</a>
+                        <a href="<?php echo get_field('gift_card_link'); ?>" class="button">Buy a Gift Card</a>
                     </div>
                 </div>
             </div>

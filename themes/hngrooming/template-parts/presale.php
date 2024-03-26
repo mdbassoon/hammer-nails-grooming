@@ -194,7 +194,7 @@ $presale = get_field('presale');
                                     <h3 class="title-xl">Opulence You Can Afford</h3>
                                     <p class="text-18">We offer world-class luxury experiences, without the pretentious price tag. Relax as our dedicated artists deliver treatments infused with high grade essential oils, aromatherapeutic steamed towels, reflexology and massage. </p>
                                     <h5 class="text-18">Click below to explore our services options</h5>
-                                    <a href="/services" class="button mx-auto">Services</a>
+                                    <a href="/service" class="button mx-auto">Services</a>
                                 </div>
                             </div>
                             <div class="col-lg-6"></div>
@@ -274,7 +274,7 @@ $presale = get_field('presale');
                                         <div class="brea-icon">
                                             <img src="<?php echo get_theme_file_uri( 'assets/images/location.png'); ?>" alt="">
                                         </div>
-                                        <a class="text-18" href="<?php echo get_field('google_maps_link'); ?>"><?php echo get_field('address')['address']; ?></a>
+                                        <a class="text-18" href="<?php echo get_field('google_map_link'); ?>"><?php echo get_field('address')['address']; ?></a>
                                     </li>
                                     <li>
                                         <div class="brea-icon">
