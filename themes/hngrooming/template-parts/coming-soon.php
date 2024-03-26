@@ -89,7 +89,7 @@ $membership = $data['membership'];
         </div>
         <div class="row justify-content-center membership-main">
             <?php 
-            $titles = array('Classic Club','VIP Club','Club Luxe');
+            $titles = array('VIP Club','Classic Club','Club Luxe');
             $i=0;
             foreach($membership['plans'] as $plan){
                 ?>
