@@ -49,7 +49,7 @@ get_header();
                             </div>
                         </div>
                         <div class="join-btn pt-5 mt-3">
-                            <a href="#" class="button mx-auto">Apply Today</a>
+                            <a href="#" class="button mx-auto apply-button">Apply Today</a>
                         </div>
                         <div class="apply-form">
                             <?php echo do_shortcode('[gravityform id="4"]'); ?>
@@ -101,7 +101,7 @@ get_header();
                 <div class="win-box text-center">
                     <h4 class="title-xxl">Where Will You Take Us?</h4>
                     <p class="text-18"> If you love to connect with and care for people, then we are looking for YOU!</p>
-                    <a href="#" class="button mx-auto">Apply</a>
+                    <a href="#" class="button apply-button mx-auto">Apply</a>
                 </div>
             </div>
         </section>
@@ -110,4 +110,13 @@ get_header();
 
 <?php
 get_footer();
+
+?>
+<script>
+jQuery('.apply-button').on('click',function(){
+    jQuery('.apply-form').slideToggle();
+});
+
+</script>
+<?php
 
