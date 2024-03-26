@@ -29,7 +29,7 @@ get_header();
                     <span class="mobile-only">
                         <h1 class="title-xxl">Your Luxury Grooming Shop</h1>
                         <form action="/our-locations">
-                            <div class="location-item">
+                            <div class="location-item header-buton-wrapper">
                                 <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
                                 <button class="button header-button" type="button">Book Now</button>
                             </div>
@@ -276,10 +276,10 @@ get_footer();
         console.log('scrollTop',jQuery(window).scrollTop());
         console.log('top',buttonTop);
         if(jQuery(window).scrollTop()<500) {
-            jQuery('.button.header-button').removeClass('sticky');
+            jQuery('.header-button-wrapper').removeClass('sticky');
         } else if(buttonTop-jQuery(window).scrollTop()<200){
             console.log('adding sticky class');
-            jQuery('.button.header-button').addClass('sticky');
+            jQuery('.header-button-wrapper').addClass('sticky');
         }
 
     });
