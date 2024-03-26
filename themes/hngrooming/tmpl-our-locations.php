@@ -691,6 +691,7 @@ get_footer();
 
             jQuery('.show-map').on('click',function(e){
                 e.preventDefault();
+                console.log('clicked');
                 jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'400px'},300);
                 jQuery('.show-map').hide();
                 jQuery('.hide-map').show();
