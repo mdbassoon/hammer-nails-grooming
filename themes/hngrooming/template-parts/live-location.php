@@ -480,7 +480,7 @@ $template = get_field('template');
  
             $cats = get_categories(array(
                 'taxonomy' => 'service_types',
-                'orderby' => 'name',
+                'orderby'        => 'ID',
                 'order'   => 'ASC'
             ));
 
