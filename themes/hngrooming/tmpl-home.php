@@ -29,7 +29,7 @@ get_header();
                     <span class="mobile-only">
                         <h1 class="title-xxl">Your Luxury Grooming Shop</h1>
                         <form action="/our-locations">
-                            <div class="location-item header-buton-wrapper">
+                            <div class="location-item header-button-wrapper">
                                 <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
                                 <button class="button header-button" type="button">Book Now</button>
                             </div>
