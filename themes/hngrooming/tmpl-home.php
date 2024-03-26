@@ -273,6 +273,7 @@ get_footer();
     jQuery(window).on('scroll',function(){
 
         let buttonTop = jQuery('.header-button').position().top;
+        console.log('top',buttonTop);
         if(buttonTop>200){
             jQuery('.button.sticky').addClass('sticky');
         }
