@@ -201,7 +201,10 @@ get_header();
                             </div>
                             <div class="col-lg-7 order-1 order-lg-2">
                                 <div class="map-right">
+                                    <a href="#" class="button hide-map">HIDE MAP</a>
+                                    <a href="#" class="button show-map">SHOW MAP</a>
                                     <div id="map" style="width:100%;height:100%;"></div>
+                                    <a href="#" class="button hide-map">HIDE MAP</a>
                                 </div>
                             </div>
                         </div>
@@ -685,6 +688,17 @@ get_footer();
             }
             
             lastScroll = jQuery(this).scrollTop();
+
+            jQuery('.show-map').on('click',function(){
+                jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'400px'},300);
+                jQuery('.show-map').hide();
+                jQuery('.hide-map').show();
+            });
+            jQuery('.hide-map').on('click',function(){
+                jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'0px'},300);
+                jQuery('.hide-map').hide();
+                jQuery('.show-map').show();
+            });
         })
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
