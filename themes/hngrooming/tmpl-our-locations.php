@@ -292,417 +292,417 @@ get_footer();
 ?>
 
 <script type="text/javascript">
-        var clicked_event = true;
-        let userLocation = null;
-        let mapStyles = [
+    var clicked_event = true;
+    let userLocation = null;
+    let mapStyles = [
+        {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
             {
-            "featureType": "all",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "saturation": 36
-                },
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 40
-                }
-            ]
+                "saturation": 36
             },
             {
-            "featureType": "all",
-            "elementType": "labels.text.stroke",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 16
-                }
-            ]
+                "color": "#000000"
             },
             {
-            "featureType": "all",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-            },
-            {
-            "featureType": "administrative",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 20
-                }
-            ]
-            },
-            {
-            "featureType": "administrative",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#e3c76c"
-                },
-                {
-                    "lightness": 17
-                },
-                {
-                    "weight": 1.2
-                }
-            ]
-            },
-            {
-            "featureType": "landscape",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 20
-                }
-            ]
-            },
-            {
-            "featureType": "poi",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 21
-                }
-            ]
-            },
-            {
-            "featureType": "road.highway",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 17
-                }
-            ]
-            },
-            {
-            "featureType": "road.highway",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 29
-                },
-                {
-                    "weight": 0.2
-                }
-            ]
-            },
-            {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 18
-                }
-            ]
-            },
-            {
-            "featureType": "road.local",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 16
-                }
-            ]
-            },
-            {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 19
-                }
-            ]
-            },
-            {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#e7cf83"
-                },
-                {
-                    "lightness": 17
-                }
-            ]
+                "lightness": 40
             }
-        ];
-        
-        let currentState = '';
-        let mainMap;
-        
-        let scrollingMap = false;
-        function scrollToListLocation(map){
-            let latLng = map.center;
-            
-            let geocoder = new google.maps.Geocoder();
-            
-            geocoder.geocode({ 'latLng': latLng }, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    if (results[1]) {
-                        let addressComponents = results[1]['address_components'];
-                        let state = '';
-                        addressComponents.map(function(addressArr){
-                            if(addressArr.types[0]=="administrative_area_level_1"){
-                                state = addressArr.short_name;
-                            }
-                        });
-                        console.log('state',state,currentState);
-                        if(state!=currentState){
-                            scrollingMap = true;
-                            let stateElement = jQuery('.state-'+state);
-                            if(stateElement.length>0){
-                                let stateTop = jQuery('.state-'+state).position().top;
-                                let boxTop = jQuery('.map-left').scrollTop();
-                                let top = stateTop + boxTop;
-                                jQuery('.map-left').animate({
-                                    scrollTop:top
-                                },300,null,function(){
-                                    setTimeout(function(){
-                                        scrollingMap = false;
-                                    },300)
-                                });
-                            }
-                            currentState = state;
-                        }
-                        
-                    }
-                }
-            });
+        ]
+        },
+        {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+        },
+        {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+        },
+        {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+        },
+        {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#e3c76c"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+        },
+        {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+        },
+        {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+        },
+        {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+        },
+        {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+        },
+        {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+        },
+        {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+        },
+        {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+        },
+        {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#e7cf83"
+            },
+            {
+                "lightness": 17
+            }
+        ]
         }
-        function makeMaps(centerCoord=null){
-            
-            let zoom_per_view = 4.35;
-                
-            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                zoom_per_view = 3.3;
-            }
-            
-            if(centerCoord){
-                zoom_per_view = 5.8;
-            }
-            let gCoord = new google.maps.LatLng('39.50','-98.35');
-            if(centerCoord){
-                gCoord = new google.maps.LatLng(centerCoord['lat'],centerCoord['lng']);
-            }
-            
-            mainMap = new google.maps.Map(document.getElementById('map'),{
-                zoom: zoom_per_view,
-                maxZoom: 20,
-                center: gCoord,
-                backgroundColor: "#ffffff",
-                panControl: !1,
-                scrollwheel: !1,
-                styles: mapStyles,
-            });
-            
-            let coordinates = <?php echo count($all_coord)>0?json_encode($all_coord):json_encode(array()); ?>;
-
-            let markers = [];
-            let infoWindows = [];
-
-            let markerIcon = new google.maps.MarkerImage('<?php echo get_theme_file_uri( 'assets/images/pin.png'); ?>',null,null,null,new google.maps.Size(38,45));
-
-            coordinates.map(function(map,i){
-                let mapCoord = new google.maps.LatLng(parseFloat(map.lat),parseFloat(map.lng));
-                
-                let info = map.info;
-                
-                let address = (info.address&&info.address!=''?'<p>'+info.address+'</p>':'<p>COMING SOON</p>');
-                let phone = (info.phone&&info.phone!=''?'<a href="tel: '+info.phone+'" tabindex="0">'+info.phone+'</a>':'');
-                let link = (info.linkActive==true?'</strong></p><p><a href="'+info.link+'" target="_blank">View Location</a>':'');
-
-                let infoWindow = new google.maps.InfoWindow({
-                    content: '<div><h3>'+info.title+'</h3>'+address+'<p><strong>'+phone+link+'</div></p>',
-                    maxWidth: 300,
-                    pixelOffset: new google.maps.Size(0,-10)
-                });
-                
-                infoWindows.push(infoWindow);
-
-                let marker = new google.maps.Marker({
-                    map: mainMap,
-                    position: mapCoord,
-                    icon: markerIcon,
-                });
-                markers.push(marker);
-
-                marker.addListener("click", (function() {
-                    infoWindows.map(function(window){
-                        window.close();
-                    });
-                    infoWindows[i].open(mainMap, markers[i]);
-                }));
-                
-            });
-            new MarkerClusterer(mainMap,markers,{
-                maxZoom: 12,
-                averageCenter: !0,
-                styles: [{
-                    url: "<?php echo get_theme_file_uri( 'assets/images/cluster-pin.png'); ?>",
-                    width: 55,
-                    height: 70,
-                    anchorText: [40, -1]
-                }],
-            });
-
-            google.maps.event.addListener(mainMap, 'idle', function(){
-                console.log('initial scroll firing');
-                scrollToListLocation(mainMap);
-            });
-        }
+    ];
     
-        function init() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const zip = urlParams.get('zip');
-            if(zip){
-                let geocoder = new google.maps.Geocoder();
-                geocoder.geocode( { 'address':'zipcode '+zip}, function(results, status) {
-                        if (status == google.maps.GeocoderStatus.OK) {
-                            let centerCoord = {};
-                            centerCoord['lat']  = results[0].geometry.location.lat();
-                            centerCoord['lng']  = results[0].geometry.location.lng();                         
-                            makeMaps(centerCoord); 
-
-                        } else {
-                            console.log("Geocode Error: " + status);
-                            makeMaps();
-                        }
-                });
-            } else {
-                const successCallback = (position) => {
-                    let centerCoord = {};
-                    centerCoord['lat']  = position.coords.latitude;
-                    centerCoord['lng']  = position.coords.longitude;                    
-                    makeMaps(centerCoord); 
-                };
-                const errorCallback = (error) => {
-                    makeMaps();
-                };
-
-                navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-            }            
-        }  
-        jQuery('.location-tablinks a').on('click',function(e){
-            
-            e.preventDefault();
-            scrollingMap = true;
-            jQuery('.nav-link').removeClass('active');
-            jQuery(this).closest('.nav-link').addClass('active');
-            
-            let abbr = jQuery(this).attr('data-state');
-            let top = 0;
-
-            if(abbr!='all'){
-                let stateTop = jQuery('.state-'+abbr).position().top;
-                let boxTop = jQuery('.map-left').scrollTop();
-                top = stateTop + boxTop;
-            }
-
-            let geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    if (results[0]) {
-                        mainMap.setZoom(5.8);
-                        mainMap.panTo(results[0].geometry.location);
-
-                    }
-                }
-            });
-            jQuery('.map-left').animate({scrollTop:top},300,null,function(){
-                setTimeout(function(){
-                    scrollingMap = false;
-                },300)
-            });
-            
-        }); 
-
-        let lastScroll = 0;
-        jQuery('.map-left').on('scroll',function(){
-            if(scrollingMap==true){
-                return;
-            }
-
-            let direction = true;
-            if(jQuery(this).scrollTop()<lastScroll){
-                //Scrolling Up
-                direction = false;
-
-            }
-            for(let i=0;i<jQuery('.map-section').length;i++){
-                let section = jQuery('.map-section')[i];
-                let abbr = jQuery(section).attr('data-state');
-                let bound = jQuery(section).position().top;
-                if(!direction){
-                    bound = jQuery(section).position().top + jQuery(section).outerHeight(true);
-                }
-                if(bound>0&&bound<100&&currentState!=abbr){ 
-                    currentState = abbr;
-                    let geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
-                        if (status == google.maps.GeocoderStatus.OK) {
-                            if (results[0]) {
-                                mainMap.setZoom(5.8);
-                                mainMap.panTo(results[0].geometry.location);
- 
-                            }
+    let currentState = '';
+    let mainMap;
+    
+    let scrollingMap = false;
+    function scrollToListLocation(map){
+        let latLng = map.center;
+        
+        let geocoder = new google.maps.Geocoder();
+        
+        geocoder.geocode({ 'latLng': latLng }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[1]) {
+                    let addressComponents = results[1]['address_components'];
+                    let state = '';
+                    addressComponents.map(function(addressArr){
+                        if(addressArr.types[0]=="administrative_area_level_1"){
+                            state = addressArr.short_name;
                         }
                     });
-                    break;
+                    console.log('state',state,currentState);
+                    if(state!=currentState){
+                        scrollingMap = true;
+                        let stateElement = jQuery('.state-'+state);
+                        if(stateElement.length>0){
+                            let stateTop = jQuery('.state-'+state).position().top;
+                            let boxTop = jQuery('.map-left').scrollTop();
+                            let top = stateTop + boxTop;
+                            jQuery('.map-left').animate({
+                                scrollTop:top
+                            },300,null,function(){
+                                setTimeout(function(){
+                                    scrollingMap = false;
+                                },300)
+                            });
+                        }
+                        currentState = state;
+                    }
+                    
                 }
-
             }
+        });
+    }
+    function makeMaps(centerCoord=null){
+        
+        let zoom_per_view = 4.35;
             
-            lastScroll = jQuery(this).scrollTop();
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            zoom_per_view = 3.3;
+        }
+        
+        if(centerCoord){
+            zoom_per_view = 5.8;
+        }
+        let gCoord = new google.maps.LatLng('39.50','-98.35');
+        if(centerCoord){
+            gCoord = new google.maps.LatLng(centerCoord['lat'],centerCoord['lng']);
+        }
+        
+        mainMap = new google.maps.Map(document.getElementById('map'),{
+            zoom: zoom_per_view,
+            maxZoom: 20,
+            center: gCoord,
+            backgroundColor: "#ffffff",
+            panControl: !1,
+            scrollwheel: !1,
+            styles: mapStyles,
+        });
+        
+        let coordinates = <?php echo count($all_coord)>0?json_encode($all_coord):json_encode(array()); ?>;
+
+        let markers = [];
+        let infoWindows = [];
+
+        let markerIcon = new google.maps.MarkerImage('<?php echo get_theme_file_uri( 'assets/images/pin.png'); ?>',null,null,null,new google.maps.Size(38,45));
+
+        coordinates.map(function(map,i){
+            let mapCoord = new google.maps.LatLng(parseFloat(map.lat),parseFloat(map.lng));
+            
+            let info = map.info;
+            
+            let address = (info.address&&info.address!=''?'<p>'+info.address+'</p>':'<p>COMING SOON</p>');
+            let phone = (info.phone&&info.phone!=''?'<a href="tel: '+info.phone+'" tabindex="0">'+info.phone+'</a>':'');
+            let link = (info.linkActive==true?'</strong></p><p><a href="'+info.link+'" target="_blank">View Location</a>':'');
+
+            let infoWindow = new google.maps.InfoWindow({
+                content: '<div><h3>'+info.title+'</h3>'+address+'<p><strong>'+phone+link+'</div></p>',
+                maxWidth: 300,
+                pixelOffset: new google.maps.Size(0,-10)
+            });
+            
+            infoWindows.push(infoWindow);
+
+            let marker = new google.maps.Marker({
+                map: mainMap,
+                position: mapCoord,
+                icon: markerIcon,
+            });
+            markers.push(marker);
+
+            marker.addListener("click", (function() {
+                infoWindows.map(function(window){
+                    window.close();
+                });
+                infoWindows[i].open(mainMap, markers[i]);
+            }));
+            
+        });
+        new MarkerClusterer(mainMap,markers,{
+            maxZoom: 12,
+            averageCenter: !0,
+            styles: [{
+                url: "<?php echo get_theme_file_uri( 'assets/images/cluster-pin.png'); ?>",
+                width: 55,
+                height: 70,
+                anchorText: [40, -1]
+            }],
+        });
+
+        google.maps.event.addListener(mainMap, 'idle', function(){
+            console.log('initial scroll firing');
+            scrollToListLocation(mainMap);
+        });
+    }
+
+    function init() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const zip = urlParams.get('zip');
+        if(zip){
+            let geocoder = new google.maps.Geocoder();
+            geocoder.geocode( { 'address':'zipcode '+zip}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        let centerCoord = {};
+                        centerCoord['lat']  = results[0].geometry.location.lat();
+                        centerCoord['lng']  = results[0].geometry.location.lng();                         
+                        makeMaps(centerCoord); 
+
+                    } else {
+                        console.log("Geocode Error: " + status);
+                        makeMaps();
+                    }
+            });
+        } else {
+            const successCallback = (position) => {
+                let centerCoord = {};
+                centerCoord['lat']  = position.coords.latitude;
+                centerCoord['lng']  = position.coords.longitude;                    
+                makeMaps(centerCoord); 
+            };
+            const errorCallback = (error) => {
+                makeMaps();
+            };
+
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        }            
+    }  
+    jQuery('.location-tablinks a').on('click',function(e){
+        
+        e.preventDefault();
+        scrollingMap = true;
+        jQuery('.nav-link').removeClass('active');
+        jQuery(this).closest('.nav-link').addClass('active');
+        
+        let abbr = jQuery(this).attr('data-state');
+        let top = 0;
+
+        if(abbr!='all'){
+            let stateTop = jQuery('.state-'+abbr).position().top;
+            let boxTop = jQuery('.map-left').scrollTop();
+            top = stateTop + boxTop;
+        }
+
+        let geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    mainMap.setZoom(5.8);
+                    mainMap.panTo(results[0].geometry.location);
+
+                }
+            }
+        });
+        jQuery('.map-left').animate({scrollTop:top},300,null,function(){
+            setTimeout(function(){
+                scrollingMap = false;
+            },300)
+        });
+        
+    }); 
+
+    let lastScroll = 0;
+    jQuery('.map-left').on('scroll',function(){
+        if(scrollingMap==true){
+            return;
+        }
+
+        let direction = true;
+        if(jQuery(this).scrollTop()<lastScroll){
+            //Scrolling Up
+            direction = false;
+
+        }
+        for(let i=0;i<jQuery('.map-section').length;i++){
+            let section = jQuery('.map-section')[i];
+            let abbr = jQuery(section).attr('data-state');
+            let bound = jQuery(section).position().top;
+            if(!direction){
+                bound = jQuery(section).position().top + jQuery(section).outerHeight(true);
+            }
+            if(bound>0&&bound<100&&currentState!=abbr){ 
+                currentState = abbr;
+                let geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address':'state '+abbr }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results[0]) {
+                            mainMap.setZoom(5.8);
+                            mainMap.panTo(results[0].geometry.location);
+
+                        }
+                    }
+                });
+                break;
+            }
+
+        }
+        
+        lastScroll = jQuery(this).scrollTop();
 
 
-        })
-        jQuery('.show-map').on('click',function(e){
-            e.preventDefault();
-            console.log('clicked');
-            jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'400px'},300);
-            jQuery('.show-map').hide();
-            jQuery('.hide-map').show();
-        });
-        jQuery('.hide-map').on('click',function(e){
-            e.preventDefault();
-            jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'0px'},300);
-            jQuery('.hide-map').hide();
-            jQuery('.show-map').show();
-        });
+    })
+    jQuery('.show-map').on('click',function(e){
+        e.preventDefault();
+        console.log('clicked');
+        jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'400px'},300);
+        jQuery('.show-map').hide();
+        jQuery('.hide-map').show();
+    });
+    jQuery('.hide-map').on('click',function(e){
+        e.preventDefault();
+        jQuery('.locations-template .location-area .location-tabmain .tab-pane > .row .order-1').animate({height:'0px'},300);
+        jQuery('.hide-map').hide();
+        jQuery('.show-map').show();
+    });
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>
