@@ -194,7 +194,7 @@ $presale = get_field('presale');
                                     <h3 class="title-xl">Opulence You Can Afford</h3>
                                     <p class="text-18">We offer world-class luxury experiences, without the pretentious price tag. Relax as our dedicated artists deliver treatments infused with high grade essential oils, aromatherapeutic steamed towels, reflexology and massage. </p>
                                     <h5 class="text-18">Click below to explore our services options</h5>
-                                    <a href="#" class="button mx-auto">Services</a>
+                                    <a href="/services" class="button mx-auto">Services</a>
                                 </div>
                             </div>
                             <div class="col-lg-6"></div>
