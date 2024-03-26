@@ -14,7 +14,7 @@ $presale = get_field('presale');
                     <div class="brea-left csopen-cnt">
                         <h1 class="title-lg"><span>Opening</span> <?php echo $top['opens']; ?></h1>
                         <p class="text-21"><?php echo $top['description']; ?></p>
-                        <a href="#">
+                        <a href="#services">
                             <img src="<?php echo $top['icon']; ?>" alt="<?php echo $top['icon']; ?>">
                         </a>
                     </div>
@@ -327,3 +327,14 @@ $presale = get_field('presale');
     </section>
 
 </main>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
