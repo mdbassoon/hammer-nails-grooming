@@ -278,6 +278,8 @@ get_footer();
         if(buttonTop-jQuery(window).scrollTop()<200){
             console.log('adding sticky class');
             jQuery('.button.header-button').addClass('sticky');
+        } else if(jQuery(window).scrollTop()<500) {
+            jQuery('.button.header-button').removeClass('sticky');
         }
 
     });
