@@ -165,7 +165,7 @@ get_header();
                                                         </div>  
                                                         <ul class="d-flex align-items-center">
                                                             <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
-                                                            <li class="mobile-only"><a href="<?php echo get_field('google_maps_link',$location_id); ?>">GET DIRECTIONS <img src="<?php echo get_theme_file_uri( 'assets/images/small-directions.svg'); ?>" /></a></li>
+                                                            <li class="mobile-only directions"><a href="<?php echo get_field('google_maps_link',$location_id); ?>">GET DIRECTIONS <img src="<?php echo get_theme_file_uri( 'assets/images/small-directions.svg'); ?>" /></a></li>
                                                             <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book <span class="mobile-only">Now</span></a></li>
                                                         </ul>
                                                         <?php
