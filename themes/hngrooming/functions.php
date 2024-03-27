@@ -408,18 +408,20 @@ function populate_posts( $form ) {
 		foreach($states as $abbr=>$state){
 			$locations_in_state = get_posts(array(
 				'post_type'=>'location',
-				'meta_key'      => 'state',
-				'meta_value'    => $abbr,
 				'fields' => 'ids',
 				'posts_per_page'=>-1,
 				'orderby' => 'title',
 				'order' => 'ASC',
+				
 			));
 			if(count($locations_in_state)>0){
 				foreach($locations_in_state as $state_info){
 					
 					foreach($state_info as $location_id){
-						if(get_field('location_status',$location_id)['hide_listing'][0]=='1'||(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1')){
+						if(get_field('location_status',$location_id)['hide_listing'][0]=='1'){
+							continue;
+						}
+						if(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1'){
 							continue;
 						}
 						$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
