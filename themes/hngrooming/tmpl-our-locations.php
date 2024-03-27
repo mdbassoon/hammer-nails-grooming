@@ -236,7 +236,7 @@ get_header();
                                     <div class="col-sm-6 col-lg-3">
                                         <div class="location2-item">
                                             <div class="location2-banner">
-                                                <a href="<?php echo get_the_permalink($location_id); ?>">
+                                                <a <?php echo get_field('location_status',$location_id)['presale'][0]!='1'&&get_field('booking_link',$location_id)!='1'?'':'href="'.get_the_permalink($location_id).'"'; ?>">
                                                     <img src="<?php echo get_the_post_thumbnail_url($location_id)?get_the_post_thumbnail_url($location_id):get_theme_file_uri( 'assets/images/brea-ca.jpg'); ?>" alt="brea-ca">
                                                 </a>
                                             </div>
@@ -483,7 +483,6 @@ get_footer();
                             state = addressArr.short_name;
                         }
                     });
-                    console.log('state',state,currentState);
                     if(state!=currentState){
                         scrollingMap = true;
                         let stateElement = jQuery('.state-'+state);
@@ -583,7 +582,6 @@ get_footer();
         });
 
         google.maps.event.addListener(mainMap, 'idle', function(){
-            console.log('initial scroll firing');
             scrollToListLocation(mainMap);
         });
     }
@@ -700,7 +698,6 @@ get_footer();
     })
     jQuery('.show-map').on('click',function(e){
         e.preventDefault();
-        console.log('clicked');
         jQuery('#map').animate({height:'400px'},300);
         jQuery('.show-map').toggleClass('hide-map-button');
         jQuery('.hide-map').toggleClass('hide-map-button');
