@@ -721,10 +721,10 @@ get_footer();
         console.log('scrollTop',jQuery(window).scrollTop());
         console.log('top',buttonTop);
         if(jQuery(window).scrollTop()<500) {
-            jQuery('.membership-button-wrapper').removeClass('sticky');
+            jQuery('.map-right').removeClass('sticky');
         } else if(buttonTop-jQuery(window).scrollTop()<200){
             console.log('adding sticky class');
-            jQuery('.membership-button-wrapper').addClass('sticky');
+            jQuery('.map-right').addClass('sticky');
         }
 
     });
