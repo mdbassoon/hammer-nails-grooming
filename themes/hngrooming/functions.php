@@ -418,12 +418,7 @@ function populate_posts( $form ) {
 				foreach($locations_in_state as $state_info){
 					
 					foreach($state_info as $location_id){
-						if(get_field('location_status',$location_id)['hide_listing'][0]=='1'){
-							continue;
-						}
-						if(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1'){
-							continue;
-						}
+						
 						$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
 					}
 				}
