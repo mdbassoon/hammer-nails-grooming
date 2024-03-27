@@ -3766,6 +3766,7 @@ background-image: url('https://hammernew.taggartmediagroup.com/images/down.png')
 		padding:0px;
 		margin-top:0px;
 		margin-bottom:0px;
+		z-index:999;
 	}
 	.care-content {
 		z-index:-1;
