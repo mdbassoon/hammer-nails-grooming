@@ -416,7 +416,7 @@ function populate_posts( $form ) {
 				'order' => 'ASC',
 			));
 			if(count($locations_in_state)>0){
-				foreach($locations_in_state as $abbr=>$state_info){
+				foreach($locations_in_state as $state_info){
 					
 					foreach($state_info as $location_id){
 						if(get_field('location_status',$location_id)['hide_listing'][0]=='1'||(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1')){
