@@ -252,7 +252,7 @@ get_header();
                                                     <?php
                                                 } else {
                                                     ?>
-                                                    <a href="<?php echo get_field('membership_link',$location_id); ?>" class="button">Join Our Club</a>
+                                                    <a href="<?php echo get_the_permalink($location_id); ?>" class="button">Join Our Club</a>
                                                     <?php
                                                 }
                                                 ?>
