@@ -170,7 +170,7 @@ get_header();
                                                                 <li><a href="<?php echo get_the_permalink($location_id); ?>" class="button view-btn">View</a></li>
                                                                 <li class="mobile-only directions"><a href="<?php echo get_field('google_maps_link',$location_id); ?>">GET DIRECTIONS <img src="<?php echo get_theme_file_uri( 'assets/images/small-directions.svg'); ?>" /></a></li>
                                                                 <?php if(get_field('location_status',$location_id)['is_it_live'][0]=='1'){ ?>
-                                                                <li><a href="<?php echo get_field('booking_link',$location_id); ?>" class="button book-btn">Book <span class="mobile-only">Now</span></a></li>
+                                                                <li><a href="<?php echo get_field('booking_link',$location_id)!=''?get_field('booking_link',$location_id):get_the_permalink($location_id); ?>" class="button book-btn">Book <span class="mobile-only">Now</span></a></li>
                                                                 <?php } ?>
                                                             </ul>
                                                             <?php
@@ -246,7 +246,7 @@ get_header();
                                             <div class="location2-btn">
                                                 <a href="tel: <?php echo preg_replace("/[^0-9]/", "", get_field('address',$location_id)['phone']); ?>" class="button"><?php echo get_field('address',$location_id)['phone']; ?></a>
                                                 <?php 
-                                                if(get_field('location_status',$location_id)['presale'][0]!='1'&&get_field('booking_link',$location_id)!=''){
+                                                if(get_field('booking_link',$location_id)!=''){
                                                     ?>
                                                     <a href="<?php echo get_field('booking_link',$location_id); ?>" class="button">Schedule appointment</a>
                                                     <?php
