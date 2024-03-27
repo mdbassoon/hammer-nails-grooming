@@ -236,7 +236,7 @@ get_header();
                                     <div class="col-sm-6 col-lg-3">
                                         <div class="location2-item">
                                             <div class="location2-banner">
-                                                <a <?php echo get_field('location_status',$location_id)['presale'][0]!='1'&&get_field('is_it_live',$location_id)!='1'?'':'href="'.get_the_permalink($location_id).'"'; ?>">
+                                                <a <?php echo get_field('location_status',$location_id)['presale'][0]!='1'&&get_field('location_status',$location_id)['is_it_live'][0]!='1'?'':'href="'.get_the_permalink($location_id).'"'; ?>">
                                                     <img src="<?php echo get_the_post_thumbnail_url($location_id)?get_the_post_thumbnail_url($location_id):get_theme_file_uri( 'assets/images/brea-ca.jpg'); ?>" alt="brea-ca">
                                                 </a>
                                             </div>
