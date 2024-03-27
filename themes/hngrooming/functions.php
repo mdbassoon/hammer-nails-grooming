@@ -395,9 +395,9 @@ add_filter( 'gform_pre_submission_filter_4', 'populate_posts' );
 add_filter( 'gform_admin_pre_render_4', 'populate_posts' );
 function populate_posts( $form ) {
  
-    foreach ( $form['fields'] as &$field ) {
+    foreach ( $form['fields'] as $field ) {
  
-        if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
+        if ( $field->type != 'select'  ) {
             continue;
         }
  
