@@ -19,7 +19,7 @@ get_header();
             <div class="hero-content">
                 <div class="container">
                     <h6 class="title-md">Welcome To</h6>
-                    <h1 class="title-xxl">Luxury Grooming <br>Shop for Guys</h1>
+                    <h1 class="title-xxl">Your Luxury Grooming Shop</h1>
                     <form action="/our-locations">
                         <div class="location-item">
                             <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
