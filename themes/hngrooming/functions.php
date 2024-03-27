@@ -397,7 +397,7 @@ function populate_posts( $form ) {
  
     foreach ( $form['fields'] as $field ) {
  
-        if ( $field->type != 'select'  ) {
+        if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
             continue;
         }
  
@@ -406,7 +406,8 @@ function populate_posts( $form ) {
         $choices = array();
 		$states = hn_state_abbr();
 		foreach($states as $abbr=>$state){
-			$locations_in_state = get_posts(array(
+			$choices[] = array( 'text' => $state, 'value' => $state );
+			/*$locations_in_state = get_posts(array(
 				'post_type'=>'location',
 				'fields' => 'ids',
 				'posts_per_page'=>-1,
@@ -422,7 +423,7 @@ function populate_posts( $form ) {
 						$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
 					}
 				}
-			}
+			}*/
 		}
 
  
