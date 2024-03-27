@@ -31,7 +31,7 @@ get_header();
                         <form action="/our-locations">
                             <div class="location-item header-button-wrapper">
                                 <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
-                                <button class="button header-button" type="button">Book Now</button>
+                                <a href="/our-locations" class="button header-button" type="button">Book Now</a>
                             </div>
                         </form>     
                     </span>
