@@ -406,7 +406,6 @@ function populate_posts( $form ) {
         $choices = array();
 		$states = hn_state_abbr();
 		foreach($states as $abbr=>$state){
-			$choices[] = array( 'text' => $state, 'value' => $state );
 			$locations_in_state = get_posts(array(
 				'post_type'=>'location',
 				'fields' => 'ids',
@@ -415,16 +414,16 @@ function populate_posts( $form ) {
 				'order' => 'ASC',
 				
 			));
-			$choices[] = array( 'text' => count($locations_in_state), 'value' => count($locations_in_state) );
-			/*if(count($locations_in_state)>0){
+			if(count($locations_in_state)>0){
 				foreach($locations_in_state as $state_info){
 					
+					$choices[] = array( 'text' => $state_info, 'value' => $state_info );
 					foreach($state_info as $location_id){
 						
-						$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
+						//$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
 					}
 				}
-			}*/
+			}
 		}
 
  
