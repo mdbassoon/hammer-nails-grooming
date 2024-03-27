@@ -389,11 +389,8 @@ function hn_acf_state_select($field){
 add_filter('acf/load_field/key=field_65fa99467d844', 'hn_acf_state_select', 10, 3);
 
 
-add_filter( 'gform_pre_render_4', 'populate_posts' );
-add_filter( 'gform_pre_validation_4', 'populate_posts' );
-add_filter( 'gform_pre_submission_filter_4', 'populate_posts' );
-add_filter( 'gform_admin_pre_render_4', 'populate_posts' );
-function populate_posts( $form ) {
+add_filter( 'gform_pre_render_4', 'hn_populate_career_locations' );
+function hn_populate_career_locations( $form ) {
  
     foreach ( $form['fields'] as $field ) {
  
