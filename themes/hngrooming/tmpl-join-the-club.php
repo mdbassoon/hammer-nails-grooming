@@ -20,7 +20,9 @@ get_header();
                             <li class="text-18">Superior Routines</li>
                             <li class="text-18">Confident Lifestyles</li>
                         </ul>
-                        <a href="#choose-area" class="button membership-button">Choose Your Membership</a>
+                        <div class="membership-button-wrapper">
+                            <a href="#choose-area" class="button membership-button">Choose Your Membership</a>
+                        </div>
                     </div>
                 </div>
             </div>
