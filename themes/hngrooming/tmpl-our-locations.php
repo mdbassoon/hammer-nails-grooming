@@ -272,7 +272,7 @@ get_header();
                                             </a>
                                         </div>
                                         <h4>
-                                            <a class="title-lg4"><?php echo get_the_title($location_id); ?></a>
+                                            <span class="title-lg4"><?php echo get_the_title($location_id); ?></span>
                                         </h4>
                                         <p class="text-12">COMING SOON!</p>
                                     </div>
