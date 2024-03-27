@@ -201,7 +201,7 @@ get_header();
                                     ?>
                                 </div>
                             </div>
-                            <div class="col-lg-7 order-1 order-lg-2">
+                            <div class="col-lg-7 order-1 order-lg-2 map-right-wrapper">
                                 <div class="map-right">
                                     <a href="#" class="button hide-map hide-map-button">HIDE MAP</a>
                                     <a href="#" class="button show-map">SHOW MAP</a>
@@ -717,14 +717,14 @@ get_footer();
 
     jQuery(window).on('scroll',function(){
 
-        let buttonTop = jQuery('.map-right').offset().top;
+        let buttonTop = jQuery('.map-right-wrapper').offset().top;
         console.log('scrollTop',jQuery(window).scrollTop());
         console.log('top',buttonTop);
         if(jQuery(window).scrollTop()<500) {
-            jQuery('.map-right').removeClass('sticky');
+            jQuery('.map-right-wrapper').removeClass('sticky');
         } else if(buttonTop-jQuery(window).scrollTop()<200){
             console.log('adding sticky class');
-            jQuery('.map-right').addClass('sticky');
+            jQuery('.map-right-wrapper').addClass('sticky');
         }
 
     });
