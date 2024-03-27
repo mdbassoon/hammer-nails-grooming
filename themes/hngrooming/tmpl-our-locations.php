@@ -272,7 +272,7 @@ get_header();
                                             </a>
                                         </div>
                                         <h4>
-                                            <a class="title-lg4" href="<?php echo get_the_permalink($location_id); ?>"><?php echo get_the_title($location_id); ?></a>
+                                            <a class="title-lg4"><?php echo get_the_title($location_id); ?></a>
                                         </h4>
                                         <p class="text-12">COMING SOON!</p>
                                     </div>
