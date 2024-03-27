@@ -3757,7 +3757,7 @@ background-image: url('https://hammernew.taggartmediagroup.com/images/down.png')
 		padding-bottom:0px;
 		margin-bottom:0px;
 	}
-	.home-template .header-button-wrapper.sticky {
+	.home-template .header-button-wrapper.sticky,.membership-template .membership-button.sticky {
 		position: fixed;
     top: 130px;
     max-width: 525px;

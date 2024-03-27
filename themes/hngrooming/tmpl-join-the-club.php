@@ -20,7 +20,7 @@ get_header();
                             <li class="text-18">Superior Routines</li>
                             <li class="text-18">Confident Lifestyles</li>
                         </ul>
-                        <a href="#choose-area" class="button">Choose Your Membership</a>
+                        <a href="#choose-area" class="button membership-button">Choose Your Membership</a>
                     </div>
                 </div>
             </div>
@@ -387,3 +387,20 @@ get_header();
 
     <?php
 get_footer();
+?>
+<script>
+
+    jQuery(window).on('scroll',function(){
+
+        let buttonTop = jQuery('.membership-button').offset().top;
+        console.log('scrollTop',jQuery(window).scrollTop());
+        console.log('top',buttonTop);
+        if(jQuery(window).scrollTop()<500) {
+            jQuery('.membership-button-wrapper').removeClass('sticky');
+        } else if(buttonTop-jQuery(window).scrollTop()<200){
+            console.log('adding sticky class');
+            jQuery('.membership-button-wrapper').addClass('sticky');
+        }
+
+    });
+</script>
