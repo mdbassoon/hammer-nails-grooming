@@ -712,4 +712,21 @@ get_footer();
         jQuery('.show-map').toggleClass('hide-map-button');
     });
 </script>
+
+<script>
+
+    jQuery(window).on('scroll',function(){
+
+        let buttonTop = jQuery('.map-right').offset().top;
+        console.log('scrollTop',jQuery(window).scrollTop());
+        console.log('top',buttonTop);
+        if(jQuery(window).scrollTop()<500) {
+            jQuery('.membership-button-wrapper').removeClass('sticky');
+        } else if(buttonTop-jQuery(window).scrollTop()<200){
+            console.log('adding sticky class');
+            jQuery('.membership-button-wrapper').addClass('sticky');
+        }
+
+    });
+</script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&callback=init"></script>

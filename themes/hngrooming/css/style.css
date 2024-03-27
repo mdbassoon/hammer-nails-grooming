@@ -3955,6 +3955,17 @@ width:50%;
 	.locations-template .location-upper {
 		display:none;
 	}
+	.locations-template .map-right.sticky {
+		position: fixed;
+    top: 130px;
+    max-width: 525px;
+		width:calc(100% - 40px) !important;
+		background:rgba(0,0,0,0.6);
+		padding:0px;
+		margin-top:0px;
+		margin-bottom:0px;
+		z-index:999;
+	}
 }
 
 
