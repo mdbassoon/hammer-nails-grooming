@@ -389,39 +389,54 @@ function hn_acf_state_select($field){
 add_filter('acf/load_field/key=field_65fa99467d844', 'hn_acf_state_select', 10, 3);
 
 
-
-
-
-function hn_populate_job_locations( $input_info, $field, $column, $value, $form_id ) {
-
-	$states = hn_state_abbr();
-	$locations_by_state = array();
-	foreach($states as $abbr=>$state){
-		$locations_in_state = get_posts(array(
-			'post_type'=>'location',
-			'meta_key'      => 'state',
-			'meta_value'    => $abbr,
-			'fields' => 'ids',
-			'posts_per_page'=>-1,
-			'orderby' => 'title',
-			'order' => 'ASC',
-		));
-		if(count($locations_in_state)>0){
-			foreach($locations_in_state as $abbr=>$state_info){
-				
-				foreach($state_info as $location_id){
-					if(get_field('location_status',$location_id)['hide_listing'][0]=='1'||(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1')){
-						continue;
+add_filter( 'gform_pre_render_4', 'populate_posts' );
+add_filter( 'gform_pre_validation_4', 'populate_posts' );
+add_filter( 'gform_pre_submission_filter_4', 'populate_posts' );
+add_filter( 'gform_admin_pre_render_4', 'populate_posts' );
+function populate_posts( $form ) {
+ 
+    foreach ( $form['fields'] as &$field ) {
+ 
+        if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
+            continue;
+        }
+ 
+        
+ 
+        $choices = array();
+		$states = hn_state_abbr();
+		foreach($states as $abbr=>$state){
+			$locations_in_state = get_posts(array(
+				'post_type'=>'location',
+				'meta_key'      => 'state',
+				'meta_value'    => $abbr,
+				'fields' => 'ids',
+				'posts_per_page'=>-1,
+				'orderby' => 'title',
+				'order' => 'ASC',
+			));
+			if(count($locations_in_state)>0){
+				foreach($locations_in_state as $abbr=>$state_info){
+					
+					foreach($state_info as $location_id){
+						if(get_field('location_status',$location_id)['hide_listing'][0]=='1'||(get_field('location_status',$location_id)['is_it_live'][0]!='1'&&get_field('location_status',$location_id)['presale'][0]!='1')){
+							continue;
+						}
+						$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
 					}
-					$locations_by_state[] = array(get_the_title($location_id));
 				}
 			}
 		}
-	}
 
-    return array( 'type' => 'select', 'choices' => implode(",",$locations_by_state) );
+ 
+        // update 'Select a Post' to whatever you'd like the instructive option to be
+        $field->placeholder = 'Location*';
+        $field->choices = $choices;
+ 
+    }
+ 
+    return $form;
 }
-add_filter( 'gform_column_input_4_3', 'hn_populate_job_locations', 10, 5 );
 
 function enable_svg_upload( $upload_mimes ) {
 
