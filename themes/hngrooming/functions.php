@@ -402,27 +402,25 @@ function hn_populate_career_locations( $form ) {
  
         $choices = array();
 		$states = hn_state_abbr();
-		foreach($states as $abbr=>$state){
-			$locations_in_state = get_posts(array(
-				'post_type'=>'location',
-				'fields' => 'ids',
-				'posts_per_page'=>-1,
-				'orderby' => 'title',
-				'order' => 'ASC',
+
+		$locations_in_state = get_posts(array(
+			'post_type'=>'location',
+			'fields' => 'ids',
+			'posts_per_page'=>-1,
+			'orderby' => 'title',
+			'order' => 'ASC',
+			
+		));
+		if(count($locations_in_state)>0){
+			foreach($locations_in_state as $state_info){
 				
-			));
-			if(count($locations_in_state)>0){
-				foreach($locations_in_state as $state_info){
+				$choices[] = array( 'text' => get_the_title($state_info), 'value' => get_the_title($state_info) );
+				foreach($state_info as $location_id){
 					
-					$choices[] = array( 'text' => get_the_title($state_info), 'value' => get_the_title($state_info) );
-					foreach($state_info as $location_id){
-						
-						//$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
-					}
+					//$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
 				}
 			}
 		}
-
  
         // update 'Select a Post' to whatever you'd like the instructive option to be
         $field->placeholder = 'Location*';
