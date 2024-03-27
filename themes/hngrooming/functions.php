@@ -417,7 +417,7 @@ function populate_posts( $form ) {
 			if(count($locations_in_state)>0){
 				foreach($locations_in_state as $state_info){
 					
-					$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
+					$choices[] = array( 'text' => get_the_title($state_info), 'value' => get_the_title($state_info) );
 					foreach($state_info as $location_id){
 						
 						//$choices[] = array( 'text' => get_the_title($location_id), 'value' => get_the_title($location_id) );
