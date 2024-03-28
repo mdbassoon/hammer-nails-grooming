@@ -65,7 +65,7 @@ get_header();
                 <div class="container">
                     <div class="member-cnt">
                         <h3 class="title-xl">Reward yourself with Top Tier Grooming Services in a Relaxed Environment</h3>
-                        <a href="/join-the-club" class="button">Become a Member</a>
+                        <a href="/join-the-club" class="button">Book Now</a>
                     </div>
                 </div>
             </div>
