@@ -3150,11 +3150,17 @@ header.sticky {
 
 
 /****    GRAVITY FORMS *****/
-
-#gform_fields_1 {
-    max-width: 740px;
+.coming-soon-wrapper .gform_fields {
+    max-width: 720px;
     column-gap: 0px;
     display: flex;
+}
+
+.coming-soon-wrapper .gform_fields .gfield {
+	width:100% !important;
+}
+.coming-soon-wrapper .gform_fields .gfield--type-submit {
+	margin-left:20px;
 }
 #gform_fields_2 {
 	display:flex;
@@ -3180,12 +3186,6 @@ header.sticky {
     font-size: 1.6rem !important;
     font-weight: 400 !important;
 	border-radius:0px !important;
-}
-#gform_fields_1 .gfield {
-	width:100% !important;
-}
-#gform_fields_1 .gfield--type-submit {
-	margin-left:20px;
 }
 .gfield--type-submit {
 	margin-left:20px;
