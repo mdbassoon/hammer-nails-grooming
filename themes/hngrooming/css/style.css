@@ -3152,7 +3152,7 @@ header.sticky {
 /****    GRAVITY FORMS *****/
 
 #gform_fields_1 {
-    max-width: 839px;
+    max-width: 740px;
     column-gap: 0px;
     display: flex;
 }
@@ -3183,6 +3183,12 @@ header.sticky {
 }
 #gform_fields_1 .gfield {
 	width:100% !important;
+}
+#gform_fields_1 .gfield--type-submit {
+	margin-left:20px;
+}
+.gfield--type-submit {
+	margin-left:20px;
 }
 .gform_footer input[type="submit"],.gfield--type-submit input[type="submit"] {
 	  width: 100% !important;
