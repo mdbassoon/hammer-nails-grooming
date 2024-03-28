@@ -3150,16 +3150,16 @@ header.sticky {
 
 
 /****    GRAVITY FORMS *****/
-.coming-soon-wrapper .gform_fields {
+.comingsoon-wrapper .gform_fields {
     max-width: 720px;
     column-gap: 0px;
     display: flex;
 }
 
-.coming-soon-wrapper .gform_fields .gfield {
+.comingsoon-wrapper .gform_fields .gfield {
 	width:100% !important;
 }
-.coming-soon-wrapper .gform_fields .gfield--type-submit {
+.comingsoon-wrapper .gform_fields .gfield--type-submit {
 	margin-left:20px;
 }
 #gform_fields_2 {
