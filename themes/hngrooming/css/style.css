@@ -3991,3 +3991,10 @@ width:50%;
 	}
 
 }
+
+.gform_ajax_spinner {
+	max-width:100%;
+	width: 100px !important;
+	display:block;
+	margin: 20px auto;
+}
