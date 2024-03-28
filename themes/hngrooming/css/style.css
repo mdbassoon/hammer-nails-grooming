@@ -3823,8 +3823,7 @@ background-image: url('https://hammernew.taggartmediagroup.com/images/down.png')
 			height:auto;
 	}
 		.locations-template .location-area .location-tabmain {
-		
-		padding:0px;
+		padding:0px !important;
 	}
 		.locations-template .location-area .location-tabmain .tab-pane > .row .order-1 {
 		height:auto;
