@@ -58,7 +58,7 @@ get_header();
                                 <li class="text-18"><div><span>2</span></div> Choose the corresponding dollar amount</li>
                                 <li class="text-18"><div><span>3</span></div> Add a personal message, and when and where to send it</li>
                             </ul>
-                            <a href="#" class="button">Gift Now</a>
+                            <a href="#" class="button">Purchase Gift Card</a>
                         </div>
                     </div>
                     <div class="col-lg-7 order-1 order-lg-2">
