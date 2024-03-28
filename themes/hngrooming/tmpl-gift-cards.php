@@ -16,7 +16,7 @@ get_header();
                     <div class="giftcard-cnt">
                         <h1 class="title-xxl gift-herotitle">Hammer & Nails Gift Cards</h1>
                         <p class="text-20">Give Your Man the Gift of Confidence If they shave, get haircuts, cut their nails, trim their beard, or you just want some "me time."</p>
-                        <a href="/our-locations" class="button">Purchase Gift Card</a>
+                        <a href="/our-locations" class="button">Purchase A Gift Card</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@ get_header();
                                 <li class="text-18"><div><span>2</span></div> Choose the corresponding dollar amount</li>
                                 <li class="text-18"><div><span>3</span></div> Add a personal message, and when and where to send it</li>
                             </ul>
-                            <a href="#" class="button">Purchase Gift Card</a>
+                            <a href="#" class="button">Purchase A Gift Card</a>
                         </div>
                     </div>
                     <div class="col-lg-7 order-1 order-lg-2">
