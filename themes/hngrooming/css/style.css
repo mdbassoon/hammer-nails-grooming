@@ -3152,7 +3152,9 @@ header.sticky {
 /****    GRAVITY FORMS *****/
 
 #gform_fields_1 {
-	max-width:740px;
+    max-width: 839px;
+    column-gap: 0px;
+    display: flex;
 }
 #gform_fields_2 {
 	display:flex;
