@@ -3162,6 +3162,10 @@ header.sticky {
 .comingsoon-wrapper .gform_fields .gfield--type-submit {
 	margin-left:20px;
 }
+.comingsoon-wrapper .gform_confirmation_message {
+	text-align: center;
+    color: #e3c76c;
+}
 #gform_fields_2 {
 	display:flex;
 	flex-direction:column;
