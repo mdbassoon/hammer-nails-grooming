@@ -23,7 +23,7 @@ get_header();
                     <form action="/our-locations">
                         <div class="location-item">
                             <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
-                            <button class="button" type="button">Book Now</button>
+                            <button class="button" type="submit">Book Now</button>
                         </div>
                     </form>                    
                     <span class="mobile-only">
