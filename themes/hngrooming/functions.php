@@ -522,6 +522,6 @@ add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
 add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
 function spinner_url( $image_src, $form ) {
-return "/wp-content/uploads/2024/03/800.svg";
+return "/wp-content/uploads/2024/03/800-1.svg";
 }
 
