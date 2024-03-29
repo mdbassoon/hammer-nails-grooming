@@ -1,7 +1,7 @@
 <?php 
 $presale = get_field('presale');
 ?>
-<main class="overflow-hidden">
+<main class="overflow-hidden presale-template">
 
     <!--================ brea-section start ================-->
     <?php 

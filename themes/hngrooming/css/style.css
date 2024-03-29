@@ -3166,7 +3166,7 @@ header.sticky {
 	text-align: center;
     color: #e3c76c;
 }
-#gform_fields_2 {
+.presale-template .gfields {
 	display:flex;
 	flex-direction:column;
 	column-gap:0px !important;
