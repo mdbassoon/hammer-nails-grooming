@@ -71,7 +71,7 @@ $template = get_field('template');
                 <h2>
                 WELCOME TO HAMMER &amp; NAILS
                 </h2>
-                <a class="Hlink" href="https://hammerandnails.zenoti.com/webstoreNew/services/225e62f8-764a-4f9e-bac2-a1d7151f7a16" target="">Book Now</a>
+                <a class="button" href="https://hammerandnails.zenoti.com/webstoreNew/services/225e62f8-764a-4f9e-bac2-a1d7151f7a16" target="">Book Now</a>
             </div>
         </div>
     </section>
