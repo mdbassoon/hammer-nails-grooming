@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Service
+ * Template Name: Cigar Den
  *
  * @package WordPress
  */ 
