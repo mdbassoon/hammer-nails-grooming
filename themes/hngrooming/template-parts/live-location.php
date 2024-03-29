@@ -64,7 +64,7 @@ $template = get_field('template');
             </div>
         </div>
     </section>
-    <section>
+    <section class="mobile-top-section">
         <div class="location-mobile-hero-top-wrapper" style="background-image:url(https://etmsnngjpg8.exactdn.com/wp-content/uploads/2024/02/hn-mobile-bg.jpg?strip=all&amp;lossy=1&amp;ssl=1)">
             <div class="location-mobile-hero-top">
                 <img src="https://eclectic-anaconda-882afc.instawp.xyz/wp-content/uploads/2024/02/hn-mobile-icon.svg">
@@ -73,6 +73,13 @@ $template = get_field('template');
                 </h2>
                 <a class="button" href="https://hammerandnails.zenoti.com/webstoreNew/services/225e62f8-764a-4f9e-bac2-a1d7151f7a16" target="">Book Now</a>
             </div>
+        </div>
+        <div class="bre-schedule">
+            <?php 
+            foreach(get_field('hours') as $day){
+                ?><p lang="text-18"><?php echo $day['day']; ?> <span><?php echo $day['times']; ?></span></p><?php
+            }
+            ?>
         </div>
     </section>
     <!--================= partner-area ================-->
