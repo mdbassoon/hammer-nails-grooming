@@ -3166,7 +3166,7 @@ header.sticky {
 	text-align: center;
     color: #e3c76c;
 }
-.presale-template .gform_wrapper form {
+.presale-template .gform_wrapper {
 	display:flex;
 	flex-direction:column;
 	column-gap:0px !important;
