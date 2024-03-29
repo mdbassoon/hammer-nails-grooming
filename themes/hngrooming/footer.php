@@ -46,7 +46,7 @@
             <div class="footer-bottom d-block d-lg-flex align-items-center justify-content-between">
                 <p class="text-16"><span> &copy; Copyright 2024.</span> The Hammer & Nails Salon Group, LLC.</p>
                 <ul class="d-flex align-items-center">
-                    <li><a href="#" class="text-16">ACCESSIBILITY</a></li>
+                    <li><a href="/accessibility" class="text-16">ACCESSIBILITY</a></li>
                     <li><a href="/privacy-policy" class="text-16">Privacy Policy</a></li>
                 </ul>
             </div>            
