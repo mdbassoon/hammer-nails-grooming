@@ -9,7 +9,7 @@ $presale = get_field('presale');
     ?>
     <section class="brea-section" id="top-section">
         <div class="container">
-            <div class="row align-items-center csgreen-mainrow">
+            <div class="row  csgreen-mainrow">
                 <div class="col-xl-4 col-lg-6">
                     <div class="brea-left csopen-cnt">
                         <h1 class="title-lg"><span>Opening</span> <?php echo $top['opens']; ?></h1>
