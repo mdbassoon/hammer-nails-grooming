@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-  <main class="overflow-hidden">
+  <main class="overflow-hidden service-template">
 
         <!--================ service-wrapper start ================-->
         <section class="service-wrapper service-area">
