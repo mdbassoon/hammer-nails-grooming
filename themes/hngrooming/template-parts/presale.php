@@ -38,17 +38,7 @@ $presale = get_field('presale');
             </div>
         </div>
     </section>
-    <section>
-        <div class="location-mobile-hero-top-wrapper" style="background-image:url(https://etmsnngjpg8.exactdn.com/wp-content/uploads/2024/02/hn-mobile-bg.jpg?strip=all&amp;lossy=1&amp;ssl=1)">
-            <div class="location-mobile-hero-top">
-                <img src="https://eclectic-anaconda-882afc.instawp.xyz/wp-content/uploads/2024/02/hn-mobile-icon.svg">
-                <h2>
-                WELCOME TO HAMMER &amp; NAILS
-                </h2>
-                <a class="Hlink" href="https://hammerandnails.zenoti.com/webstoreNew/services/225e62f8-764a-4f9e-bac2-a1d7151f7a16" target="">Book Now</a>
-            </div>
-        </div>
-    </section>
+    
     <!--================ founding-area start ================-->
     <?php $memberships = $presale['memberships']; ?>
     <section class="founding-area">
