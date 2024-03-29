@@ -3166,7 +3166,7 @@ header.sticky {
 	text-align: center;
     color: #e3c76c;
 }
-.presale-template .gform_wrapper .gform-fields {
+.presale-template .gform_wrapper .gform_fields {
 	display:flex;
 	flex-direction:column;
 	column-gap:0px !important;
@@ -3996,4 +3996,27 @@ width:50%;
 	width: 100px !important;
 	display:block;
 	margin: 20px auto;
+}
+
+
+.apply-form #field_4_14 label:hover{
+	background: transparent;
+    border-color: var(--white);
+    color: var(--yellow);
+}
+@media screen and (max-width:991px){ 
+		.locations-template .location-area .location-tabmain {
+		padding:0px !important;
+	}
+	.locations-template .map-right-wrapper.sticky .show-map,.hide-map {
+		max-width:initial;
+		margin:0 auto;
+	}
+	.locations-template .map-right-wrapper.sticky {
+		width:100% !important;
+		max-width:initial;
+		background:#000;
+		padding:40px 20px;
+		top:110px;
+	}
 }
