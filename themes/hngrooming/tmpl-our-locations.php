@@ -6,7 +6,7 @@
  */
 get_header();
 ?>
-<?php $key = 'AIzaSyDTfEMCccFxb8xUKhA6wFn92TCqTREbKTE'; ?>
+<?php $key = get_field('google_map_api_key','options'); ?>
 <script src="<?php echo get_template_directory_uri();?>/js/markcluster.js?1" type="text/javascript"></script>
 <script src="https://unpkg.com/@google/markerclustererplus@5.0.1/dist/markerclustererplus.min.js" type="text/javascript"></script>
 <style>
