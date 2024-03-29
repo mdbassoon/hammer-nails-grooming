@@ -17,5 +17,3 @@ if(str_contains($url_dir,'coming-soon')){
 } else {
     require get_template_directory() . '/template-parts/live-location.php';
 }
-
-get_footer();
