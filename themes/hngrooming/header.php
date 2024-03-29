@@ -101,7 +101,7 @@ if($status){
                     <li><a class="text-16" href="/gift-cards">Gift Cards</a></li>
                     <li><a class="text-16" href="/our-locations">Locations</a></li>
                     <li><a class="text-16" href="/careers">Careers</a></li>
-                    <li><a class="text-16" href="/franchise">Franchise</a></li>
+                    <li><a class="text-16" href="https://hammerandnailsfranchise.com/">Franchise</a></li>
                 </ul>
            </div>
         </div>
