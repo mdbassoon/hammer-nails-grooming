@@ -1589,7 +1589,7 @@ Sunday: 11a-5p<br>
 <li id="menu-item-7912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7912"><a href="https://webstore.hammerandnailsgrooming.com/webstoreNew/giftcards/d7f0fbb6-2cf8-4294-a540-97168030afdd">Gift Cards</a></li>
 <li id="menu-item-7913" class="com_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-7913"><a href="#cigarMonth">MONTH</a></li>
 </ul>
-<ul class="social-media-footer">
+<ul class="social-media-footer" style="opacity:0;">
 <li><a href="https://www.facebook.com/HammerandNailsGrooming"><i class="fab fa-facebook-f"></i></a></li>
 <li><a href="https://twitter.com/handngrooming"><i class="fab fa-twitter"></i></a></li>
 <li><a href="https://www.instagram.com/hammerandnailsgrooming/"><i class="fab fa-instagram"></i></a></li>
