@@ -20,7 +20,7 @@ get_header();
                 <div class="container">
                     <h6 class="title-md">Welcome To</h6>
                     <h1 class="title-xxl">Your Luxury<br/>Grooming Shop</h1>
-                    <form action="/our-locations">
+                    <form action="/our-locations#tab1">
                         <div class="location-item">
                             <input class="text-16" name="zip" type="text" placeholder="Enter a zip code">
                             <button class="button" type="submit">Book Now</button>
