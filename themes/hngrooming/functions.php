@@ -525,3 +525,7 @@ function spinner_url( $image_src, $form ) {
 return "/wp-content/uploads/2024/03/800-1.svg";
 }
 
+add_filter( 'gform_field_value_date', 'populate_date' );
+function populate_date( $value ) {
+   return date('m-d-Y');
+}
