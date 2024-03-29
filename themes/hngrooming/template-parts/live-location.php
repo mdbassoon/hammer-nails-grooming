@@ -1,7 +1,7 @@
 <?php 
 $template = get_field('template');
 ?>
-<main class="overflow-hidden">
+<main class="overflow-hidden live-location-template">
     <!--================ brea-section start ================-->
     <section class="brea-section">
         <div class="container">
