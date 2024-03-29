@@ -42,7 +42,7 @@ get_header();
         <section class="location-area">
             <div class="container">
                 <div class="location-upper">
-                    <form action="/our-locations">
+                    <form action="/our-locations#tab1">
                         <div class="location-item justify-content-center">
                             <input class="text-16" type="text" name="zip" placeholder="Enter Your City Or Zip" required>
                             <button class="button" type="submit">Submit</button>
